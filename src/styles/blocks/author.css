@@ -1,0 +1,28 @@
+.author {
+  display: flex;
+  margin: 0;
+}
+
+.author__about {
+  margin: 0;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+}
+
+.author__info {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.author__text {
+  margin: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
