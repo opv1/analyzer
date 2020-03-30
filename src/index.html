@@ -6,6 +6,7 @@
     <meta name="author" content="Павел Овечкин" />
     <meta name="description" content="Дипломная работа" />
     <link rel="icon" href="./images/favicon.svg" />
+    <link rel="stylesheet" href="./vendor/normalize.css" />
     <link rel="stylesheet" href="./styles/index.css" />
     <title>NewsAnalyzer</title>
   </head>
@@ -13,27 +14,57 @@
     <div class="page">
       <header class="header">
         <a class="header__home">NewsAnalyzer</a>
-        <div class="header__navigation">
+        <nav class="header__navigation">
           <a class="header__main">Главная</a>
           <a class="header__about" href="">О проекте</a>
-        </div>
+        </nav>
       </header>
       <main class="content">
         <section class="search">
           <h1 class="search__question">Что в мире твориться?</h1>
           <p class="search__info">
             Введите в поиске любую тему и узнайте, насколько популярной она была
-            в носотях за прошедшую неделю.
+            в новостях за прошедшую неделю.
           </p>
-          <input type="text" />
+          <form class="search__form" name="search">
+            <input
+              class="search__input"
+              name="search"
+              type="search"
+              placeholder="Введите тему новости"
+              required
+            />
+            <button class="search__button" type="submit">
+              Искать
+            </button>
+          </form>
         </section>
-        <section class="result"></section>
+        <section class="result">
+          <div class="result__inline">
+            <h3 class="result__search">Результаты поиска</h3>
+            <a class="result__analytics" href=""
+              >Посмотреть аналитику &#8250;</a
+            >
+          </div>
+          <div class="result__cards">
+            <div class="result__card">
+              <div class="result__image"></div>
+              <div class="result__date"></div>
+              <h4 class="result__name"></h4>
+              <p class="result__text"></p>
+              <span class="result__from"></span>
+            </div>
+          </div>
+          <button class="result__more" type="submit">Показать еще</button>
+        </section>
         <section class="author">
-          <img
-            class="author__photo"
-            src="./images/image-03.png"
-            alt="Фото автора"
-          />
+          <picture class="author__block">
+            <img
+              class="author__photo"
+              src="./images/image-03.png"
+              alt="Фото автора"
+            />
+          </picture>
           <div class="author__info">
             <h2 class="author__about">Об авторе</h2>
             <p class="author__text">
@@ -50,11 +81,16 @@
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2020. Павел Овечкин</p>
-        <div class="footer__navigation">
-          <a class="footer__nav" href="">Главная</a>
-          <a class="footer__nav" href="">О проекте</a>
-          <a class="footer__nav" href="">Яндекс.Практикум</a>
-        </div>
+        <nav class="footer__navigation">
+          <a class="footer__nav" href="" target="_blank">Главная</a>
+          <a class="footer__nav" href="" target="_blank">О проекте</a>
+          <a
+            class="footer__nav"
+            href="https://praktikum.yandex.ru/"
+            target="_blank"
+            >Яндекс.Практикум</a
+          >
+        </nav>
         <div class="footer__links">
           <a
             class="footer__link"

@@ -2,40 +2,45 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 0;
+  margin: auto;
+  padding: 25px 0;
   width: 100%;
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
 }
 
 .header__home {
-  margin: 0;
+  margin: auto;
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
-  /* color: #ffffff; */
+  color: #fff;
 }
 
 .header__navigation {
-  margin: 0;
+  margin: auto;
 }
 
 .header__main {
-  margin: 0;
+  margin: auto;
   margin-right: 34px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
+  color: #fff;
+  text-decoration: none;
 }
 
 .header__about {
-  margin: 0;
+  margin: auto;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
+  color: #b6bcbf;
+  text-decoration: none;
 }

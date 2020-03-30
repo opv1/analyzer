@@ -1,28 +1,45 @@
 .author {
   display: flex;
-  margin: 0;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 80px 80px;
 }
 
-.author__about {
-  margin: 0;
-  font-family: Roboto Slab;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 40px;
-  line-height: 46px;
+.author__block {
+  margin: auto;
+  max-width: 464px;
+  max-height: 464px;
 }
 
 .author__info {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: auto;
+  max-width: 600px;
+}
+
+.author__about {
+  margin: auto;
+  margin-bottom: 24px;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1a1b22;
 }
 
 .author__text {
-  margin: 0;
+  margin: auto;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
+  color: #1a1b22;
+}
+
+.author__text:last-child {
+  margin-top: 20px;
 }

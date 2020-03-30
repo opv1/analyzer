@@ -1,3 +1,90 @@
 .result {
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 80px 80px;
+  background: #f5f6f7;
+}
+
+.result__inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result__search {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1a1b22;
+}
+
+.result__analytics {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1a1b22;
+  text-decoration: none;
+}
+
+.result__cards {
+  display: flex;
+}
+
+.result__card {
+  display: flex;
+}
+
+.result__image {
+  background-image: url();
+}
+
+.result__date {
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6bcbf;
+}
+
+.result__name {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1a1b22;
+}
+
+.result__text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1a1b22;
+}
+
+.result__from {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #b6bcbf;
+}
+
+.result__more {
+  padding: 20px 84px;
+  max-width: 290px;
+  border-radius: 80px;
+  background: #ffffff;
 }

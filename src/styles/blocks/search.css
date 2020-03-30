@@ -1,24 +1,69 @@
 .search {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  margin: 0;
+  margin: auto;
 }
 
 .search__question {
-  margin: 0;
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 32px;
+  max-width: 545px;
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: normal;
   font-size: 60px;
   line-height: 64px;
+  color: #fff;
 }
 
 .search__info {
-  margin: 0;
+  margin: auto;
+  margin-bottom: 64px;
+  max-width: 545px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
+  color: #fff;
+}
+
+.search__form {
+  margin: auto;
+  margin-bottom: 80px;
+  max-width: 610px;
+}
+
+.search__input {
+  margin: auto;
+  padding: 21px 24px 21px 24px;
+  border: 1px solid #d1d2d6;
+  border-radius: 100px;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.search__button {
+  margin: auto;
+  width: 170px;
+  padding: 21px 24px 21px 24px;
+  border: 1px solid #d1d2d6;
+  border-radius: 100px;
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  background: #347eff;
 }
