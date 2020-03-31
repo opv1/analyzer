@@ -12,19 +12,21 @@
   </head>
   <body>
     <div class="page page__main">
-      <header class="header">
+      <header class="header shadow__darker">
         <div class="header__wrapper">
-          <div class="header__home">NewsAnalyzer</div>
+          <div class="header__caption text__white">NewsAnalyzer</div>
           <nav class="header__navigation">
-            <a class="header__main">Главная</a>
-            <a class="header__about" href="">О проекте</a>
+            <a class="header__main text__white active__main">Главная</a>
+            <a class="header__about text__grey hover__white" href=""
+              >О проекте</a
+            >
           </nav>
         </div>
       </header>
       <main class="content">
         <section class="search">
-          <h1 class="search__caption">Что в мире творится?</h1>
-          <p class="search__info">
+          <h1 class="search__caption text__white">Что в мире творится?</h1>
+          <p class="search__info text__white">
             Введите в поиске любую тему и узнайте, насколько популярной она была
             в новостях за прошедшую неделю.
           </p>
@@ -37,66 +39,82 @@
               required
               maxlength="40"
             />
-            <button class="search__button" type="submit">
+            <button class="search__button text__white" type="submit">
               Искать
             </button>
           </form>
         </section>
-        <section class="result">
+        <section class="result background__grey">
           <div class="result__wrapper">
             <div class="result__inline">
-              <h3 class="result__caption">Результаты поиска</h3>
-              <a class="result__analytics" href=""
+              <h3 class="result__caption text__black">Результаты поиска</h3>
+              <a class="result__analytics text__black" href="" target="_blank"
                 >Посмотреть аналитику &#8250;</a
               >
             </div>
             <div class="result__cards">
               <div class="result__card">
-                <div class="result__pictures"></div>
+                <img
+                  class="result__pictures"
+                  src="./images/image_08.png"
+                  alt=""
+                />
                 <div class="result__info">
-                  <div class="result__date">2 августа, 2019</div>
-                  <h4 class="result__name">Национальное достояние – парки</h4>
-                  <p class="result__text">
+                  <div class="result__date text__grey">2 августа, 2019</div>
+                  <h4 class="result__name text__black">
+                    Национальное достояние – парки
+                  </h4>
+                  <p class="result__text text__black">
                     В 2016 году Америка отмечала важный юбилей: сто лет назад
                     здесь начала складываться система национальных парков –
                     охраняемых территорий, где и сегодня каждый может
                     приобщиться к природе.
                   </p>
-                  <span class="result__from">Лента.ру</span>
+                  <span class="result__from text__grey">Лента.ру</span>
                 </div>
               </div>
               <div class="result__card">
-                <div class="result__pictures"></div>
+                <img
+                  class="result__pictures"
+                  src="./images/image_04.png"
+                  alt=""
+                />
                 <div class="result__info">
-                  <div class="result__date">2 августа, 2019</div>
-                  <h4 class="result__name">
+                  <div class="result__date text__grey">2 августа, 2019</div>
+                  <h4 class="result__name text__black">
                     Лесные огоньки: история одной фотографии
                   </h4>
-                  <p class="result__text">
+                  <p class="result__text text__black">
                     Фотограф отвлеклась от освещения суровой политической
                     реальности Мексики, чтобы запечатлеть ускользающую красоту
                     одного из местных чудес природы.
                   </p>
-                  <span class="result__from">Медуза</span>
+                  <span class="result__from text__grey">Медуза</span>
                 </div>
               </div>
               <div class="result__card">
-                <div class="result__pictures"></div>
+                <img
+                  class="result__pictures"
+                  src="./images/image_07.png"
+                  alt=""
+                />
                 <div class="result__info">
-                  <div class="result__date">2 августа, 2019</div>
-                  <h4 class="result__name">
+                  <div class="result__date text__grey">2 августа, 2019</div>
+                  <h4 class="result__name text__black">
                     «Первозданная тайга»: новый фотопроект Игоря Шпиленка
                   </h4>
-                  <p class="result__text">
+                  <p class="result__text text__black">
                     Знаменитый фотограф снимает первозданные леса России, чтобы
                     рассказать о необходимости их сохранения. В этот раз он
                     отправился в Двинско-Пинежскую тайгу, где...
                   </p>
-                  <span class="result__from">Риа</span>
+                  <span class="result__from text__grey">Риа</span>
                 </div>
               </div>
             </div>
-            <button class="result__button" type="submit">Показать еще</button>
+            <button class="result__button text__black" type="submit">
+              Показать еще
+            </button>
           </div>
         </section>
         <section class="author">
@@ -107,13 +125,13 @@
               alt="Фото автора"
             />
             <div class="author__info">
-              <h2 class="author__caption">Об авторе</h2>
-              <p class="author__text">
+              <h2 class="author__caption text__black">Об авторе</h2>
+              <p class="author__text text__black">
                 Это блок с описаением автора проекта. Здесь следует указать, как
                 вас зовут, чем вы занимаетесь, какими технологиями разработки
                 владете.
               </p>
-              <p class="author__text">
+              <p class="author__text text__black">
                 Также можно рассказать о процессе обучения в Практикуме, чему вы
                 тут научились, и чем можете помочь потенциальным заказчикам.
               </p>
@@ -123,12 +141,16 @@
       </main>
       <footer class="footer">
         <div class="footer__wrapper">
-          <p class="footer__copyright">&copy; 2020. Павел Овечкин</p>
+          <p class="footer__copyright text__grey">&copy; 2020. Павел Овечкин</p>
           <nav class="footer__navigation">
-            <a class="footer__nav" href="" target="_blank">Главная</a>
-            <a class="footer__nav" href="" target="_blank">О проекте</a>
+            <a class="footer__nav text__black" href="" target="_blank"
+              >Главная</a
+            >
+            <a class="footer__nav text__black" href="" target="_blank"
+              >О проекте</a
+            >
             <a
-              class="footer__nav"
+              class="footer__nav text__black"
               href="https://praktikum.yandex.ru/"
               target="_blank"
               >Яндекс.Практикум</a

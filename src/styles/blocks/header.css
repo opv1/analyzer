@@ -1,7 +1,22 @@
 .header {
   margin: auto;
   padding: 25px 0;
-  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
+
+.header a.active__main {
+  border-bottom: 2px solid #ffffff;
+}
+
+.header a.active__about {
+  border-bottom: 2px solid #000000;
+}
+
+.hover__white:hover {
+  color: #ffffff;
+}
+
+.hover__black:hover {
+  color: #1a1b22;
 }
 
 .header__wrapper {
@@ -12,35 +27,34 @@
   max-width: 85%;
 }
 
-.header__home {
+.header__caption {
   margin: 0;
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
-  color: #fff;
 }
 
 .header__main {
   margin: 0;
+  text-decoration: none;
   margin-right: 34px;
+  padding-bottom: 25px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  color: #fff;
-  text-decoration: none;
 }
 
 .header__about {
   margin: 0;
+  text-decoration: none;
+  padding-bottom: 25px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  color: #b6bcbf;
-  text-decoration: none;
 }

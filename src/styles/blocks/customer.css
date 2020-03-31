@@ -1,29 +1,16 @@
-.author {
+.customer {
   margin: auto;
   padding: 80px 0;
 }
 
-.author__wrapper {
+.cusotmer__wrapper {
   display: flex;
+  flex-direction: column;
   margin: auto;
   max-width: 85%;
 }
 
-.author__photo {
-  margin: 0;
-  max-width: 464px;
-  max-height: 464px;
-}
-
-.author__info {
-  display: flex;
-  flex-direction: column;
-  margin: 0 56px;
-  margin-top: 51px;
-  max-width: 600px;
-}
-
-.author__caption {
+.customer__caption {
   margin: 0;
   margin-bottom: 24px;
   font-family: Roboto Slab;
@@ -33,15 +20,14 @@
   line-height: 46px;
 }
 
-.author__text {
-  margin: 0;
+.customer__info {
+  max-width: 815px;
+}
+
+.customer__text {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
-}
-
-.author__text:last-child {
-  margin-top: 20px;
 }

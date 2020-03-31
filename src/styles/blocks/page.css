@@ -5,6 +5,7 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+  position: relative;
   margin: auto;
   max-width: 1440px;
   min-width: 320px;
@@ -14,6 +15,6 @@
 
 .page__main {
   background-image: url(../../images/background.png);
-  background-repeat: no-repeat;
   background-position: top;
+  background-repeat: no-repeat;
 }

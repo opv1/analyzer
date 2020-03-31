@@ -5,130 +5,245 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Павел Овечкин" />
     <meta name="description" content="Дипломная работа" />
-    <link rel="icon" href="./images/favicon.svg" />
+    <link rel="icon" href="../images/favicon.svg" />
     <link rel="stylesheet" href="../vendor/normalize.css" />
     <link rel="stylesheet" href="../styles/index.css" />
-    <title>Document</title>
+    <title>О проекте</title>
   </head>
   <body>
-    <dir class="page page__about">
-      <header class="header">
-        <a class="header__home">NewsAnalyzer</a>
-        <nav class="header__navigation">
-          <a class="header__main">Главная</a>
-          <a class="header__about" href="">О проекте</a>
-        </nav>
+    <div class="page page__about">
+      <header class="header shadow__lighter">
+        <div class="header__wrapper">
+          <div class="header__caption text__black">NewsAnalyzer</div>
+          <nav class="header__navigation">
+            <a class="header__main text__grey hover__black" href="">Главная</a>
+            <a class="header__about text__black active__about">О проекте</a>
+          </nav>
+        </div>
       </header>
       <main class="content">
         <section class="customer">
-          <h1 class="customer__caption">Клиентам</h1>
-          <div class="customer__info">
-            <p class="customer__text">
-              Этот сайт — дипломный проект студента Яндкс.Практикума. Его цель —
-              показать, чему научился студент, и какими технологиями владеет.
-            </p>
-            <p class="customer__text">
-              Вёртска сайта выполнена по методологии БЭМ. Это делает сайт гибким
-              и масштабируемым. Кроме того, добавлять новые страницы и
-              функциальность проще и быстрее, чем в проектах, выполненных по
-              другим методологиям. Также сайт проще и дешевле поддерживать.
-            </p>
-            <p class="customer__text">
-              Карточки с новостям приходят с сервера и обрабатываются асихронно.
-              То есть сайт продолжает работать, пока от сервера приходит ответ.
-              Это повышает удобство использования сервиса.
-            </p>
-            <p class="customer__text">
-              При создании проекта была использона сборка технологией Webpack.
-              Это современных подход к разработке сайтов. Код оптимизируется, а
-              значит, сайт работает быстрее. Также настроена сайт работает в
-              старых браузерах. Даже если посетители — пользователи старых
-              операционных систем у них не будет проблем с отображением. А
-              значит потенциальная аудитория возрастает.
-            </p>
-            <p class="customer__text">
-              Проект был проверен экспертами Яндекс.Практикума. И если вашему
-              бизесу нужен сайт, мы рекомендуем обратиться к этому студенту.
-            </p>
+          <div class="cusotmer__wrapper">
+            <h1 class="customer__caption text__black">Клиентам</h1>
+            <div class="customer__info">
+              <p class="customer__text text__black">
+                Этот сайт — дипломный проект студента Яндкс.Практикума. Его цель
+                — показать, чему научился студент, и какими технологиями
+                владеет.
+              </p>
+              <p class="customer__text text__black">
+                Вёртска сайта выполнена по методологии БЭМ. Это делает сайт
+                гибким и масштабируемым. Кроме того, добавлять новые страницы и
+                функциальность проще и быстрее, чем в проектах, выполненных по
+                другим методологиям. Также сайт проще и дешевле поддерживать.
+              </p>
+              <p class="customer__text text__black">
+                Карточки с новостям приходят с сервера и обрабатываются
+                асихронно. То есть сайт продолжает работать, пока от сервера
+                приходит ответ. Это повышает удобство использования сервиса.
+              </p>
+              <p class="customer__text text__black">
+                При создании проекта была использона сборка технологией Webpack.
+                Это современных подход к разработке сайтов. Код оптимизируется,
+                а значит, сайт работает быстрее. Также сайт работает в старых
+                браузерах. Даже если посетители — пользователи старых
+                операционных систем у них не будет проблем с отображением. А
+                значит потенциальная аудитория возрастает.
+              </p>
+              <p class="customer__text text__black">
+                Проект был проверен экспертами Яндекс.Практикума. И если вашему
+                бизесу нужен сайт, мы рекомендуем обратиться к этому студенту.
+              </p>
+            </div>
           </div>
         </section>
-        <section class="stack">
-          <h2 class="stack__caption">Используемые технологии</h2>
-          <picture class="stack__technology">
-            <img src="../images/html.svg" alt="HTML" />
-            <img src="../images/css.svg" alt="CSS" />
-            <img src="../images/js.svg" alt="JavaScript" />
-            <img src="../images/webpack.svg" alt="Webpack" />
-          </picture>
+        <section class="stack background__grey">
+          <div class="stack__wrapper">
+            <h2 class="stack__caption text__black">Используемые технологии</h2>
+            <picture class="stack__technology">
+              <img class="stack__icon" src="../images/html.svg" alt="HTML" />
+              <img class="stack__icon" src="../images/css.svg" alt="CSS" />
+              <img
+                class="stack__icon"
+                src="../images/js.svg"
+                alt="JavaScript"
+              />
+              <img
+                class="stack__icon"
+                src="../images/webpack.svg"
+                alt="Webpack"
+              />
+            </picture>
+          </div>
         </section>
         <section class="author">
-          <picture class="author__block">
+          <div class="author__wrapper">
             <img
               class="author__photo"
-              src="./images/image-03.png"
+              src="../images/image-03.png"
               alt="Фото автора"
             />
-          </picture>
-          <div class="author__info">
-            <h2 class="author__caption">Об авторе</h2>
-            <p class="author__text">
-              Это блок с описаением автора проекта. Здесь следует указать, как
-              вас зовут, чем вы занимаетесь, какими технологиями разработки
-              владете.
-            </p>
-            <p class="author__text">
-              Также можно рассказать о процессе обучения в Практикуме, чему вы
-              тут научились, и чем можете помочь потенциальным заказчикам.
-            </p>
+            <div class="author__info">
+              <h2 class="author__caption text__black">Об авторе</h2>
+              <p class="author__text text__black">
+                Это блок с описаением автора проекта. Здесь следует указать, как
+                вас зовут, чем вы занимаетесь, какими технологиями разработки
+                владете.
+              </p>
+              <p class="author__text text__black">
+                Также можно рассказать о процессе обучения в Практикуме, чему вы
+                тут научились, и чем можете помочь потенциальным заказчикам.
+              </p>
+            </div>
           </div>
         </section>
-        <section class="commits">
+        <section class="commits background__grey">
+          <div class="commits__wrapper">
+            <div class="commits__inline">
+              <h3 class="commits__caption text__black">
+                История коммитов из GitHub
+              </h3>
+              <a
+                class="commits__analytics text__black"
+                href="https://github.com/opv1/yp-diplom/commits/master/"
+                target="_blank"
+                >Открыть в GitHub &#8250;</a
+              >
+            </div>
+          </div>
           <div class="swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">Slide 1</div>
-              <div class="swiper-slide">Slide 2</div>
-              <div class="swiper-slide">Slide 3</div>
-              <div class="swiper-slide">Slide 4</div>
-              <div class="swiper-slide">Slide 5</div>
-              <div class="swiper-slide">Slide 6</div>
-              <div class="swiper-slide">Slide 7</div>
-              <div class="swiper-slide">Slide 8</div>
-              <div class="swiper-slide">Slide 9</div>
-              <div class="swiper-slide">Slide 10</div>
+              <div class="swiper-slide">
+                <p class="swiper-data text__grey">14 августа, 2019</p>
+                <div class="swiper-user">
+                  <img
+                    class="swiper-photo"
+                    src="../images/image-01.png"
+                    alt=""
+                  />
+                  <div class="swiper-block">
+                    <h3 class="swiper-name text__black">Антон Долинин</h3>
+                    <p class="swiper-email text__black">anton@yandex.ru</p>
+                  </div>
+                </div>
+                <p class="swiper-commit text__black">
+                  Emmet (formerly Zen Coding) is a web- developer’s toolkit that
+                  can greatly improve your HTML & CSS workflow.
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <p class="swiper-data text__grey">14 августа, 2019</p>
+                <div class="swiper-user">
+                  <img
+                    class="swiper-photo"
+                    src="../images/image-041.png"
+                    alt=""
+                  />
+                  <div class="swiper-block">
+                    <h3 class="swiper-name text__black">Антон Долинин</h3>
+                    <p class="swiper-email text__black">anton@yandex.ru</p>
+                  </div>
+                </div>
+                <p class="swiper-commit text__black">
+                  Emmet (formerly Zen Coding) is a web- developer’s toolkit that
+                  can greatly improve your HTML & CSS workflow.
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <p class="swiper-data text__grey">14 августа, 2019</p>
+                <div class="swiper-user">
+                  <img
+                    class="swiper-photo"
+                    src="../images/image-031.png"
+                    alt=""
+                  />
+                  <div class="swiper-block">
+                    <h3 class="swiper-name text__black">Инга Иванова</h3>
+                    <p class="swiper-email text__black">ingaiva@yandex.ru</p>
+                  </div>
+                </div>
+                <p class="swiper-commit text__black">
+                  With Emmet, you can type CSS-like expressions that can be
+                  dynamically parsed, and produce output depending on what you
+                  type in the abb...
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <p class="swiper-data text__grey">14 августа, 2019</p>
+                <div class="swiper-user">
+                  <img
+                    class="swiper-photo"
+                    src="../images/image-01.png"
+                    alt=""
+                  />
+                  <div class="swiper-block">
+                    <h3 class="swiper-name text__black">Антон Долинин</h3>
+                    <p class="swiper-email text__black">anton@yandex.ru</p>
+                  </div>
+                </div>
+                <p class="swiper-commit text__black">
+                  Emmet (formerly Zen Coding) is a web- developer’s toolkit that
+                  can greatly improve your HTML & CSS workflow.
+                </p>
+              </div>
             </div>
-            <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
           </div>
         </section>
       </main>
       <footer class="footer">
-        <p class="footer__copyright">&copy; 2020. Павел Овечкин</p>
-        <nav class="footer__navigation">
-          <a class="footer__nav" href="" target="_blank">Главная</a>
-          <a class="footer__nav" href="" target="_blank">О проекте</a>
-          <a
-            class="footer__nav"
-            href="https://praktikum.yandex.ru/"
-            target="_blank"
-            >Яндекс.Практикум</a
-          >
-        </nav>
-        <div class="footer__links">
-          <a
-            class="footer__link"
-            href="https://github.com/opv1/"
-            target="_blank"
-            ><img class="footer__icon" src="./images/github.svg" alt="GitHub" />
-          </a>
-          <a
-            class="footer__link"
-            href="https://www.facebook.com/"
-            target="_blank"
-            ><img class="footer__icon" src="./images/fb.svg" alt="Facebook" />
-          </a>
+        <div class="footer__wrapper">
+          <p class="footer__copyright text__grey">&copy; 2020. Павел Овечкин</p>
+          <nav class="footer__navigation">
+            <a class="footer__nav text__black" href="" target="_blank"
+              >Главная</a
+            >
+            <a class="footer__nav text__black" href="" target="_blank"
+              >О проекте</a
+            >
+            <a
+              class="footer__nav text__black"
+              href="https://praktikum.yandex.ru/"
+              target="_blank"
+              >Яндекс.Практикум</a
+            >
+          </nav>
+          <div class="footer__links">
+            <a
+              class="footer__link"
+              href="https://github.com/opv1/"
+              target="_blank"
+              ><img
+                class="footer__icon"
+                src="../images/github.svg"
+                alt="GitHub"
+              />
+            </a>
+            <a
+              class="footer__link"
+              href="https://www.facebook.com/"
+              target="_blank"
+              ><img
+                class="footer__icon"
+                src="../images/fb.svg"
+                alt="Facebook"
+              />
+            </a>
+          </div>
         </div>
       </footer>
-    </dir>
+    </div>
+    <script src="../js/utils/swiper.js"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        freeMode: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    </script>
   </body>
-  <script src="../index.js"></script>
 </html>

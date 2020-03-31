@@ -1,0 +1,29 @@
+.navigation {
+  margin: auto;
+  padding-top: 40px;
+}
+
+.navigation__wrapper {
+  display: flex;
+  margin: auto;
+  max-width: 85%;
+}
+
+.navigation__main {
+  margin: 0;
+  text-decoration: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.navigation__analytics {
+  margin: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}

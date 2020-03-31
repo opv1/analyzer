@@ -1,0 +1,69 @@
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  padding: 64px 0;
+}
+
+.swiper-slide {
+  font-size: 18px;
+  background: #fff;
+  border-radius: 16px;
+  height: 288px;
+  padding: 24px;
+  display: -ms-flexbox;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+}
+
+.swiper-data {
+  margin: 0;
+  margin-bottom: 16px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.swiper-user {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.swiper-photo {
+  width: 64px;
+  height: 64px;
+}
+
+.swiper-block {
+  margin-left: 16px;
+}
+
+.swiper-name {
+  margin: 0;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.swiper-email {
+  margin: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.swiper-commit {
+  margin: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+}

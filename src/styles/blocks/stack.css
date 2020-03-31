@@ -1,0 +1,29 @@
+.stack {
+  margin: auto;
+  padding: 80px 0;
+}
+
+.stack__wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 85%;
+}
+
+.stack__caption {
+  margin: 0;
+  max-width: 344px;
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+}
+
+.stack__technology {
+  margin: 0;
+}
+
+.stack__icon {
+  margin: 0 15px;
+}

@@ -1,0 +1,17 @@
+.graphic {
+  margin: auto;
+  padding: 80px 0;
+}
+
+.graphic__wrapper {
+  margin: auto;
+  max-width: 85%;
+}
+
+.graphic__caption {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+}

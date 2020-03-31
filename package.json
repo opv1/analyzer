@@ -2,7 +2,8 @@
   "name": "yp-diplom",
   "version": "0.1.0",
   "description": "Graduate Work",
-  "main": "index.js",
+  "private": true,
+  "main": "./src",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
@@ -55,6 +56,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.6.4",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "swiper": "^5.3.6"
   }
 }

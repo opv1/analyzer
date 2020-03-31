@@ -1,0 +1,42 @@
+.analytics {
+  margin: auto;
+  padding: 80px 0;
+}
+
+.analytics__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 85%;
+}
+
+.analytics__caption {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+}
+
+.analytics__list {
+  margin: 0;
+  padding: 0;
+}
+
+.analytics__item {
+  margin: 0;
+  list-style-type: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.analytics__count {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
