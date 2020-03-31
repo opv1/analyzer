@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Павел Овечкин" />
+    <meta name="description" content="Дипломная работа" />
+    <link rel="icon" href="./images/favicon.svg" />
+    <link rel="stylesheet" href="../vendor/normalize.css" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <dir class="page page__about">
+      <header class="header">
+        <a class="header__home">NewsAnalyzer</a>
+        <nav class="header__navigation">
+          <a class="header__main">Главная</a>
+          <a class="header__about" href="">О проекте</a>
+        </nav>
+      </header>
+      <main class="content">
+        <section class="customer">
+          <h1 class="customer__caption">Клиентам</h1>
+          <div class="customer__info">
+            <p class="customer__text">
+              Этот сайт — дипломный проект студента Яндкс.Практикума. Его цель —
+              показать, чему научился студент, и какими технологиями владеет.
+            </p>
+            <p class="customer__text">
+              Вёртска сайта выполнена по методологии БЭМ. Это делает сайт гибким
+              и масштабируемым. Кроме того, добавлять новые страницы и
+              функциальность проще и быстрее, чем в проектах, выполненных по
+              другим методологиям. Также сайт проще и дешевле поддерживать.
+            </p>
+            <p class="customer__text">
+              Карточки с новостям приходят с сервера и обрабатываются асихронно.
+              То есть сайт продолжает работать, пока от сервера приходит ответ.
+              Это повышает удобство использования сервиса.
+            </p>
+            <p class="customer__text">
+              При создании проекта была использона сборка технологией Webpack.
+              Это современных подход к разработке сайтов. Код оптимизируется, а
+              значит, сайт работает быстрее. Также настроена сайт работает в
+              старых браузерах. Даже если посетители — пользователи старых
+              операционных систем у них не будет проблем с отображением. А
+              значит потенциальная аудитория возрастает.
+            </p>
+            <p class="customer__text">
+              Проект был проверен экспертами Яндекс.Практикума. И если вашему
+              бизесу нужен сайт, мы рекомендуем обратиться к этому студенту.
+            </p>
+          </div>
+        </section>
+        <section class="stack">
+          <h2 class="stack__caption">Используемые технологии</h2>
+          <picture class="stack__technology">
+            <img src="../images/html.svg" alt="HTML" />
+            <img src="../images/css.svg" alt="CSS" />
+            <img src="../images/js.svg" alt="JavaScript" />
+            <img src="../images/webpack.svg" alt="Webpack" />
+          </picture>
+        </section>
+        <section class="author">
+          <picture class="author__block">
+            <img
+              class="author__photo"
+              src="./images/image-03.png"
+              alt="Фото автора"
+            />
+          </picture>
+          <div class="author__info">
+            <h2 class="author__caption">Об авторе</h2>
+            <p class="author__text">
+              Это блок с описаением автора проекта. Здесь следует указать, как
+              вас зовут, чем вы занимаетесь, какими технологиями разработки
+              владете.
+            </p>
+            <p class="author__text">
+              Также можно рассказать о процессе обучения в Практикуме, чему вы
+              тут научились, и чем можете помочь потенциальным заказчикам.
+            </p>
+          </div>
+        </section>
+        <section class="commits">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+              <div class="swiper-slide">Slide 7</div>
+              <div class="swiper-slide">Slide 8</div>
+              <div class="swiper-slide">Slide 9</div>
+              <div class="swiper-slide">Slide 10</div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2020. Павел Овечкин</p>
+        <nav class="footer__navigation">
+          <a class="footer__nav" href="" target="_blank">Главная</a>
+          <a class="footer__nav" href="" target="_blank">О проекте</a>
+          <a
+            class="footer__nav"
+            href="https://praktikum.yandex.ru/"
+            target="_blank"
+            >Яндекс.Практикум</a
+          >
+        </nav>
+        <div class="footer__links">
+          <a
+            class="footer__link"
+            href="https://github.com/opv1/"
+            target="_blank"
+            ><img class="footer__icon" src="./images/github.svg" alt="GitHub" />
+          </a>
+          <a
+            class="footer__link"
+            href="https://www.facebook.com/"
+            target="_blank"
+            ><img class="footer__icon" src="./images/fb.svg" alt="Facebook" />
+          </a>
+        </div>
+      </footer>
+    </dir>
+  </body>
+  <script src="../index.js"></script>
+</html>

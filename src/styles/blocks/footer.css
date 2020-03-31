@@ -1,14 +1,18 @@
 .footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   margin: auto;
   padding: 25px 0;
-  width: 100%;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  max-width: 85%;
 }
 
 .footer__copyright {
-  margin: auto;
+  margin: 0;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -22,7 +26,7 @@
 }
 
 .footer__nav {
-  margin: auto;
+  margin: 0;
   font-family: Source Sans Pro;
   font-style: normal;
   font-weight: normal;
@@ -37,11 +41,11 @@
 }
 
 .footer__links {
-  margin: auto;
+  margin: 0;
 }
 
 .footer__link {
-  margin: auto;
+  margin: 0;
 }
 
 .footer__link:last-child {
@@ -49,5 +53,5 @@
 }
 
 .footer__icon {
-  margin: auto;
+  margin: 0;
 }

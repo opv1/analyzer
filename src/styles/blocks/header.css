@@ -1,15 +1,19 @@
 .header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   margin: auto;
   padding: 25px 0;
-  width: 100%;
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
 }
 
-.header__home {
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: auto;
+  max-width: 85%;
+}
+
+.header__home {
+  margin: 0;
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: bold;
@@ -18,12 +22,8 @@
   color: #fff;
 }
 
-.header__navigation {
-  margin: auto;
-}
-
 .header__main {
-  margin: auto;
+  margin: 0;
   margin-right: 34px;
   font-family: Roboto;
   font-style: normal;
@@ -35,7 +35,7 @@
 }
 
 .header__about {
-  margin: auto;
+  margin: 0;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;

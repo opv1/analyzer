@@ -1,19 +1,27 @@
 .result {
+  margin: auto;
+  padding: 80px 0;
+  background: #f5f6f7;
+}
+
+.result__wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   margin: auto;
-  padding: 80px 80px;
-  background: #f5f6f7;
+  max-width: 85%;
 }
 
 .result__inline {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
-.result__search {
+.result__caption {
+  margin: 0;
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: normal;
@@ -23,6 +31,7 @@
 }
 
 .result__analytics {
+  margin: 0;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
@@ -34,17 +43,48 @@
 
 .result__cards {
   display: flex;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  max-height: 575px;
+  width: 100%;
 }
 
 .result__card {
   display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  min-height: 580px;
+  border-radius: 16px;
+  background: #fff;
 }
 
-.result__image {
-  background-image: url();
+.result__card:nth-child(2) {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.result__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-left: 24px;
+  margin-right: 24px;
+  height: 100%;
+}
+
+.result__pictures {
+  min-height: 272px;
+  background-image: url(../../images/image_08.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .result__date {
+  margin: 0;
   font-family: Source Sans Pro;
   font-style: normal;
   font-weight: normal;
@@ -54,6 +94,7 @@
 }
 
 .result__name {
+  margin: 0;
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: normal;
@@ -63,6 +104,7 @@
 }
 
 .result__text {
+  margin: 0;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -72,6 +114,8 @@
 }
 
 .result__from {
+  margin: 0;
+  margin-bottom: 24px;
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: bold;
@@ -82,9 +126,18 @@
   color: #b6bcbf;
 }
 
-.result__more {
+.result__button {
+  margin: auto;
   padding: 20px 84px;
   max-width: 290px;
+  border: 1px solid transparent;
   border-radius: 80px;
-  background: #ffffff;
+  box-sizing: border-box;
+  background: #fff;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
 }

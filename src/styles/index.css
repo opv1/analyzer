@@ -1,6 +1,7 @@
 @import '~normalize.css';
 @import './fonts.css';
 @import './blocks/author.css';
+@import './blocks/commits.css';
 @import './blocks/content.css';
 @import './blocks/footer.css';
 @import './blocks/header.css';

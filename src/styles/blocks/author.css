@@ -1,13 +1,17 @@
 .author {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: auto;
-  padding: 80px 80px;
+  padding: 80px 0;
 }
 
-.author__block {
+.author__wrapper {
+  display: flex;
+  /* justify-content: space-between; */
   margin: auto;
+  max-width: 85%;
+}
+
+.author__photo {
+  margin: 0;
   max-width: 464px;
   max-height: 464px;
 }
@@ -15,12 +19,13 @@
 .author__info {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 0 56px;
+  margin-top: 51px;
   max-width: 600px;
 }
 
-.author__about {
-  margin: auto;
+.author__caption {
+  margin: 0;
   margin-bottom: 24px;
   font-family: Roboto Slab;
   font-style: normal;
@@ -31,7 +36,7 @@
 }
 
 .author__text {
-  margin: auto;
+  margin: 0;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;

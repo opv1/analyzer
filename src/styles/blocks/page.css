@@ -8,9 +8,12 @@
   margin: auto;
   max-width: 1440px;
   min-width: 320px;
+  font-family: 'Roboto', 'Roboto Slab', 'Source Sans Pro', Arial, Helvetica,
+    sans-serif;
+}
+
+.page__main {
   background-image: url(../../images/background.png);
   background-repeat: no-repeat;
   background-position: top;
-  font-family: 'Roboto', 'Roboto Slab', 'Source Sans Pro', Arial, Helvetica,
-    sans-serif;
 }

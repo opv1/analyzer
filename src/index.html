@@ -11,17 +11,19 @@
     <title>NewsAnalyzer</title>
   </head>
   <body>
-    <div class="page">
+    <div class="page page__main">
       <header class="header">
-        <a class="header__home">NewsAnalyzer</a>
-        <nav class="header__navigation">
-          <a class="header__main">Главная</a>
-          <a class="header__about" href="">О проекте</a>
-        </nav>
+        <div class="header__wrapper">
+          <div class="header__home">NewsAnalyzer</div>
+          <nav class="header__navigation">
+            <a class="header__main">Главная</a>
+            <a class="header__about" href="">О проекте</a>
+          </nav>
+        </div>
       </header>
       <main class="content">
         <section class="search">
-          <h1 class="search__question">Что в мире твориться?</h1>
+          <h1 class="search__caption">Что в мире творится?</h1>
           <p class="search__info">
             Введите в поиске любую тему и узнайте, насколько популярной она была
             в новостях за прошедшую неделю.
@@ -33,6 +35,7 @@
               type="search"
               placeholder="Введите тему новости"
               required
+              maxlength="40"
             />
             <button class="search__button" type="submit">
               Искать
@@ -40,70 +43,115 @@
           </form>
         </section>
         <section class="result">
-          <div class="result__inline">
-            <h3 class="result__search">Результаты поиска</h3>
-            <a class="result__analytics" href=""
-              >Посмотреть аналитику &#8250;</a
-            >
-          </div>
-          <div class="result__cards">
-            <div class="result__card">
-              <div class="result__image"></div>
-              <div class="result__date"></div>
-              <h4 class="result__name"></h4>
-              <p class="result__text"></p>
-              <span class="result__from"></span>
+          <div class="result__wrapper">
+            <div class="result__inline">
+              <h3 class="result__caption">Результаты поиска</h3>
+              <a class="result__analytics" href=""
+                >Посмотреть аналитику &#8250;</a
+              >
             </div>
+            <div class="result__cards">
+              <div class="result__card">
+                <div class="result__pictures"></div>
+                <div class="result__info">
+                  <div class="result__date">2 августа, 2019</div>
+                  <h4 class="result__name">Национальное достояние – парки</h4>
+                  <p class="result__text">
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад
+                    здесь начала складываться система национальных парков –
+                    охраняемых территорий, где и сегодня каждый может
+                    приобщиться к природе.
+                  </p>
+                  <span class="result__from">Лента.ру</span>
+                </div>
+              </div>
+              <div class="result__card">
+                <div class="result__pictures"></div>
+                <div class="result__info">
+                  <div class="result__date">2 августа, 2019</div>
+                  <h4 class="result__name">
+                    Лесные огоньки: история одной фотографии
+                  </h4>
+                  <p class="result__text">
+                    Фотограф отвлеклась от освещения суровой политической
+                    реальности Мексики, чтобы запечатлеть ускользающую красоту
+                    одного из местных чудес природы.
+                  </p>
+                  <span class="result__from">Медуза</span>
+                </div>
+              </div>
+              <div class="result__card">
+                <div class="result__pictures"></div>
+                <div class="result__info">
+                  <div class="result__date">2 августа, 2019</div>
+                  <h4 class="result__name">
+                    «Первозданная тайга»: новый фотопроект Игоря Шпиленка
+                  </h4>
+                  <p class="result__text">
+                    Знаменитый фотограф снимает первозданные леса России, чтобы
+                    рассказать о необходимости их сохранения. В этот раз он
+                    отправился в Двинско-Пинежскую тайгу, где...
+                  </p>
+                  <span class="result__from">Риа</span>
+                </div>
+              </div>
+            </div>
+            <button class="result__button" type="submit">Показать еще</button>
           </div>
-          <button class="result__more" type="submit">Показать еще</button>
         </section>
         <section class="author">
-          <picture class="author__block">
+          <div class="author__wrapper">
             <img
               class="author__photo"
               src="./images/image-03.png"
               alt="Фото автора"
             />
-          </picture>
-          <div class="author__info">
-            <h2 class="author__about">Об авторе</h2>
-            <p class="author__text">
-              Это блок с описаением автора проекта. Здесь следует указать, как
-              вас зовут, чем вы занимаетесь, какими технологиями разработки
-              владете.
-            </p>
-            <p class="author__text">
-              Также можно рассказать о процессе обучения в Практикуме, чему вы
-              тут научились, и чем можете помочь потенциальным заказчикам.
-            </p>
+            <div class="author__info">
+              <h2 class="author__caption">Об авторе</h2>
+              <p class="author__text">
+                Это блок с описаением автора проекта. Здесь следует указать, как
+                вас зовут, чем вы занимаетесь, какими технологиями разработки
+                владете.
+              </p>
+              <p class="author__text">
+                Также можно рассказать о процессе обучения в Практикуме, чему вы
+                тут научились, и чем можете помочь потенциальным заказчикам.
+              </p>
+            </div>
           </div>
         </section>
       </main>
       <footer class="footer">
-        <p class="footer__copyright">&copy; 2020. Павел Овечкин</p>
-        <nav class="footer__navigation">
-          <a class="footer__nav" href="" target="_blank">Главная</a>
-          <a class="footer__nav" href="" target="_blank">О проекте</a>
-          <a
-            class="footer__nav"
-            href="https://praktikum.yandex.ru/"
-            target="_blank"
-            >Яндекс.Практикум</a
-          >
-        </nav>
-        <div class="footer__links">
-          <a
-            class="footer__link"
-            href="https://github.com/opv1/"
-            target="_blank"
-            ><img class="footer__icon" src="./images/github.svg" alt="GitHub" />
-          </a>
-          <a
-            class="footer__link"
-            href="https://www.facebook.com/"
-            target="_blank"
-            ><img class="footer__icon" src="./images/fb.svg" alt="Facebook" />
-          </a>
+        <div class="footer__wrapper">
+          <p class="footer__copyright">&copy; 2020. Павел Овечкин</p>
+          <nav class="footer__navigation">
+            <a class="footer__nav" href="" target="_blank">Главная</a>
+            <a class="footer__nav" href="" target="_blank">О проекте</a>
+            <a
+              class="footer__nav"
+              href="https://praktikum.yandex.ru/"
+              target="_blank"
+              >Яндекс.Практикум</a
+            >
+          </nav>
+          <div class="footer__links">
+            <a
+              class="footer__link"
+              href="https://github.com/opv1/"
+              target="_blank"
+              ><img
+                class="footer__icon"
+                src="./images/github.svg"
+                alt="GitHub"
+              />
+            </a>
+            <a
+              class="footer__link"
+              href="https://www.facebook.com/"
+              target="_blank"
+              ><img class="footer__icon" src="./images/fb.svg" alt="Facebook" />
+            </a>
+          </div>
         </div>
       </footer>
     </div>
