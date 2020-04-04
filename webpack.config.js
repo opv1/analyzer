@@ -85,6 +85,7 @@ module.exports = {
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
+      cssProcessor: require('cssnano'),
       cssProcessorPluginOptions: {
         preset: ['default'],
       },
@@ -92,6 +93,20 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './index.html',
+      minify: {
+        collapseWhitespace: isDev,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      template: './about.html',
+      filename: 'about.html',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HtmlWebpackPlugin({
+      template: './analytics.html',
+      filename: 'analytics.html',
       minify: {
         collapseWhitespace: isProd,
       },

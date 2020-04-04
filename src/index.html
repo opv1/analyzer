@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Павел Овечкин" />
     <meta name="description" content="Дипломная работа" />
-    <link rel="icon" href="./images/favicon.svg" />
+    <link rel="icon" href="<%=require('./images/favicon.png').default%>" />
     <title>NewsAnalyzer</title>
   </head>
   <body>
@@ -15,9 +15,7 @@
           <span class="header__caption text__white">NewsAnalyzer</span>
           <nav class="header__navigation">
             <a class="header__main text__white active__main">Главная</a>
-            <a
-              class="header__about text__grey hover__white"
-              href="./pages/about/index.html"
+            <a class="header__about text__grey hover__white" href="about.html"
               >О проекте</a
             >
           </nav>
@@ -28,10 +26,10 @@
           <div class="search__wrapper">
             <div class="search__block">
               <h1 class="search__caption text__white">Что в мире творится?</h1>
-              <p class="search__info text__white">
+              <h2 class="search__info text__white">
                 Введите в поиске любую тему и узнайте, насколько популярной она
                 была в новостях за прошедшую неделю.
-              </p>
+              </h2>
             </div>
             <form class="search__form" name="search">
               <input
@@ -51,14 +49,14 @@
         <section class="loading background__grey">
           <div class="loading__block">
             <i class="loading__preloader"></i>
-            <p class="loading__text text__grey">Идет поиск новостей...</p>
+            <h3 class="loading__text text__grey">Идет поиск новостей...</h3>
           </div>
         </section>
         <section class="nfound background__grey">
           <div class="nfound__block">
             <img
               class="nfound__icon"
-              src="./images/not-found.svg"
+              src="<%=require('./images/not-found.svg').default%>"
               alt="Ничего не найдено"
             />
             <h3 class="nfound__caption">Ничего не найдено</h3>
@@ -71,9 +69,7 @@
           <div class="result__wrapper">
             <div class="result__inline">
               <h3 class="result__caption text__black">Результаты поиска</h3>
-              <a
-                class="result__analytics text__black"
-                href="./pages/analytics/index.html"
+              <a class="result__analytics text__black" href="analytics.html"
                 >Посмотреть аналитику <span class="arrow">&#8250;</span></a
               >
             </div>
@@ -81,7 +77,7 @@
               <div class="result__card">
                 <img
                   class="result__pictures"
-                  src="./images/image_08.png"
+                  src="<%=require('./images/image_08.png').default%>"
                   alt="Фото"
                 />
                 <div class="result__info">
@@ -101,39 +97,41 @@
               <div class="result__card">
                 <img
                   class="result__pictures"
-                  src="./images/image_04.png"
+                  src="<%=require('./images/image_08.png').default%>"
                   alt="Фото"
                 />
                 <div class="result__info">
                   <div class="result__date text__grey">2 августа, 2019</div>
                   <h4 class="result__name text__black">
-                    Лесные огоньки: история одной фотографии
+                    Национальное достояние – парки
                   </h4>
                   <p class="result__text text__black">
-                    Фотограф отвлеклась от освещения суровой политической
-                    реальности Мексики, чтобы запечатлеть ускользающую красоту
-                    одного из местных чудес природы.
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад
+                    здесь начала складываться система национальных парков –
+                    охраняемых территорий, где и сегодня каждый может
+                    приобщиться к природе.
                   </p>
-                  <span class="result__from text__grey">Медуза</span>
+                  <span class="result__from text__grey">Лента.ру</span>
                 </div>
               </div>
               <div class="result__card">
                 <img
                   class="result__pictures"
-                  src="./images/image_07.png"
+                  src="<%=require('./images/image_08.png').default%>"
                   alt="Фото"
                 />
                 <div class="result__info">
                   <div class="result__date text__grey">2 августа, 2019</div>
                   <h4 class="result__name text__black">
-                    «Первозданная тайга»: новый фотопроект Игоря Шпиленка
+                    Национальное достояние – парки
                   </h4>
                   <p class="result__text text__black">
-                    Знаменитый фотограф снимает первозданные леса России, чтобы
-                    рассказать о необходимости их сохранения. В этот раз он
-                    отправился в Двинско-Пинежскую тайгу, где...
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад
+                    здесь начала складываться система национальных парков –
+                    охраняемых территорий, где и сегодня каждый может
+                    приобщиться к природе.
                   </p>
-                  <span class="result__from text__grey">Риа</span>
+                  <span class="result__from text__grey">Лента.ру</span>
                 </div>
               </div>
             </div>
@@ -141,7 +139,7 @@
               <div class="result__card">
                 <img
                   class="result__pictures"
-                  src="./images/image_08.png"
+                  src="<%=require('./images/image_08.png').default%>"
                   alt="Фото"
                 />
                 <div class="result__info">
@@ -161,39 +159,41 @@
               <div class="result__card">
                 <img
                   class="result__pictures"
-                  src="./images/image_07.png"
+                  src="<%=require('./images/image_08.png').default%>"
                   alt="Фото"
                 />
                 <div class="result__info">
                   <div class="result__date text__grey">2 августа, 2019</div>
                   <h4 class="result__name text__black">
-                    «Первозданная тайга»: новый фотопроект Игоря Шпиленка
+                    Национальное достояние – парки
                   </h4>
                   <p class="result__text text__black">
-                    Знаменитый фотограф снимает первозданные леса России, чтобы
-                    рассказать о необходимости их сохранения. В этот раз он
-                    отправился в Двинско-Пинежскую тайгу, где...
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад
+                    здесь начала складываться система национальных парков –
+                    охраняемых территорий, где и сегодня каждый может
+                    приобщиться к природе.
                   </p>
-                  <span class="result__from text__grey">Риа</span>
+                  <span class="result__from text__grey">Лента.ру</span>
                 </div>
               </div>
               <div class="result__card">
                 <img
                   class="result__pictures"
-                  src="./images/image_04.png"
+                  src="<%=require('./images/image_08.png').default%>"
                   alt="Фото"
                 />
                 <div class="result__info">
                   <div class="result__date text__grey">2 августа, 2019</div>
                   <h4 class="result__name text__black">
-                    Лесные огоньки: история одной фотографии
+                    Национальное достояние – парки
                   </h4>
                   <p class="result__text text__black">
-                    Фотограф отвлеклась от освещения суровой политической
-                    реальности Мексики, чтобы запечатлеть ускользающую красоту
-                    одного из местных чудес природы.
+                    В 2016 году Америка отмечала важный юбилей: сто лет назад
+                    здесь начала складываться система национальных парков –
+                    охраняемых территорий, где и сегодня каждый может
+                    приобщиться к природе.
                   </p>
-                  <span class="result__from text__grey">Медуза</span>
+                  <span class="result__from text__grey">Лента.ру</span>
                 </div>
               </div>
             </div>
@@ -206,7 +206,7 @@
           <div class="author__wrapper">
             <img
               class="author__photo"
-              src="./images/image-03.png"
+              src="<%=require('./images/image-03.png').default%>"
               alt="Фото автора"
             />
             <div class="author__info">
@@ -232,12 +232,10 @@
             &copy; 2020. Павел Овечкин
           </p>
           <nav class="footer__navigation">
-            <a class="footer__nav-item text__black" href="./index.html"
+            <a class="footer__nav-item text__black" href="index.html"
               >Главная</a
             >
-            <a
-              class="footer__nav-item text__black"
-              href="./pages/about/index.html"
+            <a class="footer__nav-item text__black" href="about.html"
               >О проекте</a
             >
             <a
@@ -254,7 +252,7 @@
               target="_blank"
               ><img
                 class="footer__icon"
-                src="./images/github.svg"
+                src="<%=require('./images/github.svg').default%>"
                 alt="GitHub"
               />
             </a>
@@ -262,7 +260,11 @@
               class="footer__link"
               href="https://www.facebook.com/"
               target="_blank"
-              ><img class="footer__icon" src="./images/fb.svg" alt="Facebook" />
+              ><img
+                class="footer__icon"
+                src="<%=require('./images/fb.svg').default%>"
+                alt="Facebook"
+              />
             </a>
           </div>
         </div>
