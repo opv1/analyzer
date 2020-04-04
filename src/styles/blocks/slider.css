@@ -1,0 +1,261 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+  padding: 0 104px !important;
+  /* margin-bottom: 48px; */
+}
+
+.slider::after {
+  content: '';
+  width: 88px;
+  height: 288px;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  background: linear-gradient(90deg, rgba(245, 246, 247, 0) 0%, #f5f6f7 100%);
+}
+
+.slider::before {
+  content: '';
+  width: 88px;
+  height: 288px;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  background: linear-gradient(270deg, rgba(245, 246, 247, 0) 0%, #f5f6f7 100%);
+}
+
+.slider__container {
+  display: grid;
+  grid-auto-flow: column;
+  padding-bottom: 48px;
+  position: relative;
+  justify-content: flex-start;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.swiper-pagination {
+  position: relative !important;
+}
+
+.swiper-pagination-bullet {
+  margin: 0 4px;
+  background: #d1d2d6 !important;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 100%;
+}
+
+.swiper-pagination-bullet:focus {
+  outline: none;
+}
+
+.swiper-pagination-bullet-active {
+  background: #1a1b22 !important;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 100%;
+}
+
+.slider__button-next {
+  width: 40px;
+  height: 40px;
+  background: url(../../images/slider-control.svg);
+  position: absolute;
+  top: calc(50% - 16px);
+  z-index: 100;
+  right: 10px;
+  background-position: center -7px;
+  cursor: pointer;
+}
+
+.slider__button-prev {
+  width: 40px;
+  height: 40px;
+  background: url(../../images/slider-control.svg);
+  position: absolute;
+  top: calc(50% - 16px);
+  z-index: 100;
+  left: 10px;
+  background-position: center -7px;
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+.swiper-button-disabled {
+  display: none;
+}
+
+.slider__item {
+  height: 240px !important;
+  width: 352px !important;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.slider__info {
+  margin-left: 16px;
+}
+
+.slider__author {
+  display: flex;
+}
+
+.slider__image {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+}
+
+.slider__date {
+  text-align: left;
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #b6bcbf;
+  margin: 0 0 16px;
+}
+
+.slider__name {
+  font-family: 'Roboto Slab';
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1a1b22;
+  margin: 0 0 2px;
+}
+
+.slider__email {
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #1a1b22;
+  margin: 0;
+}
+
+.slider__description {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1a1b22;
+  text-align: left;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .slider {
+    position: relative;
+    overflow: hidden;
+    padding: 0 40px !important;
+    margin-bottom: 48px;
+  }
+
+  .slider::after {
+    display: none;
+  }
+
+  .slider::before {
+    display: none;
+  }
+
+  .slider__button-next {
+    display: none;
+  }
+
+  .slider__button-prev {
+    display: none;
+  }
+
+  .slider__item {
+    width: 304px !important;
+    padding: 16px;
+  }
+
+  .swiper-pagination {
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 767px) {
+  .slider {
+    position: relative;
+    overflow: hidden;
+    padding: 0 16px !important;
+  }
+
+  .slider::after {
+    display: none;
+  }
+
+  .slider::before {
+    display: none;
+  }
+
+  .slider__button-next {
+    display: none;
+  }
+
+  .slider__button-prev {
+    display: none;
+  }
+
+  .swiper-pagination {
+    padding-top: 10px;
+    padding-bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slider__item {
+    width: calc(100% - 32px) !important;
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .slider {
+    position: relative;
+    overflow: hidden;
+    padding: 0 16px !important;
+  }
+
+  .slider::after {
+    display: none;
+  }
+
+  .slider::before {
+    display: none;
+  }
+
+  .slider__button-next {
+    display: none;
+  }
+
+  .slider__button-prev {
+    display: none;
+  }
+
+  .swiper-pagination {
+    padding-top: 10px;
+    padding-bottom: 70px;
+  }
+}

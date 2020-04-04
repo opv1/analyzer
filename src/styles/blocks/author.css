@@ -1,12 +1,14 @@
 .author {
   margin: auto;
   padding: 80px 0;
+  /* display: none; */
 }
 
 .author__wrapper {
   display: flex;
+  align-items: center;
   margin: auto;
-  max-width: 85%;
+  max-width: 87%;
 }
 
 .author__photo {
@@ -18,8 +20,7 @@
 .author__info {
   display: flex;
   flex-direction: column;
-  margin: 0 56px;
-  margin-top: 51px;
+  margin-left: 56px;
   max-width: 600px;
 }
 
@@ -44,4 +45,45 @@
 
 .author__text:last-child {
   margin-top: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .author {
+    padding: 40px 0;
+  }
+
+  .author__photo {
+    max-width: 232px;
+    max-height: 232px;
+  }
+
+  .author__info {
+    margin-left: 32px;
+  }
+
+  .author__caption {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .author__wrapper {
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 90%;
+  }
+
+  .author__info {
+    margin-top: 24px;
+    margin-left: 0;
+  }
+
+  .author__text:last-child {
+    margin-top: 0;
+  }
+
+  .author__caption {
+    margin-bottom: 16px;
+  }
 }

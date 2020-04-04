@@ -6,8 +6,9 @@
 .stack__wrapper {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: auto;
-  max-width: 85%;
+  max-width: 87%;
 }
 
 .stack__caption {
@@ -21,9 +22,58 @@
 }
 
 .stack__technology {
-  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .stack__icon {
   margin: 0 15px;
+}
+
+@media screen and (max-width: 1240px) {
+  .stack {
+    padding: 40px 0;
+  }
+  .stack__caption {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 1124px) {
+  .stack__caption {
+    margin-bottom: 40px;
+  }
+
+  .stack__icon {
+    margin: 0 29px;
+  }
+
+  .stack__icon:first-child {
+    margin-left: 0;
+  }
+
+  .stack__icon:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .stack__wrapper {
+    max-width: 90%;
+  }
+
+  .stack__icon {
+    margin: 10px;
+  }
+
+  .stack__icon:first-child {
+    margin-left: 10px;
+  }
+
+  .stack__icon:last-child {
+    margin-right: 10px;
+  }
 }

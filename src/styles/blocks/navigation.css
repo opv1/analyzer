@@ -27,3 +27,9 @@
   font-size: 18px;
   line-height: 24px;
 }
+
+@media screen and (max-width: 767px) {
+  .navigation__wrapper {
+    max-width: 90%;
+  }
+}

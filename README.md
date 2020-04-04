@@ -5,7 +5,7 @@
 
 ## Описание
 
-## [Увидеть проект](https://opv1.github.io/yp-diplom/)
+## [Увидеть проект](https://opv1.github.io/yp-graduate-work/)
 
 ## Настройка проекта
 

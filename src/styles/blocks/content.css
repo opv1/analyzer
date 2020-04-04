@@ -3,6 +3,14 @@
   width: 100%;
 }
 
+.hover__white:hover {
+  color: #ffffff;
+}
+
+.hover__black:hover {
+  color: #1a1b22;
+}
+
 .background__white {
   color: #ffffff;
 }
