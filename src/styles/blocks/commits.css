@@ -1,7 +1,8 @@
 .commits {
   position: relative;
-  margin: auto;
-  padding: 70px 0;
+  margin: 0 auto;
+  padding: 80px 0;
+  width: 100%;
 }
 
 .commits__wrapper {
@@ -9,8 +10,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
-  max-width: 85%;
+  margin: 0 auto;
+  max-width: 87%;
 }
 
 .commits__inline {
@@ -23,8 +24,7 @@
 
 .commits__caption {
   margin: 0;
-  font-family: Roboto Slab;
-  font-style: normal;
+  font-family: 'Roboto Slab';
   font-weight: normal;
   font-size: 40px;
   line-height: 46px;
@@ -32,17 +32,20 @@
 
 .commits__analytics {
   margin: 0;
-  text-decoration: none;
-  font-family: Roboto;
-  font-style: normal;
+  font-family: 'Roboto';
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 1240px) {
   .commits {
-    padding: 50px 0;
+    padding: 40px 0;
+  }
+
+  .commits__inline {
+    margin-bottom: 32px;
   }
 
   .commits__caption {
@@ -53,32 +56,33 @@
 }
 
 @media screen and (max-width: 767px) {
-  .commits__wrapper {
-    max-width: 90%;
-  }
-
   .commits {
     padding: 30px 0;
   }
 
-  .commits__analytics {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    border: 1px solid #000;
-    border-radius: 80px;
-    transform: translateX(-50%);
-    width: auto;
-    padding: 15px 69px;
-    white-space: nowrap;
-    z-index: 50;
-    margin-bottom: 32px;
-  }
-  .arrow {
-    display: none;
+  .commits__wrapper {
+    max-width: 90%;
   }
 
   .commits__inline {
     margin-bottom: 16px;
+  }
+
+  .commits__arrow {
+    display: none;
+  }
+
+  .commits__analytics {
+    position: absolute;
+    z-index: 50;
+    bottom: 0;
+    left: 50%;
+    margin-bottom: 32px;
+    padding: 15px 69px;
+    width: 0 auto;
+    border: 1px solid #000;
+    border-radius: 80px;
+    transform: translateX(-50%);
+    white-space: nowrap;
   }
 }

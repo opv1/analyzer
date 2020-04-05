@@ -1,16 +1,18 @@
 .graphic {
-  margin: auto;
+  margin: 0 auto;
   padding: 80px 0;
+  width: 100%;
 }
 
 .graphic__wrapper {
-  margin: auto;
-  max-width: 85%;
+  margin: 0 auto;
+  max-width: 87%;
 }
 
 .graphic__caption {
-  font-family: Roboto Slab;
-  font-style: normal;
+  margin: 0;
+  margin-bottom: 50px;
+  font-family: 'Roboto Slab';
   font-weight: normal;
   font-size: 26px;
   line-height: 30px;
@@ -18,7 +20,7 @@
 
 .graphic__block_head {
   display: flex;
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-weight: normal;
   font-size: 12px;
   line-height: 16px;
@@ -40,13 +42,12 @@
 
 .row__cell {
   margin: 0;
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-weight: normal;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
-  color: #b6bcbf;
 }
 
 .graphic__columns {
@@ -58,10 +59,9 @@
 }
 
 .graphic__column_y {
-  font-family: Roboto;
+  font-family: 'Roboto';
   font-weight: normal;
   font-size: 18px;
-  color: #1a1b22;
   line-height: 24px;
 }
 
@@ -78,18 +78,17 @@
 }
 
 .graphic__column_x {
-  font-family: Roboto;
-  font-size: 12px;
-  line-height: 16px;
   display: flex;
   align-items: center;
-  letter-spacing: 0.4px;
-  color: #ffffff;
-  font-weight: 700;
-  background: #2f71e5;
-  padding: 4px 0 4px 6px;
-  margin-bottom: 0;
   margin-top: 56px;
+  margin-bottom: 0;
+  padding: 4px 0 4px 6px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  background: #2f71e5;
 }
 
 .graphic__column_x:nth-child(1) {
@@ -128,12 +127,16 @@
 }
 
 @media screen and (max-width: 767px) {
+  .graphic {
+    padding: 25px 0;
+  }
+
   .graphic__wrapper {
     max-width: 90%;
   }
 
-  .graphic {
-    padding: 25px 0;
+  .graphic__caption {
+    margin-bottom: 16px;
   }
 
   .graphic__row {

@@ -1,18 +1,20 @@
 .analytics {
   margin: 0 auto;
   padding: 80px 0;
+  width: 100%;
 }
 
 .analytics__wrapper {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 85%;
+  max-width: 87%;
 }
 
 .analytics__caption {
-  font-family: Roboto Slab;
-  font-style: normal;
+  margin: 0;
+  margin-bottom: 14px;
+  font-family: 'Roboto Slab';
   font-weight: normal;
   font-size: 40px;
   line-height: 46px;
@@ -25,17 +27,15 @@
 
 .analytics__item {
   margin: 0;
-  list-style-type: none;
   font-family: 'Roboto';
-  font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
+  list-style-type: none;
 }
 
 .analytics__count {
   font-family: 'Roboto';
-  font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
@@ -53,7 +53,15 @@
 }
 
 @media screen and (max-width: 767px) {
+  .analytics {
+    padding: 25px 0;
+  }
+
   .analytics__wrapper {
     max-width: 90%;
+  }
+
+  .analytics__caption {
+    margin-bottom: 16px;
   }
 }

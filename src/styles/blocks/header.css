@@ -21,8 +21,7 @@
 }
 
 .header__caption {
-  font-family: Roboto Slab;
-  font-style: normal;
+  font-family: 'Roboto Slab';
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
@@ -32,8 +31,7 @@
   margin: 0 auto;
   margin-right: 34px;
   padding-bottom: 25px;
-  font-family: Roboto;
-  font-style: normal;
+  font-family: 'Roboto';
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -43,8 +41,7 @@
 .header__about {
   margin: 0 auto;
   padding-bottom: 25px;
-  font-family: Roboto;
-  font-style: normal;
+  font-family: 'Roboto';
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;

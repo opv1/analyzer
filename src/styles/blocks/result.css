@@ -1,6 +1,7 @@
 .result {
-  margin: auto;
+  margin: 0 auto;
   padding: 80px 0;
+  width: 100%;
   /* display: none; */
 }
 
@@ -9,7 +10,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
+  margin: 0 auto;
   max-width: 87%;
 }
 
@@ -23,16 +24,14 @@
 
 .result__caption {
   margin: 0;
-  font-family: Roboto Slab;
-  font-style: normal;
+  font-family: 'Roboto Slab';
   font-weight: normal;
   font-size: 40px;
   line-height: 46px;
 }
 
 .result__analytics {
-  font-family: Roboto;
-  font-style: normal;
+  font-family: 'Roboto';
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -41,7 +40,7 @@
 
 .result__cards {
   display: flex;
-  margin: auto;
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -73,8 +72,7 @@
 .result__date {
   margin: 0;
   margin-bottom: 12px;
-  font-family: Source Sans Pro;
-  font-style: normal;
+  font-family: 'Source Sans Pro';
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
@@ -83,8 +81,7 @@
 .result__name {
   margin: 0;
   margin-bottom: 12px;
-  font-family: Roboto Slab;
-  font-style: normal;
+  font-family: 'Roboto Slab';
   font-weight: normal;
   font-size: 26px;
   line-height: 30px;
@@ -93,8 +90,7 @@
 .result__text {
   margin: 0;
   margin-bottom: 12px;
-  font-family: Roboto;
-  font-style: normal;
+  font-family: 'Roboto';
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
@@ -102,34 +98,43 @@
 
 .result__from {
   margin-bottom: 24px;
-  text-transform: uppercase;
-  font-family: Roboto Slab;
-  font-style: normal;
+  font-family: 'Roboto Slab';
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.4px;
+  text-transform: uppercase;
 }
 
 .result__button {
-  margin-top: 64px;
+  margin-top: 65px;
   padding: 20px 84px;
   max-width: 290px;
   border: 1px solid transparent;
   border-radius: 80px;
   box-sizing: border-box;
-  cursor: pointer;
-  background: #fff;
-  font-family: Roboto;
-  font-style: normal;
+  font-family: 'Roboto';
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
+  outline: none;
+  cursor: pointer;
+  background: #fff;
 }
 
-@media screen and (max-width: 1024px) {
+.result__button:hover {
+  box-shadow: 0px 5px 15px rgba(131, 152, 207, 0.5);
+  transition: box-shadow 1s ease;
+}
+
+@media screen and (max-width: 1023px) {
   .result {
     padding: 40px 0;
+  }
+
+  .result__card {
+    min-height: 420px;
+    margin: 4px;
   }
 
   .result__name {
@@ -142,7 +147,7 @@
   }
 
   .result__button {
-    margin-top: 32px;
+    margin-top: 25px;
   }
 
   .result__caption {
@@ -156,17 +161,11 @@
   }
 }
 
-@media screen and (max-width: 1023px) {
-  .result__card {
-    margin: 4px;
-  }
-
-  .result__name {
-    font-size: 22px;
-  }
-}
-
 @media screen and (max-width: 767px) {
+  .result {
+    padding: 30px 0;
+  }
+
   .result__inline {
     flex-wrap: wrap;
   }
@@ -181,15 +180,14 @@
   }
 
   .result__button {
-    margin-top: 13px;
+    margin-top: 15px;
+    padding: 15px 80px;
     font-size: 18px;
     line-height: 24px;
-    padding: 15px 83px;
-    outline: none;
   }
 
   .result__from {
-    margin-bottom: 16px;
+    margin-bottom: 15px;
   }
 }
 

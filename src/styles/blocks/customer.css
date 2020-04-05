@@ -1,19 +1,19 @@
 .customer {
-  margin: auto;
+  margin: 0 auto;
   padding: 80px 0;
+  width: 100%;
 }
 
 .cusotmer__wrapper {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 0 auto;
   max-width: 87%;
 }
 
 .customer__caption {
   margin: 0;
-  font-family: Roboto Slab;
-  font-style: normal;
+  font-family: 'Roboto Slab';
   font-weight: normal;
   font-size: 40px;
   line-height: 46px;
@@ -24,8 +24,7 @@
 }
 
 .customer__text {
-  font-family: Roboto;
-  font-style: normal;
+  font-family: 'Roboto';
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
@@ -42,6 +41,10 @@
 }
 
 @media screen and (max-width: 767px) {
+  .customer {
+    padding: 25px 0;
+  }
+
   .cusotmer__wrapper {
     max-width: 90%;
   }
