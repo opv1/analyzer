@@ -12,7 +12,7 @@
 
 .navigation__main {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
@@ -21,7 +21,7 @@
 
 .navigation__analytics {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;

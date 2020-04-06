@@ -24,14 +24,14 @@
 
 .result__caption {
   margin: 0;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: normal;
   font-size: 40px;
   line-height: 46px;
 }
 
 .result__analytics {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -72,7 +72,7 @@
 .result__date {
   margin: 0;
   margin-bottom: 12px;
-  font-family: 'Source Sans Pro';
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
@@ -81,7 +81,7 @@
 .result__name {
   margin: 0;
   margin-bottom: 12px;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: normal;
   font-size: 26px;
   line-height: 30px;
@@ -90,7 +90,7 @@
 .result__text {
   margin: 0;
   margin-bottom: 12px;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
@@ -98,7 +98,7 @@
 
 .result__from {
   margin-bottom: 24px;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
@@ -113,7 +113,7 @@
   border: 1px solid transparent;
   border-radius: 80px;
   box-sizing: border-box;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;

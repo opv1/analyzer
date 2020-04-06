@@ -27,7 +27,7 @@
 .author__caption {
   margin: 0;
   margin-bottom: 24px;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: normal;
   font-size: 40px;
   line-height: 46px;
@@ -35,7 +35,7 @@
 
 .author__text {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;

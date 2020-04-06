@@ -44,6 +44,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js',
   },
+  devtool: isDev ? 'source-map' : '',
   module: {
     rules: [
       {
@@ -77,11 +78,10 @@ module.exports = {
       },
     ],
   },
-  devtool: isDev ? 'source-map' : '',
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].[chunkhash].css',
+      filename: './[name].[chunkhash].css',
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -99,14 +99,14 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './about.html',
-      filename: 'about.html',
+      filename: './about.html',
       minify: {
         collapseWhitespace: isProd,
       },
     }),
     new HtmlWebpackPlugin({
       template: './analytics.html',
-      filename: 'analytics.html',
+      filename: './analytics.html',
       minify: {
         collapseWhitespace: isProd,
       },

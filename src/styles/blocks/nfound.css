@@ -20,7 +20,7 @@
 .nfound__caption {
   margin: 0 auto;
   margin-bottom: 16px;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: normal;
   font-size: 26px;
   line-height: 30px;
@@ -30,7 +30,7 @@
   margin: 0 auto;
   max-width: 356px;
   text-align: center;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;

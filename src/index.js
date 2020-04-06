@@ -1,30 +1,49 @@
 import './styles/index.css';
-import './scripts/swiper.js';
+import './scripts/utils/swiper.js';
+import './scripts/constants/constants.js';
+import { CommitCard } from './scripts/components/CommitCard';
+import { CommitCardList } from './scripts/components/CommitCardList';
+import { NewsCard } from './scripts/components/NewsCard';
+import { NewsCardList } from './scripts/components/NewsCardList';
+import { SearchInput } from './scripts/components/SearchInput';
+import { Statistics } from './scripts/components/Statistics';
+import { DataStorage } from './scripts/modules/DataStorage';
+import { GitHubApi } from './scripts/modules/GitHubApi';
+import { NewsApi } from './scripts/modules/NewsApi';
 
-var swiper = new Swiper('.swiper-container', {
-  slidesPerView: 3,
-  centeredSlides: false,
-  spaceBetween: 16,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 16,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 8,
-    },
-    1440: {
-      slidesPerView: 3,
-      spaceBetween: 16,
-    },
-  },
-  navigation: {
-    nextEl: '.slider__button-next',
-    prevEl: '.slider__button-prev',
+const areaPage = document.querySelector('.page');
+const searchButton = areaPage.querySelector('.search__button');
+const searchInput = areaPage.querySelector('.search__input');
+const searchForm = document.forms.search;
+const commitsCardList = new CommitCardList({
+  user: 'opv1',
+  repository: 'yp-graduate-work',
+  headers: {
+    'Content-Type': 'application/json',
   },
 });
+const newsCardList = new NewsCardList({
+  path: 'http://newsapi.org/v2/everything?',
+  keyWord: 'Apple',
+  fromDate: '2020-04-06',
+  toDate: '2020-04-06',
+  sortBy: 'popularity',
+  pageAmount: '100',
+  apiKey: '60659df53b2641f4bc17059b6e641af7',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+const commits = new CommitCard();
+const news = new NewsCard();
+
+commitsCardList
+  .getCommitsCardList()
+  .then((commitsCardList) => commits.renderCommits(commitsCardList));
+
+newsCardList
+  .getNewsCardList()
+  .then((newsCardList) => news.renderNews(newsCardList));
+
+/* searchButton.addEventListener('submit', renderNewsCards);
+function renderNewsCards() {} */
