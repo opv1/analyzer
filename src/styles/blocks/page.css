@@ -1,0 +1,22 @@
+.page {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  min-width: 320px;
+  font-family: 'Roboto', 'Roboto Slab', 'Source Sans Pro', Arial, Helvetica,
+    sans-serif;
+  box-sizing: border-box;
+}
+
+.page__main {
+  background-image: url(../../images/background.png);
+  background-position: top;
+  background-repeat: no-repeat;
+}

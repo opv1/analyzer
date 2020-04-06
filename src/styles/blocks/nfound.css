@@ -1,0 +1,43 @@
+.nfound {
+  margin: 0 auto;
+  padding: 80px 0;
+  width: 100%;
+  display: none;
+}
+
+.nfound__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.nfound__icon {
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.nfound__caption {
+  margin: 0 auto;
+  margin-bottom: 16px;
+  font-family: 'Roboto Slab';
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.nfound__text {
+  margin: 0 auto;
+  max-width: 356px;
+  text-align: center;
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 1023px) {
+  .nfound {
+    padding: 40px 0;
+  }
+}

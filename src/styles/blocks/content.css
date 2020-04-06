@@ -1,0 +1,40 @@
+.content {
+  margin: auto;
+  width: 100%;
+}
+
+.hover__white:hover {
+  color: #ffffff;
+}
+
+.hover__black:hover {
+  color: #1a1b22;
+}
+
+.background__white {
+  color: #ffffff;
+}
+
+.background__grey {
+  background: #f5f6f7;
+}
+
+.text__white {
+  color: #ffffff;
+}
+
+.text__black {
+  color: #1a1b22;
+}
+
+.text__grey {
+  color: #b6bcbf;
+}
+
+.shadow__lighter {
+  box-shadow: inset 0px -1px 0px #d1d2d6;
+}
+
+.shadow__darker {
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
