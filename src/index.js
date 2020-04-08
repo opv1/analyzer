@@ -1,28 +1,27 @@
 import './styles/index.css';
 import './scripts/utils/swiper.js';
 import './scripts/constants/constants.js';
-import { CommitCard } from './scripts/components/CommitCard';
-import { CommitCardList } from './scripts/components/CommitCardList';
+import { NewsApi } from './scripts/modules/NewsApi';
+import { GitHubApi } from './scripts/modules/GitHubApi';
+import { DataStorage } from './scripts/modules/DataStorage';
 import { NewsCard } from './scripts/components/NewsCard';
 import { NewsCardList } from './scripts/components/NewsCardList';
-import { SearchInput } from './scripts/components/SearchInput';
+import { CommitCard } from './scripts/components/CommitCard';
+import { CommitCardList } from './scripts/components/CommitCardList';
 import { Statistics } from './scripts/components/Statistics';
-import { DataStorage } from './scripts/modules/DataStorage';
-import { GitHubApi } from './scripts/modules/GitHubApi';
-import { NewsApi } from './scripts/modules/NewsApi';
+import { SearchInput } from './scripts/components/SearchInput';
 
 const areaPage = document.querySelector('.page');
-const searchButton = areaPage.querySelector('.search__button');
-const searchInput = areaPage.querySelector('.search__input');
+const loadingPage = areaPage.querySelector('.loading');
+const notFoundPage = areaPage.querySelector('.nfound');
+const resultPage = areaPage.querySelector('.result');
+const containerCards = areaPage.querySelector('.result__cards');
 const searchForm = document.forms.search;
-const commitsCardList = new CommitCardList({
-  user: 'opv1',
-  repository: 'yp-graduate-work',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
-const newsCardList = new NewsCardList({
+const searchInput = areaPage.querySelector('.search__input');
+const searchButton = areaPage.querySelector('.search__button');
+const resultButton = areaPage.querySelector('.result__button');
+
+const newsApi = new NewsApi({
   path: 'http://newsapi.org/v2/everything?',
   keyWord: 'Apple',
   fromDate: '2020-04-06',
@@ -34,16 +33,50 @@ const newsCardList = new NewsCardList({
     'Content-Type': 'application/json',
   },
 });
-const commits = new CommitCard();
-const news = new NewsCard();
+const gitHubApi = new GitHubApi({
+  user: 'opv1',
+  repository: 'yp-graduate-work',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
-commitsCardList
-  .getCommitsCardList()
-  .then((commitsCardList) => commits.renderCommits(commitsCardList));
+const newsCard = new NewsCard();
+const newsCardList = new NewsCardList(newsCard.createCard, containerCards);
+const commitCard = new CommitCard();
+const commitCardList = new CommitCardList();
+const dataStorage = new DataStorage();
 
-newsCardList
-  .getNewsCardList()
-  .then((newsCardList) => news.renderNews(newsCardList));
+/* gitHubApi.getCommits().then((commitsArray) => storage.setData(commitsArray)); */
 
-/* searchButton.addEventListener('submit', renderNewsCards);
-function renderNewsCards() {} */
+searchButton.addEventListener('click', searchNews);
+function searchNews(event) {
+  event.preventDefault();
+  const loadPromise = new Promise((resolve) => {
+    loadingPage.style.display = 'block';
+    resolve(
+      newsApi
+        .getNews()
+        .then((newsListObject) => newsCardList.getNewsList(newsListObject))
+        .catch(() => console.log('Не удается получить новости от API'))
+    );
+  });
+  loadPromise
+    .then((newsListObject) => dataStorage.setData(newsListObject))
+    .then(() => {
+      const newsList = dataStorage.getData();
+      newsCardList.getNewsArticles(newsList.articles);
+      loadingPage.style.display = 'none';
+      resultPage.style.display = 'block';
+    })
+    .catch(() => {
+      console.log('Не удается отобразить новости');
+      loadingPage.style.display = 'none';
+      notFoundPage.style.display = 'block';
+    });
+}
+
+resultButton.addEventListener('click', moreNews);
+function moreNews(event) {
+  event.preventDefault();
+}

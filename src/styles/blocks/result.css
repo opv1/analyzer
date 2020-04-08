@@ -2,7 +2,7 @@
   margin: 0 auto;
   padding: 80px 0;
   width: 100%;
-  /* display: none; */
+  display: none;
 }
 
 .result__wrapper {
@@ -54,8 +54,11 @@
   background: #fff;
 }
 
-.result__pictures {
-  width: 100%;
+.result__image {
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .result__info {
@@ -78,7 +81,7 @@
   line-height: 24px;
 }
 
-.result__name {
+.result__title {
   margin: 0;
   margin-bottom: 12px;
   font-family: 'Roboto Slab', sans-serif;
@@ -87,7 +90,7 @@
   line-height: 30px;
 }
 
-.result__text {
+.result__description {
   margin: 0;
   margin-bottom: 12px;
   font-family: 'Roboto', sans-serif;
@@ -96,7 +99,7 @@
   line-height: 22px;
 }
 
-.result__from {
+.result__source {
   margin-bottom: 24px;
   font-family: 'Roboto Slab', sans-serif;
   font-weight: bold;

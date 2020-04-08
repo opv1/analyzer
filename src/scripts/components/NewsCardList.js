@@ -1,30 +1,32 @@
 export class NewsCardList {
-  constructor(options) {
-    this.path = options.path;
-    this.keyWord = options.keyWord;
-    this.fromDate = options.fromDate;
-    this.toDate = options.toDate;
-    this.pageAmount = options.pageAmount;
-    this.sortBy = options.sortBy;
-    this.apiKey = options.apiKey;
-    this.url =
-      `${this.path}` +
-      `q=${this.keyWord}&` +
-      `from=${this.fromDate}&` +
-      `to=${this.toDate}&` +
-      `pageSize=${this.pageAmount}&` +
-      `sortBy=${this.sortBy}&` +
-      `apiKey=${this.apiKey}`;
+  constructor(methodCreateCard, containerCards) {
+    this.methodCreateCard = methodCreateCard;
+    this.containerCards = containerCards;
   }
 
-  getNewsCardList() {
-    return fetch(this.url)
-      .then((res) =>
-        res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`)
-      )
-      .then((newsCardList) => newsCardList)
-      .catch(() => {
-        throw new Error('Error');
-      });
+  getNewsList(newsListObject) {
+    return newsListObject;
+  }
+
+  getNewsArticles(newsListObject) {
+    for (const article of newsListObject) {
+      const source = article.source;
+      const title = article.title;
+      const description = article.description;
+      const url = article.url;
+      const urlToImage = article.urlToImage;
+      const publishedAt = article.publishedAt;
+      this.containerCards.insertAdjacentHTML(
+        'beforeend',
+        this.methodCreateCard(
+          source,
+          title,
+          description,
+          url,
+          urlToImage,
+          publishedAt
+        )
+      );
+    }
   }
 }
