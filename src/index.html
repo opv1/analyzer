@@ -14,10 +14,20 @@
         <div class="header__wrapper">
           <span class="header__caption text__white">NewsAnalyzer</span>
           <nav class="header__navigation">
-            <a class="header__main text__white active__main">Главная</a>
-            <a class="header__about text__grey hover__white" href="about.html"
-              >О проекте</a
-            >
+            <ul class="header__list">
+              <li class="header__list-item">
+                <a class="header__main header__text-white active__main"
+                  >Главная</a
+                >
+              </li>
+              <li class="header__list-item">
+                <a
+                  class="header__about header__text-grey hover__white"
+                  href="./about.html"
+                  >О проекте</a
+                >
+              </li>
+            </ul>
           </nav>
         </div>
       </header>
@@ -34,12 +44,14 @@
             <form class="search__form" name="search">
               <input
                 class="search__input"
+                title="Введите тему новости"
                 name="search"
                 type="search"
                 placeholder="Введите тему новости"
                 maxlength="35"
+                required
               />
-              <button class="search__button text__white" type="submit">
+              <button class="search__button text__white">
                 Искать
               </button>
             </form>
@@ -68,13 +80,13 @@
           <div class="result__wrapper">
             <div class="result__inline">
               <h2 class="result__caption text__black">Результаты поиска</h2>
-              <a class="result__analytics text__black" href="analytics.html"
+              <a class="result__analytics text__black" href="./analytics.html"
                 >Посмотреть аналитику
                 <span class="result__arrow">&#8250;</span></a
               >
             </div>
             <div class="result__cards"></div>
-            <button class="result__button text__black" type="submit">
+            <button class="result__button text__black">
               Показать еще
             </button>
           </div>
@@ -109,10 +121,10 @@
             &copy; 2020. Павел Овечкин
           </p>
           <nav class="footer__navigation">
-            <a class="footer__nav-item text__black" href="index.html"
+            <a class="footer__nav-item text__black" href="./index.html"
               >Главная</a
             >
-            <a class="footer__nav-item text__black" href="about.html"
+            <a class="footer__nav-item text__black" href="./about/about.html"
               >О проекте</a
             >
             <a

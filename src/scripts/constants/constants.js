@@ -1,4 +1,4 @@
-var swiper = new Swiper('.swiper-container', {
+export var swiper = new Swiper('.swiper-container', {
   slidesPerView: 3,
   centeredSlides: false,
   spaceBetween: 16,
@@ -25,3 +25,14 @@ var swiper = new Swiper('.swiper-container', {
     prevEl: '.slider__button-prev',
   },
 });
+
+const areaPage = document.querySelector('.page');
+export const loadingPage = areaPage.querySelector('.loading');
+export const notFoundPage = areaPage.querySelector('.nfound');
+export const resultPage = areaPage.querySelector('.result');
+export const cardsContainer = areaPage.querySelector('.result__cards');
+export const commitContainer = areaPage.querySelector('.slider__item');
+export const searchForm = document.forms.search;
+export const searchInput = areaPage.querySelector('.search__input');
+export const searchButton = areaPage.querySelector('.search__button');
+export const resultButton = areaPage.querySelector('.result__button');

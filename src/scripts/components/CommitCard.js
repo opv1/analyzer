@@ -1,3 +1,3 @@
 export class CommitCard {
-  constructor() {}
+  createCommit() {}
 }

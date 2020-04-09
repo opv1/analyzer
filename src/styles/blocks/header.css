@@ -27,6 +27,16 @@
   line-height: 24px;
 }
 
+.header__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.header__list-item {
+  list-style-type: none;
+}
+
 .header__main {
   margin: 0 auto;
   margin-right: 34px;
@@ -46,6 +56,18 @@
   font-size: 18px;
   line-height: 24px;
   text-decoration: none;
+}
+
+.header__text-white {
+  color: #ffffff;
+}
+
+.header__text-grey {
+  color: #f5f6f7;
+}
+
+.header__text-black {
+  color: #1a1b22;
 }
 
 @media screen and (max-width: 767px) {

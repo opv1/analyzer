@@ -1,8 +1,11 @@
 export class CommitCardList {
-  constructor(options) {}
+  constructor(methodCreateCommit, commitsContainer) {
+    this.methodCreateCommit = methodCreateCommit;
+    this.commitsContainer = commitsContainer;
+  }
 
-  getCommitsList(commitsList) {
-    for (const commits of commitsList) {
+  getCommitList(commitListObject) {
+    for (const commits of commitListObject) {
       console.log(commits);
     }
   }

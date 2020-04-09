@@ -39,6 +39,8 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
     main: './index.js',
+    about: './about/index.js',
+    analytics: './analytics/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -100,15 +102,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './about.html',
       filename: './about.html',
+      hash: true,
       minify: {
-        collapseWhitespace: isProd,
+        collapseWhitespace: isDev,
       },
     }),
     new HtmlWebpackPlugin({
       template: './analytics.html',
       filename: './analytics.html',
+      hash: true,
       minify: {
-        collapseWhitespace: isProd,
+        collapseWhitespace: isDev,
       },
     }),
     new WebpackMd5Hash(),

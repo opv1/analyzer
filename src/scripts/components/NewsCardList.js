@@ -1,22 +1,19 @@
 export class NewsCardList {
-  constructor(methodCreateCard, containerCards) {
+  constructor(methodCreateCard, cardsContainer) {
     this.methodCreateCard = methodCreateCard;
-    this.containerCards = containerCards;
+    this.cardsContainer = cardsContainer;
   }
 
-  getNewsList(newsListObject) {
-    return newsListObject;
-  }
-
-  getNewsArticles(newsListObject) {
-    for (const article of newsListObject) {
+  getNewsList(articlesArray) {
+    for (const article of articlesArray) {
       const source = article.source;
       const title = article.title;
       const description = article.description;
       const url = article.url;
       const urlToImage = article.urlToImage;
       const publishedAt = article.publishedAt;
-      this.containerCards.insertAdjacentHTML(
+
+      this.cardsContainer.insertAdjacentHTML(
         'beforeend',
         this.methodCreateCard(
           source,

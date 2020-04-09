@@ -1,30 +1,37 @@
 export class NewsApi {
   constructor(options) {
-    this.path = options.path;
-    this.keyWord = options.keyWord;
+    this.apiUrl = options.apiUrl;
+    this.language = options.language;
     this.fromDate = options.fromDate;
     this.toDate = options.toDate;
-    this.pageAmount = options.pageAmount;
+    this.pageSize = options.pageSize;
     this.sortBy = options.sortBy;
     this.apiKey = options.apiKey;
-    this.url =
-      `${this.path}` +
-      `q=${this.keyWord}&` +
-      `from=${this.fromDate}&` +
-      `to=${this.toDate}&` +
-      `pageSize=${this.pageAmount}&` +
-      `sortBy=${this.sortBy}&` +
-      `apiKey=${this.apiKey}`;
   }
 
-  getNews() {
-    return fetch(this.url)
+  getNews(keyWord) {
+    return fetch(
+      `${this.apiUrl}` +
+        `q=${keyWord}&` +
+        `language=${this.language}&` +
+        `from=${this.fromDate}&` +
+        `to=${this.toDate}&` +
+        `pageSize=${this.pageSize}&` +
+        `sortBy=${this.sortBy}&` +
+        `apiKey=${this.apiKey}`
+    )
       .then((res) =>
         res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`)
       )
-      .then((newsListObject) => newsListObject)
+      .then((newsListObject) => {
+        if (newsListObject.totalResults === 0) {
+          throw new Error('Ничего не найдено. Нулевой результат!');
+        } else {
+          return newsListObject;
+        }
+      })
       .catch(() => {
-        throw new Error('Error');
+        throw new Error('Ошибка на этапе запроса новостей!');
       });
   }
 }
