@@ -39,6 +39,14 @@
   text-decoration: none;
 }
 
+.commits__text-black {
+  color: #1a1b22;
+}
+
+.commits__background-grey {
+  background: #f5f6f7;
+}
+
 @media screen and (max-width: 1240px) {
   .commits {
     padding: 40px 0;

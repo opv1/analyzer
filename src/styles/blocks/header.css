@@ -4,11 +4,11 @@
   width: 100%;
 }
 
-.header a.active__main {
+.header a.header__active-main {
   border-bottom: 2px solid #ffffff;
 }
 
-.header a.active__about {
+.header a.header__active-about {
   border-bottom: 2px solid #000000;
 }
 
@@ -63,10 +63,26 @@
 }
 
 .header__text-grey {
-  color: #f5f6f7;
+  color: #b6bcbf;
 }
 
 .header__text-black {
+  color: #1a1b22;
+}
+
+.header__shadow-lighter {
+  box-shadow: inset 0px -1px 0px #d1d2d6;
+}
+
+.header__shadow-darker {
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
+
+.header__hover-white:hover {
+  color: #ffffff;
+}
+
+.header__hover-black:hover {
   color: #1a1b22;
 }
 

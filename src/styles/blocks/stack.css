@@ -32,6 +32,14 @@
   margin: 0 15px;
 }
 
+.stack__background-grey {
+  background: #f5f6f7;
+}
+
+.stack__text-black {
+  color: #1a1b22;
+}
+
 @media screen and (max-width: 1240px) {
   .stack {
     padding: 40px 0;

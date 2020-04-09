@@ -88,6 +88,10 @@
   transition: box-shadow 1s ease;
 }
 
+.search__text-white {
+  color: #ffffff;
+}
+
 @media screen and (max-width: 1023px) {
   .search__caption {
     max-width: 385px;

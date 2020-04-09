@@ -1,7 +1,8 @@
 export class NewsCardList {
-  constructor(methodCreateCard, cardsContainer) {
+  constructor(methodCreateCard, cardsContainer, methodFormateDateLocal) {
     this.methodCreateCard = methodCreateCard;
     this.cardsContainer = cardsContainer;
+    this.methodFormateDateLocal = methodFormateDateLocal;
   }
 
   getNewsList(articlesArray) {
@@ -11,7 +12,7 @@ export class NewsCardList {
       const description = article.description;
       const url = article.url;
       const urlToImage = article.urlToImage;
-      const publishedAt = article.publishedAt;
+      const publishedAt = this.methodFormateDateLocal(new Date(article.publishedAt));
 
       this.cardsContainer.insertAdjacentHTML(
         'beforeend',

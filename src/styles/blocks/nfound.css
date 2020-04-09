@@ -36,6 +36,18 @@
   line-height: 24px;
 }
 
+.nfound__background-grey {
+  background: #f5f6f7;
+}
+
+.nfound__text-black {
+  color: #1a1b22;
+}
+
+.nfound__text-grey {
+  color: #b6bcbf;
+}
+
 @media screen and (max-width: 1023px) {
   .nfound {
     padding: 40px 0;

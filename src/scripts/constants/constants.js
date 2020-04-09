@@ -26,13 +26,12 @@ export var swiper = new Swiper('.swiper-container', {
   },
 });
 
-const areaPage = document.querySelector('.page');
-export const loadingPage = areaPage.querySelector('.loading');
-export const notFoundPage = areaPage.querySelector('.nfound');
-export const resultPage = areaPage.querySelector('.result');
-export const cardsContainer = areaPage.querySelector('.result__cards');
-export const commitContainer = areaPage.querySelector('.slider__item');
+export const loadingPage = document.querySelector('.loading');
+export const notFoundPage = document.querySelector('.nfound');
+export const resultPage = document.querySelector('.result');
+export const cardsContainer = document.querySelector('.result__cards');
+export const commitsContainer = document.querySelector('.swiper-wrapper');
 export const searchForm = document.forms.search;
-export const searchInput = areaPage.querySelector('.search__input');
-export const searchButton = areaPage.querySelector('.search__button');
-export const resultButton = areaPage.querySelector('.result__button');
+export const searchInput = document.querySelector('.search__input');
+export const searchButton = document.querySelector('.search__button');
+export const resultButton = document.querySelector('.result__button');

@@ -10,19 +10,19 @@
   </head>
   <body>
     <div class="page page__main">
-      <header class="header shadow__darker">
+      <header class="header header__shadow-darker">
         <div class="header__wrapper">
-          <span class="header__caption text__white">NewsAnalyzer</span>
+          <span class="header__caption header__text-white">NewsAnalyzer</span>
           <nav class="header__navigation">
             <ul class="header__list">
               <li class="header__list-item">
-                <a class="header__main header__text-white active__main"
+                <a class="header__main header__text-white header__active-main"
                   >Главная</a
                 >
               </li>
               <li class="header__list-item">
                 <a
-                  class="header__about header__text-grey hover__white"
+                  class="header__about header__text-grey header__hover-white"
                   href="./about.html"
                   >О проекте</a
                 >
@@ -35,8 +35,10 @@
         <section class="search">
           <div class="search__wrapper">
             <div class="search__block">
-              <h1 class="search__caption text__white">Что в мире творится?</h1>
-              <h2 class="search__info text__white">
+              <h1 class="search__caption search__text-white">
+                Что в мире творится?
+              </h1>
+              <h2 class="search__info search__text-white">
                 Введите в поиске любую тему и узнайте, насколько популярной она
                 была в новостях за прошедшую неделю.
               </h2>
@@ -48,45 +50,53 @@
                 name="search"
                 type="search"
                 placeholder="Введите тему новости"
-                maxlength="35"
                 required
+                maxlength="35"
               />
-              <button class="search__button text__white">
+              <button class="search__button search__text-white">
                 Искать
               </button>
             </form>
           </div>
         </section>
-        <section class="loading background__grey">
+        <section class="loading loading__background-grey">
           <div class="loading__block">
             <i class="loading__preloader"></i>
-            <h3 class="loading__text text__grey">Идет поиск новостей...</h3>
+            <h3 class="loading__text loading__text-grey">
+              Идет поиск новостей...
+            </h3>
           </div>
         </section>
-        <section class="nfound background__grey">
+        <section class="nfound nfound__background-grey">
           <div class="nfound__block">
             <img
               class="nfound__icon"
               src="<%=require('./images/not-found.svg').default%>"
               alt="Ничего не найдено"
             />
-            <h3 class="nfound__caption text__black">Ничего не найдено</h3>
-            <p class="nfound__text text__grey">
+            <h3 class="nfound__caption nfound__text-black">
+              Ничего не найдено
+            </h3>
+            <p class="nfound__text nfound__text-grey">
               К сожалению по вашему запросу ничего не найдено.
             </p>
           </div>
         </section>
-        <section class="result background__grey">
+        <section class="result result__background-grey">
           <div class="result__wrapper">
             <div class="result__inline">
-              <h2 class="result__caption text__black">Результаты поиска</h2>
-              <a class="result__analytics text__black" href="./analytics.html"
+              <h2 class="result__caption result__text-black">
+                Результаты поиска
+              </h2>
+              <a
+                class="result__analytics result__text-black"
+                href="./analytics.html"
                 >Посмотреть аналитику
                 <span class="result__arrow">&#8250;</span></a
               >
             </div>
             <div class="result__cards"></div>
-            <button class="result__button text__black">
+            <button class="result__button result__text-black">
               Показать еще
             </button>
           </div>
@@ -99,13 +109,13 @@
               alt="Фото автора"
             />
             <div class="author__info">
-              <h2 class="author__caption text__black">Об авторе</h2>
-              <p class="author__text text__black">
+              <h2 class="author__caption author__text-black">Об авторе</h2>
+              <p class="author__text author__text-black">
                 Это блок с описаением автора проекта. Здесь следует указать, как
                 вас зовут, чем вы занимаетесь, какими технологиями разработки
                 владете.
               </p>
-              <p class="author__text text__black">
+              <p class="author__text author__text-black">
                 Также можно рассказать о процессе обучения в Практикуме, чему вы
                 тут научились, и чем можете помочь потенциальным заказчикам.
                 Если хотите, оставьте свои контакты: email и телефон. Так
@@ -117,22 +127,34 @@
       </main>
       <footer class="footer">
         <div class="footer__wrapper">
-          <p class="footer__copyright text__grey">
+          <p class="footer__copyright footer__text-grey">
             &copy; 2020. Павел Овечкин
           </p>
           <nav class="footer__navigation">
-            <a class="footer__nav-item text__black" href="./index.html"
-              >Главная</a
-            >
-            <a class="footer__nav-item text__black" href="./about/about.html"
-              >О проекте</a
-            >
-            <a
-              class="footer__nav-item text__black"
-              href="https://praktikum.yandex.ru/"
-              target="_blank"
-              >Яндекс.Практикум</a
-            >
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a
+                  class="footer__nav-item footer__text-black"
+                  href="./index.html"
+                  >Главная</a
+                >
+              </li>
+              <li class="footer__list-item">
+                <a
+                  class="footer__nav-item footer__text-black"
+                  href="./about/about.html"
+                  >О проекте</a
+                >
+              </li>
+              <li class="footer__list-item">
+                <a
+                  class="footer__nav-item footer__text-black"
+                  href="https://praktikum.yandex.ru/"
+                  target="_blank"
+                  >Яндекс.Практикум</a
+                >
+              </li>
+            </ul>
           </nav>
           <div class="footer__links">
             <a

@@ -30,6 +30,10 @@
   line-height: 24px;
 }
 
+.customer__text-black {
+  color: #1a1b22;
+}
+
 @media screen and (max-width: 1240px) {
   .customer {
     padding: 30px 0;

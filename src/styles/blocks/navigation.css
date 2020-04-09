@@ -27,6 +27,14 @@
   line-height: 24px;
 }
 
+.navigation__text-black {
+  color: #1a1b22;
+}
+
+.navigation__text-grey {
+  color: #b6bcbf;
+}
+
 @media screen and (max-width: 767px) {
   .navigation {
     display: none;

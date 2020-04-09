@@ -82,6 +82,9 @@
   width: 64px;
   height: 64px;
   border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .slider__date {
@@ -154,6 +157,14 @@
 
 .swiper-button-disabled {
   display: none;
+}
+
+.slider__text-black {
+  color: #1a1b22;
+}
+
+.slider__text-grey {
+  color: #b6bcbf;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {

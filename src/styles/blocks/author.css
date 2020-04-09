@@ -45,6 +45,10 @@
   margin-top: 20px;
 }
 
+.author__text-black {
+  color: #1a1b22;
+}
+
 @media screen and (max-width: 1023px) {
   .author {
     padding: 40px 0;
