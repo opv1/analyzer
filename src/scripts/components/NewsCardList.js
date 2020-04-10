@@ -1,30 +1,40 @@
 export class NewsCardList {
-  constructor(methodCreateCard, cardsContainer, methodFormateDateLocal) {
+  constructor(methodFormateDateLocal, methodCreateCard, cardsContainer) {
+    this.methodFormateDateLocal = methodFormateDateLocal;
     this.methodCreateCard = methodCreateCard;
     this.cardsContainer = cardsContainer;
-    this.methodFormateDateLocal = methodFormateDateLocal;
+    this.startNews = 0;
   }
 
-  getNewsList(articlesArray) {
-    for (const article of articlesArray) {
-      const source = article.source;
-      const title = article.title;
-      const description = article.description;
-      const url = article.url;
-      const urlToImage = article.urlToImage;
-      const publishedAt = this.methodFormateDateLocal(new Date(article.publishedAt));
+  renderNewsList(articlesArray) {
+    for (let i = this.startNews; i < this.startNews + 3; i++) {
+      if (articlesArray[i]) {
+        const source = articlesArray[i].source;
+        const title = articlesArray[i].title;
+        const description = articlesArray[i].description;
+        const url = articlesArray[i].url;
+        const urlToImage = articlesArray[i].urlToImage;
+        const publishedAt = this.methodFormateDateLocal(
+          new Date(articlesArray[i].publishedAt)
+        );
 
-      this.cardsContainer.insertAdjacentHTML(
-        'beforeend',
-        this.methodCreateCard(
-          source,
-          title,
-          description,
-          url,
-          urlToImage,
-          publishedAt
-        )
-      );
+        this.cardsContainer.insertAdjacentHTML(
+          'beforeend',
+          this.methodCreateCard(
+            source,
+            title,
+            description,
+            url,
+            urlToImage,
+            publishedAt
+          )
+        );
+      }
     }
+  }
+
+  renderMoreNews(articlesArray) {
+    this.startNews += 3;
+    this.renderNewsList(articlesArray);
   }
 }

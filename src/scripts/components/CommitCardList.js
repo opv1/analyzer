@@ -1,11 +1,17 @@
 export class CommitCardList {
-  constructor(methodCreateCommit, commitsContainer, methodFormateDateLocal) {
-    this.methodCreateCommit = methodCreateCommit;
-    this.commitsContainer = commitsContainer;
+  constructor(
+    methodFormateDateLocal,
+    methodCreateCommit,
+    methodCreatePagination,
+    commitsContainer
+  ) {
     this.methodFormateDateLocal = methodFormateDateLocal;
+    this.methodCreateCommit = methodCreateCommit;
+    this.methodCreatePagination = methodCreatePagination;
+    this.commitsContainer = commitsContainer;
   }
 
-  getCommitList(commitsListArray) {
+  renderCommitList(commitsListArray) {
     for (const commitObject of commitsListArray) {
       const date = this.methodFormateDateLocal(
         new Date(commitObject.commit.committer.date)
@@ -19,5 +25,6 @@ export class CommitCardList {
         this.methodCreateCommit(date, name, email, description)
       );
     }
+    this.methodCreatePagination();
   }
 }

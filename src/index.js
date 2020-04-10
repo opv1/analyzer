@@ -1,5 +1,4 @@
 import './styles/index.css';
-import './scripts/utils/swiper.js';
 import {
   loadingPage,
   notFoundPage,
@@ -7,13 +6,13 @@ import {
   cardsContainer,
   searchForm,
   resultButton,
-} from './scripts/constants/constants.js';
-import { FormateDate } from './scripts/modules/FormateDate.js';
-import { NewsApi } from './scripts/modules/NewsApi.js';
-import { DataStorage } from './scripts/modules/DataStorage.js';
-import { NewsCard } from './scripts/components/NewsCard.js';
-import { NewsCardList } from './scripts/components/NewsCardList.js';
-import { SearchInput } from './scripts/components/SearchInput.js';
+} from './scripts/constants/constants';
+import { FormateDate } from './scripts/modules/FormateDate';
+import { NewsApi } from './scripts/modules/NewsApi';
+import { DataStorage } from './scripts/modules/DataStorage';
+import { NewsCard } from './scripts/components/NewsCard';
+import { NewsCardList } from './scripts/components/NewsCardList';
+import { SearchInput } from './scripts/components/SearchInput';
 
 const formateDate = new FormateDate();
 const nowDateIco = formateDate.formateDateIco(new Date());
@@ -33,34 +32,25 @@ const newsApi = new NewsApi({
 const dataStorage = new DataStorage();
 const newsCard = new NewsCard();
 const newsCardList = new NewsCardList(
+  formateDate.formateDateLocal,
   newsCard.createCard,
-  cardsContainer,
-  formateDate.formateDateLocal
+  cardsContainer
 );
 const searchInput = new SearchInput();
-
-searchForm.addEventListener('submit', searchNews);
-resultButton.addEventListener('click', moreNews);
 
 window.onload = () => {
   if (localStorage.getItem('newsListObject') !== null) {
     const existNewsListObject = dataStorage.getData();
+    newsCardList.renderNewsList(existNewsListObject.articles);
     resultPage.setAttribute('style', 'display: block');
-    newsCardList.getNewsList(existNewsListObject.articles);
   }
 };
 
+searchForm.addEventListener('submit', searchNews);
 function searchNews(event) {
   event.preventDefault(event);
+  cardsContainer.textContent = '';
   const keyWord = searchForm.elements.search.value;
-  const validityPromise = new Promise((resolve) => {
-    resolve(
-      searchInput
-        .checkInput(keyWord)
-        .then(() => console.log('ok'))
-        .catch(() => console.log('Проверка не прошла'))
-    );
-  });
   const loadingPromise = new Promise((resolve) => {
     loadingPage.setAttribute('style', 'display: block');
     notFoundPage.setAttribute('style', 'display: none');
@@ -76,11 +66,12 @@ function searchNews(event) {
     .then((newsListObject) => dataStorage.setData(newsListObject))
     .then(() => {
       const newsListObject = dataStorage.getData();
-      newsCardList.getNewsList(newsListObject.articles);
+      newsCardList.renderNewsList(newsListObject.articles, cardsContainer);
       loadingPage.setAttribute('style', 'display: none');
       notFoundPage.setAttribute('style', 'display: none');
       resultPage.setAttribute('style', 'display: block');
     })
+    .then(() => searchForm.reset())
     .catch(() => {
       console.log('Не удается отобразить новости!');
       loadingPage.setAttribute('style', 'display: none');
@@ -89,6 +80,8 @@ function searchNews(event) {
     });
 }
 
-function moreNews(event) {
-  event.preventDefault();
+resultButton.addEventListener('click', moreNews);
+function moreNews() {
+  const newsListObject = dataStorage.getData();
+  newsCardList.renderMoreNews(newsListObject.articles);
 }

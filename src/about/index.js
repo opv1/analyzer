@@ -1,5 +1,5 @@
 import '../scripts/utils/swiper.js';
-import { commitsContainer } from '../scripts/constants/constants.js';
+import { commitsContainer } from '../scripts/constants/constants';
 import { FormateDate } from '../scripts/modules/FormateDate.js';
 import { GitHubApi } from '../scripts/modules/GitHubApi.js';
 import { CommitCard } from '../scripts/components/CommitCard.js';
@@ -15,11 +15,14 @@ const gitHubApi = new GitHubApi({
 });
 const commitCard = new CommitCard();
 const commitCardList = new CommitCardList(
+  formateDate.formateDateLocal,
   commitCard.createCommit,
-  commitsContainer,
-  formateDate.formateDateLocal
+  commitCard.createPagination,
+  commitsContainer
 );
 
 gitHubApi
   .getCommits()
-  .then((commitsListArray) => commitCardList.getCommitList(commitsListArray));
+  .then((commitsListArray) =>
+    commitCardList.renderCommitList(commitsListArray)
+  );
