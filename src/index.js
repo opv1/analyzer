@@ -1,10 +1,12 @@
 import './styles/index.css';
 import {
-  loadingPage,
-  notFoundPage,
-  resultPage,
+  loadingSection,
+  errorSection,
+  notFoundSection,
+  resultSection,
   cardsContainer,
   searchForm,
+  searchInput,
   resultButton,
 } from './scripts/constants/constants';
 import { FormateDate } from './scripts/modules/FormateDate';
@@ -13,15 +15,21 @@ import { DataStorage } from './scripts/modules/DataStorage';
 import { NewsCard } from './scripts/components/NewsCard';
 import { NewsCardList } from './scripts/components/NewsCardList';
 import { SearchInput } from './scripts/components/SearchInput';
+import {
+  counterCoincidences,
+  formateDay,
+  formateWeek,
+  formateMonth,
+} from './scripts/utils/utils';
 
 const formateDate = new FormateDate();
-const nowDateIco = formateDate.formateDateIco(new Date());
-const laterDateIco = formateDate.formatePastDateIco(new Date(), 7);
+const toDateIco = formateDate.formateDateIco(new Date());
+const fromDateIco = formateDate.formateDateAgoIco(new Date(), 7);
 const newsApi = new NewsApi({
   apiUrl: 'http://newsapi.org/v2/everything?',
   language: 'ru',
-  fromDate: `${laterDateIco}`,
-  toDate: `${nowDateIco}`,
+  fromDate: `${fromDateIco}`,
+  toDate: `${toDateIco}`,
   sortBy: 'popularity',
   pageSize: '100',
   apiKey: '60659df53b2641f4bc17059b6e641af7',
@@ -29,22 +37,36 @@ const newsApi = new NewsApi({
     'Content-Type': 'application/json',
   },
 });
-const dataStorage = new DataStorage();
-const newsCard = new NewsCard();
-const newsCardList = new NewsCardList(
-  formateDate.formateDateLocal,
-  newsCard.createCard,
-  cardsContainer
+const dataStorage = new DataStorage(
+  counterCoincidences,
+  formateDay,
+  formateWeek,
+  formateMonth
 );
-const searchInput = new SearchInput();
+const newsCard = new NewsCard(cardsContainer);
+const newsCardList = new NewsCardList(newsCard, formateDate);
+/* const searchInput = new SearchInput(); */
 
 window.onload = () => {
   if (localStorage.getItem('newsListObject') !== null) {
     const existNewsListObject = dataStorage.getData();
     newsCardList.renderNewsList(existNewsListObject.articles);
-    resultPage.setAttribute('style', 'display: block');
+    resultSection.setAttribute('style', 'display: block');
   }
 };
+
+searchInput.addEventListener('input', checkInput);
+function checkInput(event) {
+  if (searchInput.validity.valueMissing) {
+    searchInput.setCustomValidity('Нужно ввести ключевое слово');
+  } else if (searchInput.validity.tooShort || searchInput.validity.tooLong) {
+    searchInput.setCustomValidity('Должно быть от 2 до 10 символов');
+  } else if (searchInput.validity.patternMismatch) {
+    searchInput.setCustomValidity('Необходимо вводить кириллицей');
+  } else {
+    searchInput.setCustomValidity('');
+  }
+}
 
 searchForm.addEventListener('submit', searchNews);
 function searchNews(event) {
@@ -52,31 +74,40 @@ function searchNews(event) {
   cardsContainer.textContent = '';
   const keyWord = searchForm.elements.search.value;
   const loadingPromise = new Promise((resolve) => {
-    loadingPage.setAttribute('style', 'display: block');
-    notFoundPage.setAttribute('style', 'display: none');
-    resultPage.setAttribute('style', 'display: none');
+    loadingSection.setAttribute('style', 'display: block');
+    errorSection.setAttribute('style', 'display: none');
+    notFoundSection.setAttribute('style', 'display: none');
+    resultSection.setAttribute('style', 'display: none');
     resolve(
       newsApi
         .getNews(keyWord)
         .then((newsListObject) => newsListObject)
-        .catch(() => console.log('Нет ответа от API!'))
+        .catch(() => {
+          loadingSection.setAttribute('style', 'display: none');
+          errorSection.setAttribute('style', 'display: block');
+          notFoundSection.setAttribute('style', 'display: none');
+          resultSection.setAttribute('style', 'display: none');
+          console.log('Нет ответа от API!');
+        })
     );
   });
   loadingPromise
-    .then((newsListObject) => dataStorage.setData(newsListObject))
+    .then((newsListObject) => dataStorage.setData(newsListObject, keyWord))
     .then(() => {
       const newsListObject = dataStorage.getData();
-      newsCardList.renderNewsList(newsListObject.articles, cardsContainer);
-      loadingPage.setAttribute('style', 'display: none');
-      notFoundPage.setAttribute('style', 'display: none');
-      resultPage.setAttribute('style', 'display: block');
+      newsCardList.renderNewsList(newsListObject.articles);
+      loadingSection.setAttribute('style', 'display: none');
+      errorSection.setAttribute('style', 'display: none');
+      notFoundSection.setAttribute('style', 'display: none');
+      resultSection.setAttribute('style', 'display: block');
     })
     .then(() => searchForm.reset())
     .catch(() => {
       console.log('Не удается отобразить новости!');
-      loadingPage.setAttribute('style', 'display: none');
-      notFoundPage.setAttribute('style', 'display: block');
-      resultPage.setAttribute('style', 'display: none');
+      loadingSection.setAttribute('style', 'display: none');
+      errorSection.setAttribute('style', 'display: none');
+      notFoundSection.setAttribute('style', 'display: block');
+      resultSection.setAttribute('style', 'display: none');
     });
 }
 

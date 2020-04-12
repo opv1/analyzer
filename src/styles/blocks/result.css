@@ -47,6 +47,10 @@
   width: 100%;
 }
 
+.result__link-news {
+  text-decoration: none;
+}
+
 .result__card {
   display: flex;
   flex-direction: column;

@@ -29,9 +29,6 @@ const jsLoaders = () => {
       loader: 'babel-loader',
     },
   ];
-  if (isDev) {
-    loaders.push('eslint-loader');
-  }
   return loaders;
 };
 
@@ -96,7 +93,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html',
       minify: {
-        collapseWhitespace: isDev,
+        collapseWhitespace: isProd,
       },
     }),
     new HtmlWebpackPlugin({
@@ -104,7 +101,7 @@ module.exports = {
       filename: './about.html',
       hash: true,
       minify: {
-        collapseWhitespace: isDev,
+        collapseWhitespace: isProd,
       },
     }),
     new HtmlWebpackPlugin({
@@ -112,7 +109,7 @@ module.exports = {
       filename: './analytics.html',
       hash: true,
       minify: {
-        collapseWhitespace: isDev,
+        collapseWhitespace: isProd,
       },
     }),
     new WebpackMd5Hash(),

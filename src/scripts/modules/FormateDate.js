@@ -9,12 +9,18 @@ export class FormateDate {
     return dateLocal;
   }
 
+  formateDateWeekAgo(date) {
+    date.setDate(date.getDate() - 6);
+    const dateWeekAgo = date;
+    return dateWeekAgo;
+  }
+
   formateDateIco(date) {
     const dateIco = date.toISOString().slice(0, 10);
     return dateIco;
   }
 
-  formatePastDateIco(date, days) {
+  formateDateAgoIco(date, days) {
     date.setDate(date.getDate() - days);
     const dateIco = date.toISOString().slice(0, 10);
     return dateIco;

@@ -1,4 +1,15 @@
 export class CommitCard {
+  constructor(commitsContainer) {
+    this.commitsContainer = commitsContainer;
+  }
+
+  renderCommits(date, name, email, description) {
+    this.commitsContainer.insertAdjacentHTML(
+      'beforeend',
+      this.createCommit(date, name, email, description)
+    );
+  }
+
   createCommit(date, name, email, description) {
     const template = `<div class="slider__item swiper-slide">
       <p class="slider__date slider__text-grey">${date}</p>

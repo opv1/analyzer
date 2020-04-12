@@ -1,40 +1,44 @@
+import { RENDER_NUMBER_NEWS } from '../constants/constants';
+import { hideMoreButton } from '../utils/utils';
+
 export class NewsCardList {
-  constructor(methodFormateDateLocal, methodCreateCard, cardsContainer) {
-    this.methodFormateDateLocal = methodFormateDateLocal;
-    this.methodCreateCard = methodCreateCard;
-    this.cardsContainer = cardsContainer;
-    this.startNews = 0;
+  constructor(classNewsCard, classFormateDate) {
+    this.classNewsCard = classNewsCard;
+    this.classFormateDate = classFormateDate;
+    this.initialAmount = 0;
   }
 
   renderNewsList(articlesArray) {
-    for (let i = this.startNews; i < this.startNews + 3; i++) {
+    for (
+      let i = this.initialAmount;
+      i < this.initialAmount + RENDER_NUMBER_NEWS;
+      i++
+    ) {
       if (articlesArray[i]) {
         const source = articlesArray[i].source;
         const title = articlesArray[i].title;
         const description = articlesArray[i].description;
         const url = articlesArray[i].url;
         const urlToImage = articlesArray[i].urlToImage;
-        const publishedAt = this.methodFormateDateLocal(
+        const publishedAt = this.classFormateDate.formateDateLocal(
           new Date(articlesArray[i].publishedAt)
         );
-
-        this.cardsContainer.insertAdjacentHTML(
-          'beforeend',
-          this.methodCreateCard(
-            source,
-            title,
-            description,
-            url,
-            urlToImage,
-            publishedAt
-          )
+        this.classNewsCard.renderCards(
+          source,
+          title,
+          description,
+          url,
+          urlToImage,
+          publishedAt
         );
+      } else {
+        hideMoreButton();
       }
     }
   }
 
   renderMoreNews(articlesArray) {
-    this.startNews += 3;
+    this.initialAmount += RENDER_NUMBER_NEWS;
     this.renderNewsList(articlesArray);
   }
 }

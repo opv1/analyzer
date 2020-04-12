@@ -46,12 +46,14 @@
             <form class="search__form" name="search">
               <input
                 class="search__input"
-                title="Введите тему новости"
+                required
                 name="search"
                 type="search"
                 placeholder="Введите тему новости"
-                required
-                maxlength="35"
+                title="Введите тему новости"
+                minlength="2"
+                maxlength="10"
+                pattern="^([А-Яа-яЁ-ё]*)$"
               />
               <button class="search__button search__text-white">
                 Искать
@@ -79,6 +81,17 @@
             </h3>
             <p class="nfound__text nfound__text-grey">
               К сожалению по вашему запросу ничего не найдено.
+            </p>
+          </div>
+        </section>
+        <section class="error error__background-grey">
+          <div class="error__block">
+            <h3 class="error__caption nfound__text-black">
+              Во время запроса произошла ошибка
+            </h3>
+            <p class="error__text nfound__text-grey">
+              Возможно, проблема с соединением или сервер недоступен. Подождите
+              немного и попробуйте ещё раз.
             </p>
           </div>
         </section>
