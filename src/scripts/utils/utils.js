@@ -1,10 +1,13 @@
 import { resultButton } from '../constants/constants';
+import { FormateDate } from '../modules/FormateDate';
+
+const formateDate = new FormateDate();
 
 export function hideMoreButton() {
   resultButton.setAttribute('style', 'display: none');
 }
 
-export function counterCoincidences(articlesArray, keyWord) {
+export function counterCoincidencesTotal(articlesArray, keyWord) {
   const regExp = new RegExp(`${keyWord}`, `gi`);
   const resultSort = articlesArray.map((article) =>
     article.title.match(regExp)
@@ -15,29 +18,42 @@ export function counterCoincidences(articlesArray, keyWord) {
   return amountKeyWord;
 }
 
-export function formateDay(date) {
-  const optionsDate = {
-    day: 'numeric',
-  };
-  const dayNum = date.toLocaleString('ru', optionsDate);
-  const days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
-  const dayName = days[date.getDay()];
-  return { dayNum, dayName };
-}
-
-export function formateWeek(date) {
-  const arrWeek = [];
+export function weekObject(date, articlesArray, keyWord) {
+  const weekObject = [];
   for (let i = 0; i < 7; i++) {
-    date.setDate(date.getDate() - 1);
+    let currentDate = date;
     const optionsDate = {
       day: 'numeric',
     };
-    const dayNum = date.toLocaleString('ru', optionsDate);
     const days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
-    const dayName = days[date.getDay()];
-    arrWeek.push({ dayNum: dayNum, dayName: dayName });
+    const dayName = days[currentDate.getDay()];
+    const newsCount = counterCoincidencesWeek(
+      currentDate,
+      articlesArray,
+      keyWord
+    );
+    const widthPercent = Math.round((newsCount * 100) / 41);
+    const dayNum = currentDate.toLocaleString('ru', optionsDate);
+    weekObject.push({ dayNum, dayName, newsCount, widthPercent });
+    currentDate = date.setDate(date.getDate() - 1);
   }
-  return arrWeek;
+  return weekObject;
+}
+
+function counterCoincidencesWeek(currentDate, articlesArray, keyWord) {
+  const regExp = new RegExp(`${keyWord}`, `gi`);
+  let counter = 0;
+  articlesArray.map((article) => {
+    const localDate = new Date(article.publishedAt);
+    if (
+      formateDate.formateDateLocal(localDate) ===
+        formateDate.formateDateLocal(currentDate) &&
+      article.title.match(regExp)
+    ) {
+      counter += 1;
+    }
+  });
+  return counter;
 }
 
 export function formateMonth(date) {

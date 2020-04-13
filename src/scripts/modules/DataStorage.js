@@ -1,29 +1,30 @@
 export class DataStorage {
-  constructor(counterCoincidences, formateDay, formateWeek, formateMonth) {
-    this.counterCoincidences = counterCoincidences;
-    this.formateDay = formateDay;
-    this.formateWeek = formateWeek;
+  constructor(counterCoincidencesTotal, formateMonth, weekObject) {
+    this.counterCoincidencesTotal = counterCoincidencesTotal;
     this.formateMonth = formateMonth;
+    this.weekObject = weekObject;
   }
 
   setData(newsListObject, queryWord) {
     localStorage.setItem('newsListObject', JSON.stringify(newsListObject));
     const keyWord = queryWord;
     const totalResults = newsListObject.totalResults;
-    const amountKeyWord = this.counterCoincidences(
+    const amountKeyWord = this.counterCoincidencesTotal(
       newsListObject.articles,
       keyWord
     );
     const presentMonth = this.formateMonth(new Date());
-    const toDay = this.formateDay(new Date());
-    const toWeek = this.formateWeek(new Date());
+    const presentWeek = this.weekObject(
+      new Date(),
+      newsListObject.articles,
+      keyWord
+    );
     const newsAnalyticsObject = {
       keyWord,
       totalResults,
       amountKeyWord,
       presentMonth,
-      toDay,
-      toWeek,
+      presentWeek,
     };
     localStorage.setItem(
       'newsAnalyticsObject',

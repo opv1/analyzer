@@ -6,7 +6,6 @@ import {
   resultSection,
   cardsContainer,
   searchForm,
-  searchInput,
   resultButton,
 } from './scripts/constants/constants';
 import { FormateDate } from './scripts/modules/FormateDate';
@@ -16,15 +15,14 @@ import { NewsCard } from './scripts/components/NewsCard';
 import { NewsCardList } from './scripts/components/NewsCardList';
 import { SearchInput } from './scripts/components/SearchInput';
 import {
-  counterCoincidences,
-  formateDay,
-  formateWeek,
+  counterCoincidencesTotal,
   formateMonth,
+  weekObject,
 } from './scripts/utils/utils';
 
 const formateDate = new FormateDate();
 const toDateIco = formateDate.formateDateIco(new Date());
-const fromDateIco = formateDate.formateDateAgoIco(new Date(), 7);
+const fromDateIco = formateDate.formateDateAgoIco(new Date(), 6);
 const newsApi = new NewsApi({
   apiUrl: 'http://newsapi.org/v2/everything?',
   language: 'ru',
@@ -38,14 +36,13 @@ const newsApi = new NewsApi({
   },
 });
 const dataStorage = new DataStorage(
-  counterCoincidences,
-  formateDay,
-  formateWeek,
-  formateMonth
+  counterCoincidencesTotal,
+  formateMonth,
+  weekObject
 );
 const newsCard = new NewsCard(cardsContainer);
 const newsCardList = new NewsCardList(newsCard, formateDate);
-/* const searchInput = new SearchInput(); */
+const searchInput = new SearchInput();
 
 window.onload = () => {
   if (localStorage.getItem('newsListObject') !== null) {
@@ -55,24 +52,11 @@ window.onload = () => {
   }
 };
 
-searchInput.addEventListener('input', checkInput);
-function checkInput(event) {
-  if (searchInput.validity.valueMissing) {
-    searchInput.setCustomValidity('Нужно ввести ключевое слово');
-  } else if (searchInput.validity.tooShort || searchInput.validity.tooLong) {
-    searchInput.setCustomValidity('Должно быть от 2 до 10 символов');
-  } else if (searchInput.validity.patternMismatch) {
-    searchInput.setCustomValidity('Необходимо вводить кириллицей');
-  } else {
-    searchInput.setCustomValidity('');
-  }
-}
-
 searchForm.addEventListener('submit', searchNews);
 function searchNews(event) {
   event.preventDefault(event);
   cardsContainer.textContent = '';
-  const keyWord = searchForm.elements.search.value;
+  const keyWord = searchForm.elements.input.value;
   const loadingPromise = new Promise((resolve) => {
     loadingSection.setAttribute('style', 'display: block');
     errorSection.setAttribute('style', 'display: none');
@@ -116,3 +100,16 @@ function moreNews() {
   const newsListObject = dataStorage.getData();
   newsCardList.renderMoreNews(newsListObject.articles);
 }
+
+/* inputSearch.addEventListener('input', checkInput);
+function checkInput(event) {
+  if (inputSearch.validity.valueMissing) {
+    inputSearch.setCustomValidity('Нужно ввести ключевое слово');
+  } else if (inputSearch.validity.tooShort || inputSearch.validity.tooLong) {
+    inputSearch.setCustomValidity('Должно быть от 2 до 10 символов');
+  } else if (inputSearch.validity.patternMismatch) {
+    inputSearch.setCustomValidity('Необходимо вводить кириллицей');
+  } else {
+    inputSearch.setCustomValidity('');
+  }
+} */

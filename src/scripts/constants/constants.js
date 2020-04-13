@@ -8,6 +8,5 @@ export const analyticsContainer = document.querySelector(
   '.analytics__container'
 );
 export const searchForm = document.forms.search;
-export const searchInput = document.querySelector('.search__input');
 export const resultButton = document.querySelector('.result__button');
 export const RENDER_NUMBER_NEWS = 3;
