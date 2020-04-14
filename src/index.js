@@ -24,7 +24,7 @@ const formateDate = new FormateDate();
 const toDateIco = formateDate.formateDateIco(new Date());
 const fromDateIco = formateDate.formateDateAgoIco(new Date(), 6);
 const newsApi = new NewsApi({
-  apiUrl: 'http://newsapi.org/v2/everything?',
+  apiUrl: 'https://newsapi.org/v2/everything?',
   language: 'ru',
   fromDate: `${fromDateIco}`,
   toDate: `${toDateIco}`,
