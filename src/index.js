@@ -52,6 +52,11 @@ window.onload = () => {
   }
 };
 
+searchForm.addEventListener('input', checkInput);
+function checkInput(event) {
+  return searchInput.checkInput(searchForm);
+}
+
 searchForm.addEventListener('submit', searchNews);
 function searchNews(event) {
   event.preventDefault(event);
@@ -96,20 +101,7 @@ function searchNews(event) {
 }
 
 resultButton.addEventListener('click', moreNews);
-function moreNews() {
+function moreNews(event) {
   const newsListObject = dataStorage.getData();
   newsCardList.renderMoreNews(newsListObject.articles);
 }
-
-/* inputSearch.addEventListener('input', checkInput);
-function checkInput(event) {
-  if (inputSearch.validity.valueMissing) {
-    inputSearch.setCustomValidity('Нужно ввести ключевое слово');
-  } else if (inputSearch.validity.tooShort || inputSearch.validity.tooLong) {
-    inputSearch.setCustomValidity('Должно быть от 2 до 10 символов');
-  } else if (inputSearch.validity.patternMismatch) {
-    inputSearch.setCustomValidity('Необходимо вводить кириллицей');
-  } else {
-    inputSearch.setCustomValidity('');
-  }
-} */

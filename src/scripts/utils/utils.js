@@ -18,7 +18,7 @@ export function counterCoincidencesTotal(articlesArray, keyWord) {
   return amountKeyWord;
 }
 
-export function weekObject(date, articlesArray, keyWord) {
+export function weekObject(date, articlesArray, keyWord, amountKeyWord) {
   const weekObject = [];
   for (let i = 0; i < 7; i++) {
     let currentDate = date;
@@ -32,7 +32,7 @@ export function weekObject(date, articlesArray, keyWord) {
       articlesArray,
       keyWord
     );
-    const widthPercent = Math.round((newsCount * 100) / 41);
+    const widthPercent = Math.round((newsCount * 100) / amountKeyWord);
     const dayNum = currentDate.toLocaleString('ru', optionsDate);
     weekObject.push({ dayNum, dayName, newsCount, widthPercent });
     currentDate = date.setDate(date.getDate() - 1);

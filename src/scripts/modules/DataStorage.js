@@ -17,7 +17,8 @@ export class DataStorage {
     const presentWeek = this.weekObject(
       new Date(),
       newsListObject.articles,
-      keyWord
+      keyWord,
+      amountKeyWord
     );
     const newsAnalyticsObject = {
       keyWord,

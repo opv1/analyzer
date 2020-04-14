@@ -32,3 +32,15 @@
     height: 492px;
   }
 }
+
+@media screen and (max-width: 424px) {
+  .page__main {
+    height: 517px;
+  }
+}
+
+@media screen and (max-width: 333px) {
+  .page__main {
+    height: 542px;
+  }
+}
