@@ -21,10 +21,14 @@ import {
 } from './scripts/utils/utils';
 
 const formateDate = new FormateDate();
+const serverUrl =
+  process.env.NODE_ENV === 'development'
+    ? 'http://newsapi.org/v2/everything?'
+    : 'https://newsapi.org/v2/everything?';
 const toDateIco = formateDate.formateDateIco(new Date());
 const fromDateIco = formateDate.formateDateAgoIco(new Date(), 6);
 const newsApi = new NewsApi({
-  apiUrl: 'https://newsapi.org/v2/everything?',
+  apiUrl: serverUrl,
   language: 'ru',
   fromDate: `${fromDateIco}`,
   toDate: `${toDateIco}`,
