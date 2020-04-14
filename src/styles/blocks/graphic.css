@@ -12,7 +12,7 @@
 .graphic__caption {
   margin: 0;
   margin-bottom: 50px;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: normal;
   font-size: 26px;
   line-height: 30px;
@@ -20,7 +20,7 @@
 
 .graphic__block_head {
   display: flex;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 12px;
   line-height: 16px;
@@ -42,7 +42,7 @@
 
 .row__cell {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 12px;
   line-height: 16px;
@@ -59,7 +59,7 @@
 }
 
 .graphic__column_y {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
@@ -118,6 +118,22 @@
 
 .graphic__column_x:nth-child(7) {
   width: 34%;
+}
+
+.graphic__text-white {
+  color: #ffffff;
+}
+
+.graphic__text-black {
+  color: #1a1b22;
+}
+
+.graphic__text-grey {
+  color: #b6bcbf;
+}
+
+.graphic__background-grey {
+  background: #f5f6f7;
 }
 
 @media screen and (max-width: 1023px) {

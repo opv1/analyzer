@@ -24,7 +24,7 @@
 
 .commits__caption {
   margin: 0;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: normal;
   font-size: 40px;
   line-height: 46px;
@@ -32,11 +32,19 @@
 
 .commits__analytics {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
   text-decoration: none;
+}
+
+.commits__text-black {
+  color: #1a1b22;
+}
+
+.commits__background-grey {
+  background: #f5f6f7;
 }
 
 @media screen and (max-width: 1240px) {

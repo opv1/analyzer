@@ -12,37 +12,47 @@
     <div class="page page__about">
       <header class="header shadow__lighter">
         <div class="header__wrapper">
-          <span class="header__caption text__black">NewsAnalyzer</span>
+          <span class="header__caption header__text-black">NewsAnalyzer</span>
           <nav class="header__navigation">
-            <a class="header__main text__grey hover__black" href="index.html"
-              >Главная</a
-            >
-            <a class="header__about text__black active__about">О проекте</a>
+            <ul class="header__list">
+              <li class="header__list-item">
+                <a
+                  class="header__main header__text-grey header__hover-black"
+                  href="./index.html"
+                  >Главная</a
+                >
+              </li>
+              <li class="header__list-item">
+                <a class="header__about header__text-black header__active-about"
+                  >О проекте</a
+                >
+              </li>
+            </ul>
           </nav>
         </div>
       </header>
       <main class="content">
         <section class="customer">
           <div class="cusotmer__wrapper">
-            <h1 class="customer__caption text__black">Клиентам</h1>
+            <h1 class="customer__caption customer__text-black">Клиентам</h1>
             <div class="customer__info">
-              <p class="customer__text text__black">
+              <p class="customer__text customer__text-black">
                 Этот сайт — дипломный проект студента Яндкс.Практикума. Его цель
                 — показать, чему научился студент, и какими технологиями
                 владеет.
               </p>
-              <p class="customer__text text__black">
+              <p class="customer__text customer__text-black">
                 Вёртска сайта выполнена по методологии БЭМ. Это делает сайт
                 гибким и масштабируемым. Кроме того, добавлять новые страницы и
                 функциальность проще и быстрее, чем в проектах, выполненных по
                 другим методологиям. Также сайт проще и дешевле поддерживать.
               </p>
-              <p class="customer__text text__black">
+              <p class="customer__text customer__text-black">
                 Карточки с новостям приходят с сервера и обрабатываются
                 асихронно. То есть сайт продолжает работать, пока от сервера
                 приходит ответ. Это повышает удобство использования сервиса.
               </p>
-              <p class="customer__text text__black">
+              <p class="customer__text customer__text-black">
                 При создании проекта была использона сборка технологией Webpack.
                 Это современных подход к разработке сайтов. Код оптимизируется,
                 а значит, сайт работает быстрее. Также сайт работает в старых
@@ -50,16 +60,18 @@
                 операционных систем у них не будет проблем с отображением. А
                 значит потенциальная аудитория возрастает.
               </p>
-              <p class="customer__text text__black">
+              <p class="customer__text customer__text-black">
                 Проект был проверен экспертами Яндекс.Практикума. И если вашему
                 бизесу нужен сайт, мы рекомендуем обратиться к этому студенту.
               </p>
             </div>
           </div>
         </section>
-        <section class="stack background__grey">
+        <section class="stack stack__background-grey">
           <div class="stack__wrapper">
-            <h2 class="stack__caption text__black">Используемые технологии</h2>
+            <h2 class="stack__caption stack__text-black">
+              Используемые технологии
+            </h2>
             <picture class="stack__technology">
               <img
                 class="stack__icon"
@@ -92,13 +104,13 @@
               alt="Фото автора"
             />
             <div class="author__info">
-              <h2 class="author__caption text__black">Об авторе</h2>
-              <p class="author__text text__black">
+              <h2 class="author__caption author__text-black">Об авторе</h2>
+              <p class="author__text author__text-black">
                 Это блок с описаением автора проекта. Здесь следует указать, как
                 вас зовут, чем вы занимаетесь, какими технологиями разработки
                 владете.
               </p>
-              <p class="author__text text__black">
+              <p class="author__text author__text-black">
                 Также можно рассказать о процессе обучения в Практикуме, чему вы
                 тут научились, и чем можете помочь потенциальным заказчикам.
                 Если хотите, оставьте свои контакты: email и телефон. Так
@@ -107,14 +119,14 @@
             </div>
           </div>
         </section>
-        <section class="commits background__grey">
+        <section class="commits commits__background-grey">
           <div class="commits__wrapper">
             <div class="commits__inline">
-              <h2 class="commits__caption text__black">
+              <h2 class="commits__caption commits__text-black">
                 История коммитов из GitHub
               </h2>
               <a
-                class="commits__analytics text__black"
+                class="commits__analytics commits__text-black"
                 href="https://github.com/opv1/yp-diplom/commits/master/"
                 target="_blank"
                 >Открыть в GitHub <span class="commits__arrow">&#8250;</span></a
@@ -122,122 +134,7 @@
             </div>
           </div>
           <div class="slider swiper-container">
-            <div class="swiper-wrapper">
-              <div class="slider__item swiper-slide">
-                <p class="slider__date text__grey">14 августа, 2019</p>
-                <div class="slider__author">
-                  <img
-                    src="<%=require('./images/image-031.png').default%>"
-                    alt="Аватар"
-                    class="slider__image"
-                  />
-                  <div class="slider__info">
-                    <p class="slider__name text__black">Инга Иванова</p>
-                    <p class="slider__email text__black">ingaiva@yandex.ru</p>
-                  </div>
-                </div>
-                <p class="slider__description text__black">
-                  With Emmet, you can type CSS-like expressions that can be
-                  dynamically parsed, and produce output depending on what you
-                  type in the abb...
-                </p>
-              </div>
-              <div class="slider__item swiper-slide">
-                <p class="slider__date text__grey">14 августа, 2019</p>
-                <div class="slider__author">
-                  <img
-                    src="<%=require('./images/image-031.png').default%>"
-                    alt="Аватар"
-                    class="slider__image"
-                  />
-                  <div class="slider__info">
-                    <p class="slider__name text__black">Инга Иванова</p>
-                    <p class="slider__email text__black">ingaiva@yandex.ru</p>
-                  </div>
-                </div>
-                <p class="slider__description text__black">
-                  With Emmet, you can type CSS-like expressions that can be
-                  dynamically parsed, and produce output depending on what you
-                  type in the abb...
-                </p>
-              </div>
-              <div class="slider__item swiper-slide">
-                <p class="slider__date text__grey">14 августа, 2019</p>
-                <div class="slider__author">
-                  <img
-                    src="<%=require('./images/image-031.png').default%>"
-                    alt="Аватар"
-                    class="slider__image"
-                  />
-                  <div class="slider__info">
-                    <p class="slider__name text__black">Инга Иванова</p>
-                    <p class="slider__email text__black">ingaiva@yandex.ru</p>
-                  </div>
-                </div>
-                <p class="slider__description text__black">
-                  With Emmet, you can type CSS-like expressions that can be
-                  dynamically parsed, and produce output depending on what you
-                  type in the abb...
-                </p>
-              </div>
-              <div class="slider__item swiper-slide">
-                <p class="slider__date text__grey">14 августа, 2019</p>
-                <div class="slider__author">
-                  <img
-                    src="<%=require('./images/image-031.png').default%>"
-                    alt="Аватар"
-                    class="slider__image"
-                  />
-                  <div class="slider__info">
-                    <p class="slider__name text__black">Инга Иванова</p>
-                    <p class="slider__email text__black">ingaiva@yandex.ru</p>
-                  </div>
-                </div>
-                <p class="slider__description text__black">
-                  With Emmet, you can type CSS-like expressions that can be
-                  dynamically parsed, and produce output depending on what you
-                  type in the abb...
-                </p>
-              </div>
-              <div class="slider__item swiper-slide">
-                <p class="slider__date text__grey">14 августа, 2019</p>
-                <div class="slider__author">
-                  <img
-                    src="<%=require('./images/image-031.png').default%>"
-                    alt="Аватар"
-                    class="slider__image"
-                  />
-                  <div class="slider__info">
-                    <p class="slider__name text__black">Инга Иванова</p>
-                    <p class="slider__email text__black">ingaiva@yandex.ru</p>
-                  </div>
-                </div>
-                <p class="slider__description text__black">
-                  With Emmet, you can type CSS-like expressions that can be
-                  dynamically parsed, and produce output depending on what you
-                  type in the abb...
-                </p>
-              </div>
-              <div class="slider__item swiper-slide">
-                <p class="slider__date text__grey">14 августа, 2019</p>
-                <div class="slider__author">
-                  <img
-                    src="<%=require('./images/image-031.png').default%>"
-                    alt="Аватар"
-                    class="slider__image"
-                  />
-                  <div class="slider__info">
-                    <p class="slider__name text__black">Инга Иванова</p>
-                    <p class="slider__email text__black">ingaiva@yandex.ru</p>
-                  </div>
-                </div>
-                <p class="slider__description text__black">
-                  With Emmet, you can type CSS-like expressions that can be
-                  dynamically parsed, and produce output depending on what you
-                  type in the abb...
-                </p>
-              </div>
-            </div>
+            <div class="swiper-wrapper"></div>
             <div class="slider__button-next"></div>
             <div class="slider__button-prev"></div>
           </div>
@@ -246,22 +143,34 @@
       </main>
       <footer class="footer">
         <div class="footer__wrapper">
-          <p class="footer__copyright text__grey">
+          <p class="footer__copyright footer__text-grey">
             &copy; 2020. Павел Овечкин
           </p>
           <nav class="footer__navigation">
-            <a class="footer__nav-item text__black" href="index.html"
-              >Главная</a
-            >
-            <a class="footer__nav-item text__black" href="about.html"
-              >О проекте</a
-            >
-            <a
-              class="footer__nav-item text__black"
-              href="https://praktikum.yandex.ru/"
-              target="_blank"
-              >Яндекс.Практикум</a
-            >
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a
+                  class="footer__nav-item footer__text-black"
+                  href="./index.html"
+                  >Главная</a
+                >
+              </li>
+              <li class="footer__list-item">
+                <a
+                  class="footer__nav-item footer__text-black"
+                  href="./about/about.html"
+                  >О проекте</a
+                >
+              </li>
+              <li class="footer__list-item">
+                <a
+                  class="footer__nav-item footer__text-black"
+                  href="https://praktikum.yandex.ru/"
+                  target="_blank"
+                  >Яндекс.Практикум</a
+                >
+              </li>
+            </ul>
           </nav>
           <div class="footer__links">
             <a

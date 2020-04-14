@@ -12,7 +12,7 @@
 
 .navigation__main {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
@@ -21,10 +21,18 @@
 
 .navigation__analytics {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
+}
+
+.navigation__text-black {
+  color: #1a1b22;
+}
+
+.navigation__text-grey {
+  color: #b6bcbf;
 }
 
 @media screen and (max-width: 767px) {

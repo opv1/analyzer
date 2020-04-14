@@ -82,11 +82,14 @@
   width: 64px;
   height: 64px;
   border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .slider__date {
   text-align: left;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 14px;
   line-height: 22px;
@@ -94,7 +97,7 @@
 }
 
 .slider__name {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: normal;
   font-size: 26px;
   line-height: 30px;
@@ -102,7 +105,7 @@
 }
 
 .slider__email {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 14px;
   line-height: 22px;
@@ -110,7 +113,7 @@
 }
 
 .slider__description {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
@@ -154,6 +157,14 @@
 
 .swiper-button-disabled {
   display: none;
+}
+
+.slider__text-black {
+  color: #1a1b22;
+}
+
+.slider__text-grey {
+  color: #b6bcbf;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {

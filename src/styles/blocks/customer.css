@@ -13,7 +13,7 @@
 
 .customer__caption {
   margin: 0;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: normal;
   font-size: 40px;
   line-height: 46px;
@@ -24,10 +24,14 @@
 }
 
 .customer__text {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 18px;
   line-height: 24px;
+}
+
+.customer__text-black {
+  color: #1a1b22;
 }
 
 @media screen and (max-width: 1240px) {
