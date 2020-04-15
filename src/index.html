@@ -38,7 +38,7 @@
               <h1 class="search__caption search__text-white">
                 Что в мире творится?
               </h1>
-              <h2 class="search__info search__text-white">
+              <h2 class="search__description search__text-white">
                 Введите в поиске любую тему и узнайте, насколько популярной она
                 была в новостях за прошедшую неделю.
               </h2>
@@ -97,7 +97,7 @@
         </section>
         <section class="result result__background-grey">
           <div class="result__wrapper">
-            <div class="result__inline">
+            <div class="result__block">
               <h2 class="result__caption result__text-black">
                 Результаты поиска
               </h2>
@@ -108,31 +108,29 @@
                 <span class="result__arrow">&#8250;</span></a
               >
             </div>
-            <div class="result__cards"></div>
-            <button class="result__button result__text-black">
+            <div class="result__container"></div>
+            <button class="result__more result__text-black">
               Показать еще
             </button>
           </div>
         </section>
         <section class="author">
           <div class="author__wrapper">
-            <img
-              class="author__photo"
-              src="<%=require('./images/image-03.png').default%>"
-              alt="Фото автора"
-            />
+            <picture class="author__photo"></picture>
             <div class="author__info">
               <h2 class="author__caption author__text-black">Об авторе</h2>
               <p class="author__text author__text-black">
-                Это блок с описаением автора проекта. Здесь следует указать, как
-                вас зовут, чем вы занимаетесь, какими технологиями разработки
-                владете.
+                Добрый день. Меня зовут Павел Овечкин и это моя дипломная
+                работа, которая демонстрирует мои навыки и знания в области
+                фронтенд-разработки.
               </p>
               <p class="author__text author__text-black">
-                Также можно рассказать о процессе обучения в Практикуме, чему вы
-                тут научились, и чем можете помочь потенциальным заказчикам.
-                Если хотите, оставьте свои контакты: email и телефон. Так
-                заказчики смогут с вами связаться.
+                Процесс обучения у Яндекс.Практикума представлял из себя
+                выполнение самостоятельных работ: от простой одностраничной
+                верстки, до создания современного веб-приложения. С ними вы
+                можете ознакомиться в моем профиле на GitHub. После семи месяцев
+                обучения, я научился работать с языком гипертекстовой разметки,
+                языком стилей и языком программирования JavaScript.
               </p>
             </div>
           </div>
@@ -155,7 +153,7 @@
               <li class="footer__list-item">
                 <a
                   class="footer__nav-item footer__text-black"
-                  href="./about/about.html"
+                  href="./about.html"
                   >О проекте</a
                 >
               </li>

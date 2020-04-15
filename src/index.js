@@ -6,7 +6,7 @@ import {
   resultSection,
   cardsContainer,
   searchForm,
-  resultButton,
+  moreButton,
 } from './scripts/constants/constants';
 import { FormateDate } from './scripts/modules/FormateDate';
 import { NewsApi } from './scripts/modules/NewsApi';
@@ -21,10 +21,14 @@ import {
 } from './scripts/utils/utils';
 
 const formateDate = new FormateDate();
+const serverUrl =
+  process.env.NODE_ENV === 'development'
+    ? 'http://newsapi.org/v2/everything?'
+    : 'https://newsapi.org/v2/everything?';
 const toDateIco = formateDate.formateDateIco(new Date());
 const fromDateIco = formateDate.formateDateAgoIco(new Date(), 6);
 const newsApi = new NewsApi({
-  apiUrl: 'http://newsapi.org/v2/everything?',
+  apiUrl: serverUrl,
   language: 'ru',
   fromDate: `${fromDateIco}`,
   toDate: `${toDateIco}`,
@@ -40,13 +44,18 @@ const dataStorage = new DataStorage(
   formateMonth,
   weekObject
 );
-const newsCard = new NewsCard(cardsContainer);
-const newsCardList = new NewsCardList(newsCard, formateDate);
+const newsCard = new NewsCard();
+const newsCardList = new NewsCardList(newsCard, formateDate, cardsContainer);
 const searchInput = new SearchInput();
 
 window.onload = () => {
   if (localStorage.getItem('newsListObject') !== null) {
     const existNewsListObject = dataStorage.getData();
+    const newsAnalyticsObject = JSON.parse(
+      localStorage.getItem('newsAnalyticsObject')
+    );
+    const keyWord = newsAnalyticsObject.keyWord;
+    searchForm.elements.input.value = keyWord;
     newsCardList.renderNewsList(existNewsListObject.articles);
     resultSection.setAttribute('style', 'display: block');
   }
@@ -61,6 +70,8 @@ searchForm.addEventListener('submit', searchNews);
 function searchNews(event) {
   event.preventDefault(event);
   cardsContainer.textContent = '';
+  const inputForm = searchForm.elements.input;
+  inputForm.setAttribute('disabled', true);
   const keyWord = searchForm.elements.input.value;
   const loadingPromise = new Promise((resolve) => {
     loadingSection.setAttribute('style', 'display: block');
@@ -69,15 +80,21 @@ function searchNews(event) {
     resultSection.setAttribute('style', 'display: none');
     resolve(
       newsApi
-        .getNews(keyWord)
+        ._getNews(keyWord)
         .then((newsListObject) => newsListObject)
-        .catch(() => {
+        .catch((error) => {
+          console.log(error);
           loadingSection.setAttribute('style', 'display: none');
-          errorSection.setAttribute('style', 'display: block');
-          notFoundSection.setAttribute('style', 'display: none');
           resultSection.setAttribute('style', 'display: none');
-          console.log('Нет ответа от API!');
+          if (error.message === 'Проблемы на этапе запроса новостей!') {
+            errorSection.setAttribute('style', 'display: block');
+          } else if (
+            error.message === 'Ничего не найдено. Нулевой результат!'
+          ) {
+            notFoundSection.setAttribute('style', 'display: block');
+          }
         })
+        .finally(() => inputForm.removeAttribute('disabled'))
     );
   });
   loadingPromise
@@ -89,18 +106,10 @@ function searchNews(event) {
       errorSection.setAttribute('style', 'display: none');
       notFoundSection.setAttribute('style', 'display: none');
       resultSection.setAttribute('style', 'display: block');
-    })
-    .then(() => searchForm.reset())
-    .catch(() => {
-      console.log('Не удается отобразить новости!');
-      loadingSection.setAttribute('style', 'display: none');
-      errorSection.setAttribute('style', 'display: none');
-      notFoundSection.setAttribute('style', 'display: block');
-      resultSection.setAttribute('style', 'display: none');
     });
 }
 
-resultButton.addEventListener('click', moreNews);
+moreButton.addEventListener('click', moreNews);
 function moreNews(event) {
   const newsListObject = dataStorage.getData();
   newsCardList.renderMoreNews(newsListObject.articles);

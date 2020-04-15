@@ -1,10 +1,10 @@
-import { resultButton } from '../constants/constants';
+import { moreButton } from '../constants/constants';
 import { FormateDate } from '../modules/FormateDate';
 
 const formateDate = new FormateDate();
 
 export function hideMoreButton() {
-  resultButton.setAttribute('style', 'display: none');
+  moreButton.setAttribute('style', 'display: none');
 }
 
 export function counterCoincidencesTotal(articlesArray, keyWord) {

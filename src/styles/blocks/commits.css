@@ -14,7 +14,7 @@
   max-width: 87%;
 }
 
-.commits__inline {
+.commits__block {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,12 +39,12 @@
   text-decoration: none;
 }
 
-.commits__text-black {
-  color: #1a1b22;
-}
-
 .commits__background-grey {
   background: #f5f6f7;
+}
+
+.commits__text-black {
+  color: #1a1b22;
 }
 
 @media screen and (max-width: 1240px) {
@@ -52,7 +52,7 @@
     padding: 40px 0;
   }
 
-  .commits__inline {
+  .commits__block {
     margin-bottom: 32px;
   }
 
@@ -72,7 +72,7 @@
     max-width: 90%;
   }
 
-  .commits__inline {
+  .commits__block {
     margin-bottom: 16px;
   }
 

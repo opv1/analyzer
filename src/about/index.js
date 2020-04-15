@@ -13,11 +13,15 @@ const gitHubApi = new GitHubApi({
     'Content-Type': 'application/json',
   },
 });
-const commitCard = new CommitCard(commitsContainer);
-const commitCardList = new CommitCardList(commitCard, formateDate);
+const commitCard = new CommitCard();
+const commitCardList = new CommitCardList(
+  commitCard,
+  formateDate,
+  commitsContainer
+);
 
 gitHubApi
-  .getCommits()
+  ._getCommits()
   .then((commitsListArray) =>
     commitCardList.renderCommitList(commitsListArray)
   );

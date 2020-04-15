@@ -5,7 +5,7 @@ export class GitHubApi {
     this.apiUrl = `https://api.github.com/repos/${this.user}/${this.repository}/commits?`;
   }
 
-  getCommits() {
+  _getCommits() {
     return fetch(this.apiUrl)
       .then((res) =>
         res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`)

@@ -9,7 +9,7 @@ export class NewsApi {
     this.apiKey = options.apiKey;
   }
 
-  getNews(keyWord) {
+  _getNews(keyWord) {
     return fetch(
       `${this.apiUrl}` +
         `q=${keyWord}&` +
@@ -30,8 +30,12 @@ export class NewsApi {
           return newsListObject;
         }
       })
-      .catch(() => {
-        throw new Error('Ошибка на этапе запроса новостей!');
+      .catch((error) => {
+        if (error.message === 'Failed to fetch') {
+          throw new Error('Проблемы на этапе запроса новостей!');
+        } else {
+          throw new Error('Ничего не найдено. Нулевой результат!');
+        }
       });
   }
 }

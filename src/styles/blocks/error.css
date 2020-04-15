@@ -12,14 +12,10 @@
   margin: 0 auto;
 }
 
-.error__icon {
-  margin: 0 auto;
-  margin-bottom: 40px;
-}
-
 .error__caption {
   margin: 0 auto;
   margin-bottom: 16px;
+  text-align: center;
   font-family: 'Roboto Slab', sans-serif;
   font-weight: normal;
   font-size: 26px;
@@ -40,12 +36,12 @@
   background: #f5f6f7;
 }
 
-.error__text-black {
-  color: #1a1b22;
-}
-
 .error__text-grey {
   color: #b6bcbf;
+}
+
+.error__text-black {
+  color: #1a1b22;
 }
 
 @media screen and (max-width: 1023px) {

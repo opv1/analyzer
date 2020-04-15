@@ -1,16 +1,5 @@
 export class NewsCard {
-  constructor(cardsContainer) {
-    this.cardsContainer = cardsContainer;
-  }
-
-  renderCards(source, title, description, url, urlToImage, publishedAt) {
-    this.cardsContainer.insertAdjacentHTML(
-      'beforeend',
-      this.createCard(source, title, description, url, urlToImage, publishedAt)
-    );
-  }
-
-  createCard(source, title, description, url, urlToImage, publishedAt) {
+  _createCard(source, title, description, url, urlToImage, publishedAt) {
     const template = `
       <a class="result__link-news" href="${url}" target="_blank">
         <div class="result__card">
