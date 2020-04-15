@@ -30,7 +30,7 @@
   line-height: 64px;
 }
 
-.search__info {
+.search__description {
   margin: 0;
   max-width: 545px;
   font-family: 'Roboto', sans-serif;
@@ -99,7 +99,7 @@
     line-height: 40px;
   }
 
-  .search__info {
+  .search__description {
     max-width: 452px;
     font-size: 18px;
     line-height: 24px;
@@ -119,7 +119,7 @@
     margin-top: 30px;
   }
 
-  .search__info {
+  .search__description {
     font-size: 20px;
     line-height: 26px;
   }

@@ -19,7 +19,7 @@
   line-height: 46px;
 }
 
-.customer__info {
+.customer__block {
   max-width: 815px;
 }
 
@@ -38,6 +38,7 @@
   .customer {
     padding: 30px 0;
   }
+
   .customer__caption {
     font-size: 30px;
     line-height: 34px;

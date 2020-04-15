@@ -4,14 +4,6 @@
   width: 100%;
 }
 
-.header a.header__active-main {
-  border-bottom: 2px solid #ffffff;
-}
-
-.header a.header__active-about {
-  border-bottom: 2px solid #000000;
-}
-
 .header__wrapper {
   display: flex;
   justify-content: space-between;
@@ -56,6 +48,14 @@
   font-size: 18px;
   line-height: 24px;
   text-decoration: none;
+}
+
+.header a.header__active-main {
+  border-bottom: 2px solid #ffffff;
+}
+
+.header a.header__active-about {
+  border-bottom: 2px solid #000000;
 }
 
 .header__text-white {

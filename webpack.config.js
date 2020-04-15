@@ -40,10 +40,10 @@ module.exports = {
     analytics: './analytics/index.js',
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'dist'),
   },
-  devtool: isDev ? 'source-map' : '',
+
   module: {
     rules: [
       {
@@ -77,6 +77,7 @@ module.exports = {
       },
     ],
   },
+
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
@@ -93,7 +94,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html',
       minify: {
-        collapseWhitespace: isProd,
+        collapseWhitespace: isDev,
       },
     }),
     new HtmlWebpackPlugin({
@@ -101,7 +102,7 @@ module.exports = {
       filename: './about.html',
       hash: true,
       minify: {
-        collapseWhitespace: isProd,
+        collapseWhitespace: isDev,
       },
     }),
     new HtmlWebpackPlugin({
@@ -109,7 +110,7 @@ module.exports = {
       filename: './analytics.html',
       hash: true,
       minify: {
-        collapseWhitespace: isProd,
+        collapseWhitespace: isDev,
       },
     }),
     new WebpackMd5Hash(),
@@ -117,4 +118,9 @@ module.exports = {
       NODE_ENV: JSON.stringify(process.env.NODE_ENV),
     }),
   ],
+
+  devtool: isDev ? 'source-map' : '',
+  devServer: {
+    open: 'Chrome',
+  },
 };

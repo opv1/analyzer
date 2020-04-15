@@ -2,9 +2,10 @@ import { RENDER_NUMBER_NEWS } from '../constants/constants';
 import { hideMoreButton } from '../utils/utils';
 
 export class NewsCardList {
-  constructor(classNewsCard, classFormateDate) {
+  constructor(classNewsCard, classFormateDate, cardsContainer) {
     this.classNewsCard = classNewsCard;
     this.classFormateDate = classFormateDate;
+    this.cardsContainer = cardsContainer;
     this.initialAmount = 0;
   }
 
@@ -23,13 +24,16 @@ export class NewsCardList {
         const publishedAt = this.classFormateDate.formateDateLocal(
           new Date(articlesArray[i].publishedAt)
         );
-        this.classNewsCard.renderCards(
-          source,
-          title,
-          description,
-          url,
-          urlToImage,
-          publishedAt
+        this.cardsContainer.insertAdjacentHTML(
+          'beforeend',
+          this.classNewsCard._createCard(
+            source,
+            title,
+            description,
+            url,
+            urlToImage,
+            publishedAt
+          )
         );
       } else {
         hideMoreButton();
