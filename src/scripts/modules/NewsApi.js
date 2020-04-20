@@ -1,4 +1,4 @@
-export class NewsApi {
+export default class NewsApi {
   constructor(options) {
     this.apiUrl = options.apiUrl;
     this.language = options.language;
@@ -9,7 +9,7 @@ export class NewsApi {
     this.apiKey = options.apiKey;
   }
 
-  _getNews(keyWord) {
+  getNews(keyWord) {
     return fetch(
       `${this.apiUrl}` +
         `q=${keyWord}&` +
@@ -21,7 +21,7 @@ export class NewsApi {
         `apiKey=${this.apiKey}`
     )
       .then((res) =>
-        res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`)
+        res.ok ? res.json() : Promise.reject(new Error(`${res.status}`))
       )
       .then((newsListObject) => {
         if (newsListObject.totalResults === 0) {

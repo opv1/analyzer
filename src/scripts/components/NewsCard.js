@@ -1,6 +1,6 @@
-export class NewsCard {
-  _createCard(source, title, description, url, urlToImage, publishedAt) {
-    const template = `
+export default class NewsCard {
+  createCard(source, title, description, url, urlToImage, publishedAt) {
+    this.template = `
       <a class="result__link-news" href="${url}" target="_blank">
         <div class="result__card">
           <div class="result__image" style="background-image: url(${urlToImage})"></div>
@@ -12,6 +12,6 @@ export class NewsCard {
           </div>
         </div>
       </a>`;
-    return template;
+    return this.template;
   }
 }

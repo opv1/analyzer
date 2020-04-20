@@ -1,9 +1,10 @@
-import '../scripts/utils/swiper.js';
+import '../styles/about.css';
+import '../scripts/utils/swiper';
 import { commitsContainer } from '../scripts/constants/constants';
-import { FormateDate } from '../scripts/modules/FormateDate.js';
-import { GitHubApi } from '../scripts/modules/GitHubApi.js';
-import { CommitCard } from '../scripts/components/CommitCard.js';
-import { CommitCardList } from '../scripts/components/CommitCardList.js';
+import FormateDate from '../scripts/modules/FormateDate';
+import GitHubApi from '../scripts/modules/GitHubApi';
+import CommitCard from '../scripts/components/CommitCard';
+import CommitCardList from '../scripts/components/CommitCardList';
 
 const formateDate = new FormateDate();
 const gitHubApi = new GitHubApi({
@@ -21,7 +22,7 @@ const commitCardList = new CommitCardList(
 );
 
 gitHubApi
-  ._getCommits()
+  .getCommits()
   .then((commitsListArray) =>
     commitCardList.renderCommitList(commitsListArray)
   );

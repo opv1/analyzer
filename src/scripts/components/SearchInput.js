@@ -1,14 +1,17 @@
-export class SearchInput {
+export default class SearchInput {
   checkInput(searchForm) {
-    const inputForm = searchForm.elements.input;
-    if (inputForm.validity.valueMissing) {
-      inputForm.setCustomValidity('Нужно ввести ключевое слово');
-    } else if (inputForm.validity.tooShort || inputForm.validity.tooLong) {
-      inputForm.setCustomValidity('Должно быть от 2 до 10 символов');
-    } else if (inputForm.validity.patternMismatch) {
-      inputForm.setCustomValidity('Необходимо вводить кириллицей');
+    this.inputForm = searchForm.elements.input;
+    if (this.inputForm.validity.valueMissing) {
+      this.inputForm.setCustomValidity('Нужно ввести ключевое слово');
+    } else if (
+      this.inputForm.validity.tooShort ||
+      this.inputForm.validity.tooLong
+    ) {
+      this.inputForm.setCustomValidity('Должно быть от 2 до 10 символов');
+    } else if (this.inputForm.validity.patternMismatch) {
+      this.inputForm.setCustomValidity('Необходимо вводить кириллицей');
     } else {
-      inputForm.setCustomValidity('');
+      this.inputForm.setCustomValidity('');
     }
   }
 }
