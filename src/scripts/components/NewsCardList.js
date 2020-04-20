@@ -1,7 +1,7 @@
 import { RENDER_NUMBER_NEWS } from '../constants/constants';
 import { hideMoreButton } from '../utils/utils';
 
-export class NewsCardList {
+export default class NewsCardList {
   constructor(classNewsCard, classFormateDate, cardsContainer) {
     this.classNewsCard = classNewsCard;
     this.classFormateDate = classFormateDate;
@@ -13,20 +13,18 @@ export class NewsCardList {
     for (
       let i = this.initialAmount;
       i < this.initialAmount + RENDER_NUMBER_NEWS;
-      i++
+      i += 1
     ) {
       if (articlesArray[i]) {
-        const source = articlesArray[i].source;
-        const title = articlesArray[i].title;
-        const description = articlesArray[i].description;
-        const url = articlesArray[i].url;
-        const urlToImage = articlesArray[i].urlToImage;
+        const { source, title, description, url, urlToImage } = articlesArray[
+          i
+        ];
         const publishedAt = this.classFormateDate.formateDateLocal(
           new Date(articlesArray[i].publishedAt)
         );
         this.cardsContainer.insertAdjacentHTML(
           'beforeend',
-          this.classNewsCard._createCard(
+          this.classNewsCard.createCard(
             source,
             title,
             description,

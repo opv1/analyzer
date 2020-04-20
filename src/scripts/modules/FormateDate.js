@@ -1,22 +1,22 @@
-export class FormateDate {
+export default class FormateDate {
   formateDateLocal(date) {
-    const optionsDate = {
+    this.optionsDate = {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
     };
-    const dateLocal = date.toLocaleString('ru', optionsDate);
+    const dateLocal = date.toLocaleString('ru', this.optionsDate);
     return dateLocal;
   }
 
   formateDateIco(date) {
-    const dateIco = date.toISOString().slice(0, 10);
-    return dateIco;
+    this.dateIco = date.toISOString().slice(0, 10);
+    return this.dateIco;
   }
 
   formateDateAgoIco(date, days) {
     date.setDate(date.getDate() - days);
-    const dateIco = date.toISOString().slice(0, 10);
-    return dateIco;
+    this.dateIco = date.toISOString().slice(0, 10);
+    return this.dateIco;
   }
 }

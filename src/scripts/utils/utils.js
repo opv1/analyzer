@@ -1,5 +1,5 @@
 import { moreButton } from '../constants/constants';
-import { FormateDate } from '../modules/FormateDate';
+import FormateDate from '../modules/FormateDate';
 
 const formateDate = new FormateDate();
 
@@ -18,28 +18,6 @@ export function counterCoincidencesTotal(articlesArray, keyWord) {
   return amountKeyWord;
 }
 
-export function weekObject(date, articlesArray, keyWord, amountKeyWord) {
-  const weekObject = [];
-  for (let i = 0; i < 7; i++) {
-    let currentDate = date;
-    const optionsDate = {
-      day: 'numeric',
-    };
-    const days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
-    const dayName = days[currentDate.getDay()];
-    const newsCount = counterCoincidencesWeek(
-      currentDate,
-      articlesArray,
-      keyWord
-    );
-    const widthPercent = Math.round((newsCount * 100) / amountKeyWord);
-    const dayNum = currentDate.toLocaleString('ru', optionsDate);
-    weekObject.push({ dayNum, dayName, newsCount, widthPercent });
-    currentDate = date.setDate(date.getDate() - 1);
-  }
-  return weekObject;
-}
-
 function counterCoincidencesWeek(currentDate, articlesArray, keyWord) {
   const regExp = new RegExp(`${keyWord}`, `gi`);
   let counter = 0;
@@ -54,6 +32,29 @@ function counterCoincidencesWeek(currentDate, articlesArray, keyWord) {
     }
   });
   return counter;
+}
+
+export function weekObject(date, articlesArray, keyWord, amountKeyWord) {
+  const week = [];
+  for (let i = 0; i < 7; i += 1) {
+    let currentDate = date;
+    const optionsDate = {
+      day: 'numeric',
+    };
+    const days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+    const dayName = days[currentDate.getDay()];
+    const newsCount = counterCoincidencesWeek(
+      currentDate,
+      articlesArray,
+      keyWord
+    );
+    const widthPercent = Math.round((newsCount * 100) / amountKeyWord);
+    const dayNum = currentDate.toLocaleString('ru', optionsDate);
+
+    week.push({ dayNum, dayName, newsCount, widthPercent });
+    currentDate = date.setDate(date.getDate() - 1);
+  }
+  return week;
 }
 
 export function formateMonth(date) {

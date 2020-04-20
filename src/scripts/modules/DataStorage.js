@@ -1,4 +1,4 @@
-export class DataStorage {
+export default class DataStorage {
   constructor(counterCoincidencesTotal, formateMonth, weekObject) {
     this.counterCoincidencesTotal = counterCoincidencesTotal;
     this.formateMonth = formateMonth;
@@ -8,7 +8,7 @@ export class DataStorage {
   setData(newsListObject, queryWord) {
     localStorage.setItem('newsListObject', JSON.stringify(newsListObject));
     const keyWord = queryWord;
-    const totalResults = newsListObject.totalResults;
+    const { totalResults } = newsListObject;
     const amountKeyWord = this.counterCoincidencesTotal(
       newsListObject.articles,
       keyWord
@@ -31,9 +31,5 @@ export class DataStorage {
       'newsAnalyticsObject',
       JSON.stringify(newsAnalyticsObject)
     );
-  }
-
-  getData() {
-    return JSON.parse(localStorage.getItem('newsListObject'));
   }
 }

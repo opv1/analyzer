@@ -1,4 +1,4 @@
-import './styles/index.css';
+import '../styles/index.css';
 import {
   loadingSection,
   errorSection,
@@ -7,18 +7,18 @@ import {
   cardsContainer,
   searchForm,
   moreButton,
-} from './scripts/constants/constants';
-import { FormateDate } from './scripts/modules/FormateDate';
-import { NewsApi } from './scripts/modules/NewsApi';
-import { DataStorage } from './scripts/modules/DataStorage';
-import { NewsCard } from './scripts/components/NewsCard';
-import { NewsCardList } from './scripts/components/NewsCardList';
-import { SearchInput } from './scripts/components/SearchInput';
+} from '../scripts/constants/constants';
+import FormateDate from '../scripts/modules/FormateDate';
+import NewsApi from '../scripts/modules/NewsApi';
+import DataStorage from '../scripts/modules/DataStorage';
+import NewsCard from '../scripts/components/NewsCard';
+import NewsCardList from '../scripts/components/NewsCardList';
+import SearchInput from '../scripts/components/SearchInput';
 import {
   counterCoincidencesTotal,
   formateMonth,
   weekObject,
-} from './scripts/utils/utils';
+} from '../scripts/utils/utils';
 
 const formateDate = new FormateDate();
 const serverUrl =
@@ -50,23 +50,24 @@ const searchInput = new SearchInput();
 
 window.onload = () => {
   if (localStorage.getItem('newsListObject') !== null) {
-    const existNewsListObject = dataStorage.getData();
+    const existNewsListObject = JSON.parse(
+      localStorage.getItem('newsListObject')
+    );
     const newsAnalyticsObject = JSON.parse(
       localStorage.getItem('newsAnalyticsObject')
     );
-    const keyWord = newsAnalyticsObject.keyWord;
+    const { keyWord } = newsAnalyticsObject;
     searchForm.elements.input.value = keyWord;
     newsCardList.renderNewsList(existNewsListObject.articles);
     resultSection.setAttribute('style', 'display: block');
   }
 };
 
-searchForm.addEventListener('input', checkInput);
-function checkInput(event) {
+function checkInput() {
   return searchInput.checkInput(searchForm);
 }
+searchForm.addEventListener('input', checkInput);
 
-searchForm.addEventListener('submit', searchNews);
 function searchNews(event) {
   event.preventDefault(event);
   cardsContainer.textContent = '';
@@ -80,10 +81,9 @@ function searchNews(event) {
     resultSection.setAttribute('style', 'display: none');
     resolve(
       newsApi
-        ._getNews(keyWord)
+        .getNews(keyWord)
         .then((newsListObject) => newsListObject)
         .catch((error) => {
-          console.log(error);
           loadingSection.setAttribute('style', 'display: none');
           resultSection.setAttribute('style', 'display: none');
           if (error.message === 'Проблемы на этапе запроса новостей!') {
@@ -100,7 +100,7 @@ function searchNews(event) {
   loadingPromise
     .then((newsListObject) => dataStorage.setData(newsListObject, keyWord))
     .then(() => {
-      const newsListObject = dataStorage.getData();
+      const newsListObject = JSON.parse(localStorage.getItem('newsListObject'));
       newsCardList.renderNewsList(newsListObject.articles);
       loadingSection.setAttribute('style', 'display: none');
       errorSection.setAttribute('style', 'display: none');
@@ -108,9 +108,10 @@ function searchNews(event) {
       resultSection.setAttribute('style', 'display: block');
     });
 }
+searchForm.addEventListener('submit', searchNews);
 
-moreButton.addEventListener('click', moreNews);
-function moreNews(event) {
-  const newsListObject = dataStorage.getData();
+function moreNews() {
+  const newsListObject = JSON.parse(localStorage.getItem('newsListObject'));
   newsCardList.renderMoreNews(newsListObject.articles);
 }
+moreButton.addEventListener('click', moreNews);
