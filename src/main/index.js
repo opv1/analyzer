@@ -23,8 +23,8 @@ import {
 const formateDate = new FormateDate();
 const serverUrl =
   process.env.NODE_ENV === 'development'
-    ? 'http://newsapi.org/v2/everything?'
-    : 'https://newsapi.org/v2/everything?';
+    ? 'https://praktikum.tk/news/v2/everything?'
+    : 'https://praktikum.tk/news/v2/everything?';
 const toDateIco = formateDate.formateDateIco(new Date());
 const fromDateIco = formateDate.formateDateAgoIco(new Date(), 6);
 const newsApi = new NewsApi({
