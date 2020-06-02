@@ -9,7 +9,7 @@
 
 ## [Увидеть проект](https://opv1.github.io/yp-graduate-work/)
 
-### Настройка проекта
+## Настройка проекта
 
 ```
 npm run dev
