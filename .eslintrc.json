@@ -4,7 +4,10 @@
     "es6": true,
     "node": true
   },
-  "extends": ["airbnb", "prettier"],
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -13,15 +16,12 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["prettier"],
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
-    "no-console": "warn",
-    "func-names": "warn",
-    "no-unused-vars": "warn",
+    "no-undef": "off",
     "array-callback-return": "warn",
-    "no-restricted-syntax": "warn",
-    "no-undef": "warn",
-    "prefer-destructuring": "warn",
-    "class-methods-use-this": "warn"
+    "no-restricted-syntax": "off"
   }
 }

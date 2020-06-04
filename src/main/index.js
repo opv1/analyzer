@@ -23,7 +23,7 @@ import {
 const formateDate = new FormateDate();
 const serverUrl =
   process.env.NODE_ENV === 'development'
-    ? 'https://praktikum.tk/news/v2/everything?'
+    ? 'http://praktikum.tk/news/v2/everything?'
     : 'https://praktikum.tk/news/v2/everything?';
 const toDateIco = formateDate.formateDateIco(new Date());
 const fromDateIco = formateDate.formateDateAgoIco(new Date(), 6);

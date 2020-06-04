@@ -30,6 +30,7 @@ function counterCoincidencesWeek(currentDate, articlesArray, keyWord) {
     ) {
       counter += 1;
     }
+    return false;
   });
   return counter;
 }
