@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opv1/yp-course-3.git"
+    "url": "git+https://github.com/opv1/yp-graduate-work.git"
   },
   "author": "Pavel Ovechkin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/opv1/yp-course-3/issues"
+    "url": "https://github.com/opv1/yp-graduate-work/issues"
   },
-  "homepage": "https://github.com/opv1/yp-course-3#readme",
+  "homepage": "https://github.com/opv1/yp-graduate-work#readme",
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
