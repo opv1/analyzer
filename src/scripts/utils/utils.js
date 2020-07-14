@@ -1,5 +1,5 @@
 import { moreButton } from '../constants/constants';
-import { FormateDate } from '../modules/FormateDate';
+import FormateDate from '../modules/FormateDate';
 
 const formateDate = new FormateDate();
 
@@ -18,9 +18,26 @@ export function counterCoincidencesTotal(articlesArray, keyWord) {
   return amountKeyWord;
 }
 
+function counterCoincidencesWeek(currentDate, articlesArray, keyWord) {
+  const regExp = new RegExp(`${keyWord}`, `gi`);
+  let counter = 0;
+  articlesArray.map((article) => {
+    const localDate = new Date(article.publishedAt);
+    if (
+      formateDate.formateDateLocal(localDate) ===
+        formateDate.formateDateLocal(currentDate) &&
+      article.title.match(regExp)
+    ) {
+      counter += 1;
+    }
+    return false;
+  });
+  return counter;
+}
+
 export function weekObject(date, articlesArray, keyWord, amountKeyWord) {
-  const weekObject = [];
-  for (let i = 0; i < 7; i++) {
+  const week = [];
+  for (let i = 0; i < 7; i += 1) {
     let currentDate = date;
     const optionsDate = {
       day: 'numeric',
@@ -34,26 +51,11 @@ export function weekObject(date, articlesArray, keyWord, amountKeyWord) {
     );
     const widthPercent = Math.round((newsCount * 100) / amountKeyWord);
     const dayNum = currentDate.toLocaleString('ru', optionsDate);
-    weekObject.push({ dayNum, dayName, newsCount, widthPercent });
+
+    week.push({ dayNum, dayName, newsCount, widthPercent });
     currentDate = date.setDate(date.getDate() - 1);
   }
-  return weekObject;
-}
-
-function counterCoincidencesWeek(currentDate, articlesArray, keyWord) {
-  const regExp = new RegExp(`${keyWord}`, `gi`);
-  let counter = 0;
-  articlesArray.map((article) => {
-    const localDate = new Date(article.publishedAt);
-    if (
-      formateDate.formateDateLocal(localDate) ===
-        formateDate.formateDateLocal(currentDate) &&
-      article.title.match(regExp)
-    ) {
-      counter += 1;
-    }
-  });
-  return counter;
+  return week;
 }
 
 export function formateMonth(date) {

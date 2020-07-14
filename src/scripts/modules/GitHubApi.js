@@ -1,14 +1,14 @@
-export class GitHubApi {
+export default class GitHubApi {
   constructor(options) {
     this.user = options.user;
     this.repository = options.repository;
     this.apiUrl = `https://api.github.com/repos/${this.user}/${this.repository}/commits?`;
   }
 
-  _getCommits() {
+  getCommits() {
     return fetch(this.apiUrl)
       .then((res) =>
-        res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`)
+        res.ok ? res.json() : Promise.reject(new Error(`${res.status}`))
       )
       .then((commitsListArray) => commitsListArray)
       .catch(() => {

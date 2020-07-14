@@ -93,31 +93,6 @@
 
 .graphic__column_x:nth-child(1) {
   margin-top: 18px;
-  width: 15%;
-}
-
-.graphic__column_x:nth-child(2) {
-  width: 18%;
-}
-
-.graphic__column_x:nth-child(3) {
-  width: 11%;
-}
-
-.graphic__column_x:nth-child(4) {
-  width: 39%;
-}
-
-.graphic__column_x:nth-child(5) {
-  width: 45%;
-}
-
-.graphic__column_x:nth-child(6) {
-  width: 73%;
-}
-
-.graphic__column_x:nth-child(7) {
-  width: 34%;
 }
 
 .graphic__text-white {

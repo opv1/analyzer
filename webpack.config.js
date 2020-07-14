@@ -3,45 +3,35 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const Cssnano = require('cssnano');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
-const cssLoaders = (extra) => {
-  const loaders = [
-    {
-      loader: MiniCssExtractPlugin.loader,
-      options: {
-        reloadAll: true,
-      },
-    },
-    'css-loader',
-  ];
-  if (extra) {
-    loaders.push(extra);
-  }
-  return loaders;
-};
+
 const jsLoaders = () => {
   const loaders = [
     {
       loader: 'babel-loader',
     },
   ];
+  if (isDev) {
+    loaders.push('eslint-loader');
+  }
   return loaders;
 };
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    main: './index.js',
-    about: './about/index.js',
-    analytics: './analytics/index.js',
+    main: './main/index.js',
+    about: './about/about.js',
+    analytics: './analytics/analytics.js',
   },
   output: {
-    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
+    filename: './[name]/[name].[chunkhash].js',
   },
 
   module: {
@@ -52,12 +42,17 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.s[ac]ss$/,
-        use: cssLoaders('sass-loader'),
-      },
-      {
-        test: /\.css$/,
-        use: cssLoaders('postcss-loader'),
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: isDev,
+            },
+          },
+          'css-loader',
+          'postcss-loader',
+        ],
       },
       {
         test: /\.(png|jpg|gif|ico|svg)$/,
@@ -65,9 +60,6 @@ module.exports = {
           'file-loader?name=./images/[name].[ext]',
           {
             loader: 'image-webpack-loader',
-            options: {
-              reloadAll: true,
-            },
           },
         ],
       },
@@ -85,7 +77,7 @@ module.exports = {
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
+      cssProcessor: Cssnano,
       cssProcessorPluginOptions: {
         preset: ['default'],
       },
@@ -93,24 +85,25 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './index.html',
+      chunks: ['main'],
       minify: {
-        collapseWhitespace: isDev,
+        collapseWhitespace: isProd,
       },
     }),
     new HtmlWebpackPlugin({
       template: './about.html',
       filename: './about.html',
-      hash: true,
+      chunks: ['about'],
       minify: {
-        collapseWhitespace: isDev,
+        collapseWhitespace: isProd,
       },
     }),
     new HtmlWebpackPlugin({
       template: './analytics.html',
       filename: './analytics.html',
-      hash: true,
+      chunks: ['analytics'],
       minify: {
-        collapseWhitespace: isDev,
+        collapseWhitespace: isProd,
       },
     }),
     new WebpackMd5Hash(),
