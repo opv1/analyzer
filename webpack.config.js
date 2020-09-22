@@ -10,6 +10,24 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
+const cssLoaders = (extra) => {
+  const loaders = [
+    {
+      loader: MiniCssExtractPlugin.loader,
+      options: {
+        reloadAll: true,
+      },
+    },
+    'css-loader',
+  ];
+
+  if (extra) {
+    loaders.push(extra);
+  }
+
+  return loaders;
+};
+
 const jsLoaders = () => {
   const loaders = [
     {
@@ -24,11 +42,13 @@ const jsLoaders = () => {
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
+
   entry: {
     main: './main/index.js',
     about: './about/about.js',
     analytics: './analytics/analytics.js',
   },
+
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: './[name]/[name].[chunkhash].js',
@@ -43,16 +63,7 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isDev,
-            },
-          },
-          'css-loader',
-          'postcss-loader',
-        ],
+        use: cssLoaders('postcss-loader'),
       },
       {
         test: /\.(png|jpg|gif|ico|svg)$/,
@@ -60,6 +71,9 @@ module.exports = {
           'file-loader?name=./images/[name].[ext]',
           {
             loader: 'image-webpack-loader',
+            options: {
+              reloadAll: true,
+            },
           },
         ],
       },
@@ -73,7 +87,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: './[name].[chunkhash].css',
+      filename: '[name].[chunkhash].css',
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -113,7 +127,4 @@ module.exports = {
   ],
 
   devtool: isDev ? 'source-map' : '',
-  devServer: {
-    open: 'Chrome',
-  },
 };
