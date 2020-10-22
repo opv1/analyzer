@@ -13,13 +13,13 @@
 
 .author__photo {
   margin: 0;
+  border-radius: 1000px;
   width: 464px;
   height: 464px;
-  border-radius: 1000px;
-  background-image: url(https://avatars1.githubusercontent.com/u/55979609?s=400&v=4);
+  background-image: url('https://avatars1.githubusercontent.com/u/55979609?s=400&v=4');
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .author__info {
@@ -33,7 +33,7 @@
   margin: 0;
   margin-bottom: 24px;
   font-family: 'Roboto Slab', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 40px;
   line-height: 46px;
 }
@@ -41,7 +41,7 @@
 .author__text {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
 }
@@ -84,8 +84,8 @@
   }
 
   .author__wrapper {
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     max-width: 90%;
   }
 

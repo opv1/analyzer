@@ -13,25 +13,25 @@
   margin: 0;
   margin-bottom: 50px;
   font-family: 'Roboto Slab', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 26px;
   line-height: 30px;
 }
 
 .graphic__block_head {
   display: flex;
+  border-bottom: 1px solid #1a1b22;
   font-family: 'Roboto', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
-  border-bottom: 1px solid #1a1b22;
 }
 
 .graphic__block_date {
-  width: 60px;
   margin-right: 40px;
+  width: 60px;
 }
 
 .graphic__row {
@@ -43,7 +43,7 @@
 .row__cell {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.4px;
@@ -60,7 +60,7 @@
 
 .graphic__column_y {
   font-family: 'Roboto', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
 }
@@ -96,7 +96,7 @@
 }
 
 .graphic__text-white {
-  color: #ffffff;
+  color: #fff;
 }
 
 .graphic__text-black {

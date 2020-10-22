@@ -6,15 +6,15 @@
 
 .header__wrapper {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 87%;
 }
 
 .header__caption {
   font-family: 'Roboto Slab', sans-serif;
-  font-weight: bold;
+  font-weight: 900;
   font-size: 20px;
   line-height: 24px;
 }
@@ -51,15 +51,15 @@
 }
 
 .header a.header__active-main {
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid #fff;
 }
 
 .header a.header__active-about {
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid #000;
 }
 
 .header__text-white {
-  color: #ffffff;
+  color: #fff;
 }
 
 .header__text-grey {
@@ -71,15 +71,15 @@
 }
 
 .header__shadow-lighter {
-  box-shadow: inset 0px -1px 0px #d1d2d6;
+  box-shadow: inset 0 -1px 0 #d1d2d6;
 }
 
 .header__shadow-darker {
-  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .header__hover-white:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
 .header__hover-black:hover {
@@ -102,14 +102,14 @@
 
   .header__main {
     margin-right: 11px;
+    padding-bottom: 17px;
     font-size: 16px;
     line-height: 24px;
-    padding-bottom: 17px;
   }
 
   .header__about {
+    padding-bottom: 17px;
     font-size: 16px;
     line-height: 24px;
-    padding-bottom: 17px;
   }
 }

@@ -8,24 +8,24 @@
 .commits__wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 87%;
 }
 
 .commits__block {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  justify-content: space-between;
   margin-bottom: 64px;
+  width: 100%;
 }
 
 .commits__caption {
   margin: 0;
   font-family: 'Roboto Slab', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 40px;
   line-height: 46px;
 }
@@ -82,15 +82,15 @@
 
   .commits__analytics {
     position: absolute;
-    z-index: 50;
-    bottom: 0;
     left: 50%;
+    bottom: 0;
+    z-index: 50;
     margin-bottom: 32px;
-    padding: 15px 69px;
-    width: 0 auto;
     border: 1px solid #000;
     border-radius: 80px;
-    transform: translateX(-50%);
+    padding: 15px 69px;
+    width: 0 auto;
     white-space: nowrap;
+    transform: translateX(-50%);
   }
 }

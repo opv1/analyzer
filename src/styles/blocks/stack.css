@@ -6,8 +6,8 @@
 
 .stack__wrapper {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 87%;
 }
@@ -16,7 +16,7 @@
   margin: 0;
   max-width: 344px;
   font-family: 'Roboto Slab', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 40px;
   line-height: 46px;
 }
@@ -44,6 +44,7 @@
   .stack {
     padding: 40px 0;
   }
+
   .stack__caption {
     font-size: 30px;
     line-height: 40px;

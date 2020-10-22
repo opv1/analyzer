@@ -13,7 +13,7 @@
 .navigation__main {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
   text-decoration: none;
@@ -22,7 +22,7 @@
 .navigation__analytics {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
 }

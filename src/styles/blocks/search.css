@@ -9,8 +9,8 @@
 .search__wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 87%;
 }
@@ -25,7 +25,7 @@
   margin-bottom: 32px;
   max-width: 545px;
   font-family: 'Roboto Slab', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 60px;
   line-height: 64px;
 }
@@ -34,7 +34,7 @@
   margin: 0;
   max-width: 545px;
   font-family: 'Roboto', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
 }
@@ -48,23 +48,23 @@
 
 .search__input {
   margin: 0 auto;
-  min-width: 548px;
-  min-height: 64px;
-  padding: 20px 25px;
+  outline: none;
   border: 1px solid #d1d2d6;
   border-radius: 100px;
-  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  padding: 20px 25px;
+  min-width: 548px;
+  min-height: 64px;
+  box-shadow: 0 5px 15px rgba(14, 26, 57, 0.2);
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  outline: none;
   backdrop-filter: blur(8px);
 }
 
 .search__input:hover {
-  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.5);
+  box-shadow: 0 5px 15px rgba(14, 26, 57, 0.5);
   transition: box-shadow 1s ease;
 }
 
@@ -76,29 +76,29 @@
   position: absolute;
   right: -63px;
   margin: 0 auto;
-  width: 168px;
-  min-height: 66px;
-  padding: 20px 25px;
+  outline: none;
   border: 1px solid transparent;
   border-radius: 100px;
-  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  padding: 20px 25px;
+  width: 168px;
+  min-height: 66px;
+  box-shadow: 0 5px 15px rgba(14, 26, 57, 0.2);
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
-  outline: none;
   background: #347eff;
   cursor: pointer;
 }
 
 .search__button:hover {
-  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.5);
+  box-shadow: 0 5px 15px rgba(14, 26, 57, 0.5);
   transition: box-shadow 1s ease;
 }
 
 .search__text-white {
-  color: #ffffff;
+  color: #fff;
 }
 
 @media screen and (max-width: 1023px) {

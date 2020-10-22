@@ -7,14 +7,16 @@
 
 Это сервис для анализа происходящих в мире событий. Его задача — установить, насколько популярны новости на определенную тему
 
-## [Увидеть проект](https://opv1.github.io/yp-graduate-work/)
+Стек: HTML, CSS, SCSS, JavaScript, Webpack
+
+## [Увидеть проект](https://opv1.github.io/analyzer-app-yp/)
 
 ## Настройка проекта
 
 ```
-npm run dev
+npm run build
 ```
 
 ```
-npm run build
+npm run dev
 ```

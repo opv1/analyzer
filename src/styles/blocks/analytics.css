@@ -15,7 +15,7 @@
   margin: 0;
   margin-bottom: 14px;
   font-family: 'Roboto Slab', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 40px;
   line-height: 46px;
 }
@@ -26,24 +26,24 @@
 }
 
 .analytics__item {
+  list-style-type: none;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  list-style-type: none;
 }
 
 .analytics__count-week {
   font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  font-weight: 900;
   font-size: 18px;
   line-height: 24px;
 }
 
 .analytics__count-caption {
   font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  font-weight: 900;
   font-size: 18px;
   line-height: 24px;
 }
