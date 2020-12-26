@@ -1,12 +1,12 @@
-import { RENDER_NUMBER_NEWS } from '../constants/constants';
-import { hideMoreButton } from '../utils/utils';
+import { RENDER_NUMBER_NEWS } from '../constants/constants'
+import { hideMoreButton } from '../utils/utils'
 
 export default class NewsCardList {
   constructor(classNewsCard, classFormateDate, cardsContainer) {
-    this.classNewsCard = classNewsCard;
-    this.classFormateDate = classFormateDate;
-    this.cardsContainer = cardsContainer;
-    this.initialAmount = 0;
+    this.classNewsCard = classNewsCard
+    this.classFormateDate = classFormateDate
+    this.cardsContainer = cardsContainer
+    this.initialAmount = 0
   }
 
   renderNewsList(articlesArray) {
@@ -16,12 +16,10 @@ export default class NewsCardList {
       i += 1
     ) {
       if (articlesArray[i]) {
-        const { source, title, description, url, urlToImage } = articlesArray[
-          i
-        ];
+        const { source, title, description, url, urlToImage } = articlesArray[i]
         const publishedAt = this.classFormateDate.formateDateLocal(
           new Date(articlesArray[i].publishedAt)
-        );
+        )
         this.cardsContainer.insertAdjacentHTML(
           'beforeend',
           this.classNewsCard.createCard(
@@ -32,15 +30,15 @@ export default class NewsCardList {
             urlToImage,
             publishedAt
           )
-        );
+        )
       } else {
-        hideMoreButton();
+        hideMoreButton()
       }
     }
   }
 
   renderMoreNews(articlesArray) {
-    this.initialAmount += RENDER_NUMBER_NEWS;
-    this.renderNewsList(articlesArray);
+    this.initialAmount += RENDER_NUMBER_NEWS
+    this.renderNewsList(articlesArray)
   }
 }

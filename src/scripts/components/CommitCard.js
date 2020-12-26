@@ -10,7 +10,7 @@ export default class CommitCard {
         </div>
       </div>
       <p class="slider__description slider__text-black">${message}</p>
-    </div>`;
-    return this.template;
+    </div>`
+    return this.template
   }
 }

@@ -1,12 +1,12 @@
 export default class NewsApi {
   constructor(options) {
-    this.apiUrl = options.apiUrl;
-    this.language = options.language;
-    this.fromDate = options.fromDate;
-    this.toDate = options.toDate;
-    this.pageSize = options.pageSize;
-    this.sortBy = options.sortBy;
-    this.apiKey = options.apiKey;
+    this.apiUrl = options.apiUrl
+    this.language = options.language
+    this.fromDate = options.fromDate
+    this.toDate = options.toDate
+    this.pageSize = options.pageSize
+    this.sortBy = options.sortBy
+    this.apiKey = options.apiKey
   }
 
   getNews(keyWord) {
@@ -25,17 +25,17 @@ export default class NewsApi {
       )
       .then((newsListObject) => {
         if (newsListObject.totalResults === 0) {
-          throw new Error('Ничего не найдено. Нулевой результат!');
+          throw new Error('Ничего не найдено. Нулевой результат!')
         } else {
-          return newsListObject;
+          return newsListObject
         }
       })
       .catch((error) => {
         if (error.message === 'Failed to fetch') {
-          throw new Error('Проблемы на этапе запроса новостей!');
+          throw new Error('Проблемы на этапе запроса новостей!')
         } else {
-          throw new Error('Ничего не найдено. Нулевой результат!');
+          throw new Error('Ничего не найдено. Нулевой результат!')
         }
-      });
+      })
   }
 }

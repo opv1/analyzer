@@ -1,8 +1,8 @@
 export default class GitHubApi {
   constructor(options) {
-    this.user = options.user;
-    this.repository = options.repository;
-    this.apiUrl = `https://api.github.com/repos/${this.user}/${this.repository}/commits?`;
+    this.user = options.user
+    this.repository = options.repository
+    this.apiUrl = `https://api.github.com/repos/${this.user}/${this.repository}/commits?`
   }
 
   getCommits() {
@@ -12,7 +12,7 @@ export default class GitHubApi {
       )
       .then((commitsListArray) => commitsListArray)
       .catch(() => {
-        throw new Error('Ошибка на этапе запроса коммитов!');
-      });
+        throw new Error('Ошибка на этапе запроса коммитов!')
+      })
   }
 }

@@ -1,14 +1,14 @@
-const webpack = require('webpack');
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const Cssnano = require('cssnano');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackMd5Hash = require('webpack-md5-hash');
+const webpack = require('webpack')
+const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const Cssnano = require('cssnano')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WebpackMd5Hash = require('webpack-md5-hash')
 
-const isDev = process.env.NODE_ENV === 'development';
-const isProd = !isDev;
+const isDev = process.env.NODE_ENV === 'development'
+const isProd = !isDev
 
 const cssLoaders = (extra) => {
   const loaders = [
@@ -19,26 +19,24 @@ const cssLoaders = (extra) => {
       },
     },
     'css-loader',
-  ];
+  ]
 
   if (extra) {
-    loaders.push(extra);
+    loaders.push(extra)
   }
 
-  return loaders;
-};
+  return loaders
+}
 
 const jsLoaders = () => {
   const loaders = [
     {
       loader: 'babel-loader',
     },
-  ];
-  if (isDev) {
-    loaders.push('eslint-loader');
-  }
-  return loaders;
-};
+  ]
+
+  return loaders
+}
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -127,4 +125,4 @@ module.exports = {
   ],
 
   devtool: isDev ? 'source-map' : '',
-};
+}

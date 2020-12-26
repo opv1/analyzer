@@ -1,4 +1,4 @@
-import '../styles/analytics.css';
+import '../styles/analytics.css'
 import {
   analyticsContainer,
   analyticsCaption,
@@ -7,8 +7,8 @@ import {
   graphicBlockDate,
   graphicColumnsY,
   graphicColumnsX,
-} from '../scripts/constants/constants';
-import Statistics from '../scripts/components/Statistics';
+} from '../scripts/constants/constants'
+import Statistics from '../scripts/components/Statistics'
 
 const statistics = new Statistics(
   analyticsContainer,
@@ -18,17 +18,17 @@ const statistics = new Statistics(
   graphicBlockDate,
   graphicColumnsY,
   graphicColumnsX
-);
+)
 const newsAnalyticsObject = JSON.parse(
   localStorage.getItem('newsAnalyticsObject')
-);
+)
 const {
   keyWord,
   totalResults,
   amountKeyWord,
   presentMonth,
   presentWeek,
-} = newsAnalyticsObject;
+} = newsAnalyticsObject
 
 statistics.renderGraphic(
   keyWord,
@@ -36,4 +36,4 @@ statistics.renderGraphic(
   amountKeyWord,
   presentMonth,
   presentWeek
-);
+)

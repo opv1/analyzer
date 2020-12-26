@@ -1,23 +1,23 @@
 export default class CommitCardList {
   constructor(classCreateCommit, classFormateDate, commitsContainer) {
-    this.classCreateCommit = classCreateCommit;
-    this.classFormateDate = classFormateDate;
-    this.commitsContainer = commitsContainer;
+    this.classCreateCommit = classCreateCommit
+    this.classFormateDate = classFormateDate
+    this.commitsContainer = commitsContainer
   }
 
   renderCommitList(commitsListArray) {
     for (const commitObject of commitsListArray) {
       const date = this.classFormateDate.formateDateLocal(
         new Date(commitObject.commit.committer.date)
-      );
-      const { name, email } = commitObject.commit.committer;
-      const { message } = commitObject.commit;
+      )
+      const { name, email } = commitObject.commit.committer
+      const { message } = commitObject.commit
       this.commitsContainer.insertAdjacentHTML(
         'beforeend',
         this.classCreateCommit.createCommit(date, name, email, message)
-      );
+      )
     }
-    this.createPagination();
+    this.createPagination()
   }
 
   createPagination() {
@@ -47,6 +47,6 @@ export default class CommitCardList {
         nextEl: '.slider__button-next',
         prevEl: '.slider__button-prev',
       },
-    });
+    })
   }
 }

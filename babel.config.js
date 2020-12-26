@@ -13,8 +13,8 @@ const presets = [
       corejs: '3.4.1',
     },
   ],
-];
+]
 
 module.exports = {
   presets,
-};
+}

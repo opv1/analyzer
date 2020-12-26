@@ -4,19 +4,19 @@ export default class FormateDate {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
-    };
-    const dateLocal = date.toLocaleString('ru', this.optionsDate);
-    return dateLocal;
+    }
+    const dateLocal = date.toLocaleString('ru', this.optionsDate)
+    return dateLocal
   }
 
   formateDateIco(date) {
-    this.dateIco = date.toISOString().slice(0, 10);
-    return this.dateIco;
+    this.dateIco = date.toISOString().slice(0, 10)
+    return this.dateIco
   }
 
   formateDateAgoIco(date, days) {
-    date.setDate(date.getDate() - days);
-    this.dateIco = date.toISOString().slice(0, 10);
-    return this.dateIco;
+    date.setDate(date.getDate() - days)
+    this.dateIco = date.toISOString().slice(0, 10)
+    return this.dateIco
   }
 }

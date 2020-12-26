@@ -11,7 +11,7 @@ export default class NewsCard {
             <span class="result__source result__text-grey">${source.name}</span>
           </div>
         </div>
-      </a>`;
-    return this.template;
+      </a>`
+    return this.template
   }
 }
