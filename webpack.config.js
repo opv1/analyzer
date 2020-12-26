@@ -14,9 +14,6 @@ const cssLoaders = (extra) => {
   const loaders = [
     {
       loader: MiniCssExtractPlugin.loader,
-      options: {
-        reloadAll: true,
-      },
     },
     'css-loader',
   ]
