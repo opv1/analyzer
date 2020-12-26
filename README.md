@@ -7,7 +7,7 @@
 
 Это сервис для анализа происходящих в мире событий. Его задача — установить, насколько популярны новости на определенную тему
 
-Стек: HTML, CSS, SCSS, JavaScript, Webpack
+Стек: HTML, CSS, Scss, JavaScript
 
 ## [Увидеть проект](https://opv1.github.io/analyzer-app-yp/)
 
