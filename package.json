@@ -1,6 +1,6 @@
 {
-  "name": "analyzer-app-yp",
-  "version": "1.0.0",
+  "name": "analyzer-yp",
+  "version": "0.1.0",
   "description": "NewsAnalyzer",
   "private": true,
   "scripts": {
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opv1/analyzer-app-yp.git"
+    "url": "git+https://github.com/opv1/analyzer-yp.git"
   },
   "keywords": [],
   "author": "Pavel Ovechkin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/opv1/analyzer-app-yp/issues"
+    "url": "https://github.com/opv1/analyzer-yp/issues"
   },
-  "homepage": "https://github.com/opv1/analyzer-app-yp#readme",
+  "homepage": "https://github.com/opv1/analyzer-yp#readme",
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",

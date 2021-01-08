@@ -3,15 +3,9 @@
   <img src="https://img.shields.io/badge/made%20by-opv1-blue.svg">
 </p>
 
-## Описание
+## [See the project](https://opv1.github.io/analyzer-yp/)
 
-Это сервис для анализа происходящих в мире событий. Его задача — установить, насколько популярны новости на определенную тему
-
-Стек: HTML, CSS, Scss, JavaScript
-
-## [Увидеть проект](https://opv1.github.io/analyzer-app-yp/)
-
-## Настройка проекта
+## Setup
 
 ```
 npm run build
