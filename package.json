@@ -2,10 +2,11 @@
   "name": "analyzer-yp",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/opv1/analyzer-yp",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open 'Chrome' --watch",
-    "deploy": "cross-env NODE_ENV=production gh-pages -d dist"
+    "deploy": "npm run build && cross-env NODE_ENV=production gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,6 @@
   "bugs": {
     "url": "https://github.com/opv1/analyzer-yp/issues"
   },
-  "homepage": "https://github.com/opv1/analyzer-yp#readme",
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
