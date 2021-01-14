@@ -1,7 +1,6 @@
 {
   "name": "analyzer-yp",
   "version": "0.1.0",
-  "description": "NewsAnalyzer",
   "private": true,
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
@@ -13,7 +12,6 @@
     "url": "git+https://github.com/opv1/analyzer-yp.git"
   },
   "keywords": [],
-  "author": "Pavel Ovechkin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/opv1/analyzer-yp/issues"
@@ -23,7 +21,7 @@
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.2.1",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.3",
@@ -31,10 +29,10 @@
     "cssnano": "^4.1.10",
     "file-loader": "^6.2.0",
     "gh-pages": "^3.1.0",
-    "html-webpack-plugin": "^4.5.0",
+    "html-webpack-plugin": "^4.5.1",
     "image-webpack-loader": "^7.0.1",
     "lint-staged": "^10.5.3",
-    "mini-css-extract-plugin": "^1.3.3",
+    "mini-css-extract-plugin": "^1.3.4",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "path": "^0.12.7",
     "postcss-loader": "^4.1.0",
@@ -46,12 +44,13 @@
     "stylelint-scss": "^3.18.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
+    "webpack-dev-server": "^3.11.2",
     "webpack-md5-hash": "^0.0.6"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "core-js": "^3.8.1",
-    "normalize.css": "^8.0.1"
+    "core-js": "^3.8.2",
+    "normalize.css": "^8.0.1",
+    "sass": "^1.32.4"
   }
 }
