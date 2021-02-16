@@ -1,8 +1,8 @@
 {
-  "name": "analyzer-yp",
+  "name": "analyzer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/opv1/analyzer-yp",
+  "homepage": "https://github.com/opv1/analyzer",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open 'Chrome' --watch",
@@ -10,12 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opv1/analyzer-yp.git"
+    "url": "git+https://github.com/opv1/analyzer.git"
   },
   "keywords": [],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/opv1/analyzer-yp/issues"
+    "url": "https://github.com/opv1/analyzer/issues"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^3.8.2",
+    "normalize.css": "^8.0.1",
+    "sass": "^1.32.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
@@ -46,11 +52,5 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
     "webpack-md5-hash": "^0.0.6"
-  },
-  "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "core-js": "^3.8.2",
-    "normalize.css": "^8.0.1",
-    "sass": "^1.32.4"
   }
 }
