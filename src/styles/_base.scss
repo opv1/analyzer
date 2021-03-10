@@ -1,0 +1,55 @@
+@import '~normalize.css';
+
+@font-face {
+  src: url('../assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-family: 'Roboto-Regular';
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  src: url('../assets/fonts/RobotoSlab-Regular.ttf') format('truetype');
+  font-family: 'RobotoSlab-Regular';
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  src: url('../assets/fonts/SourceSansPro-Regular.ttf') format('truetype');
+  font-family: 'SourceSansPro-Regular';
+  font-weight: 400;
+  font-style: normal;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  min-width: 320px;
+  max-width: 1440px;
+  box-sizing: border-box;
+  font-family: 'Roboto-Regular', 'RobotoSlab-Regular', 'SourceSansPro-Regular',
+    'Arial', 'Helvetica', sans-serif;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 14px;
+  }
+}

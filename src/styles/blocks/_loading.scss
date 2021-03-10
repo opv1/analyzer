@@ -1,0 +1,43 @@
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+  height: 250px;
+  background: $greyBackground;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__preloader {
+    display: block;
+    border: 5px solid $greyColor;
+    border-top-color: $blueColor;
+    border-bottom-color: $blueColor;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 0.75s infinite linear;
+  }
+
+  &__text {
+    margin: 1rem;
+    font-family: 'Roboto-Regular';
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  &.hide {
+    display: none;
+  }
+}

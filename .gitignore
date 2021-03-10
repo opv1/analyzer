@@ -1,8 +1,7 @@
-# dependencies
+# Dependencies
 /dist
 /node_modules
-*.git
-*.log
+.env
 
 # Windows thumbnail cache files
 Thumbs.db
