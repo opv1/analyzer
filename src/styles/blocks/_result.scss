@@ -33,11 +33,11 @@
 
     display: flex;
     align-items: center;
+    margin: 0.5rem 0;
     font-family: 'Roboto-Regular';
     font-weight: 400;
     font-size: 1.1rem;
     text-decoration: none;
-    margin: 0.5rem 0;
     color: $greyColor;
 
     &:hover {
@@ -61,8 +61,8 @@
     flex-direction: column;
     overflow: hidden;
     border-radius: 10px;
-    max-width: 350px;
     height: 570px;
+    max-width: 350px;
     text-decoration: none;
     background: $whiteColor;
 
@@ -107,8 +107,6 @@
     font-size: 24px;
     text-overflow: ellipsis;
     color: $blackColor;
-    box-orient: vertical;
-    box-orient: vertical;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
   }
@@ -123,8 +121,6 @@
     font-size: 16px;
     text-overflow: ellipsis;
     color: $blackColor;
-    box-orient: vertical;
-    box-orient: vertical;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
 

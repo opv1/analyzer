@@ -14,18 +14,18 @@
   }
 
   &__copyright {
+    margin: 0.5rem 0;
     font-family: 'Roboto-Regular';
     font-weight: 400;
     color: $greyColor;
-    margin: 0.5rem 0;
   }
 
   &__navigation {
     display: flex;
     align-items: center;
+    margin: 0.5rem 0;
     width: 100%;
     max-width: 380px;
-    margin: 0.5rem 0;
   }
 
   &__list {

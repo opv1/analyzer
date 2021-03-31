@@ -34,6 +34,7 @@ function eventListeners() {
   constants.headerForm.addEventListener('submit', searchNews)
   constants.resultButton.addEventListener('click', moreNews)
 }
+
 document.addEventListener('DOMContentLoaded', () => {
   const data = dataStorage.getStorage()
 

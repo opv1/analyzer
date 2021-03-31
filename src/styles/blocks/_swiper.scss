@@ -8,10 +8,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background: $whiteColor;
     border-radius: 10px;
     padding: 0.5rem;
     height: 80%;
+    background: $whiteColor;
 
     &__date {
       font-family: 'Roboto', sans-serif;
@@ -25,15 +25,15 @@
     }
 
     &__avatar {
+      margin-right: 1rem;
       width: 64px;
       height: 64px;
-      margin-right: 1rem;
 
       img {
+        border-radius: 100%;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 100%;
       }
     }
 
@@ -43,10 +43,10 @@
     }
 
     &__name {
+      margin-bottom: 0.5rem;
       font-family: 'RobotoSlab-Regular';
       font-weight: 400;
       font-size: 1.5rem;
-      margin-bottom: 0.5rem;
     }
 
     &__email {

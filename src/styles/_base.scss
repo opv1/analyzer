@@ -21,19 +21,30 @@
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    'Roboto-Regular',
+    'RobotoSlab-Regular',
+    'SourceSansPro-Regular',
+    'Arial',
+    'Helvetica',
+    sans-serif;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+}
+
 .page {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   margin: auto;
   width: 100%;
   min-width: 320px;
   max-width: 1440px;
-  box-sizing: border-box;
-  font-family: 'Roboto-Regular', 'RobotoSlab-Regular', 'SourceSansPro-Regular',
-    'Arial', 'Helvetica', sans-serif;
-  text-rendering: optimizeLegibility;
-  text-size-adjust: 100%;
-  overflow-x: hidden;
 }
 
 .content {

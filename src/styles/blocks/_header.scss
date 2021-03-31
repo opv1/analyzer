@@ -135,10 +135,10 @@
     cursor: pointer;
 
     &__line {
+      margin: 5px;
       width: 21px;
       height: 3px;
       background: $blackColor;
-      margin: 5px;
     }
 
     &.hide {
@@ -147,16 +147,17 @@
   }
 
   &__sidedrawer {
-    display: none;
+    @include transition(transform);
+
     position: absolute;
-    z-index: 100;
     right: 0;
+    top: 0;
+    z-index: 100;
+    display: none;
     width: 40vw;
     height: 100vh;
-    top: 0;
     background: rgba(0, 0, 0, 0.3);
     transform: translateX(100%);
-    @include transition(transform);
 
     &__list {
       position: relative;
@@ -165,8 +166,8 @@
       align-items: center;
       list-style: none;
       margin: 0;
-      padding: 0;
       margin-top: 4rem;
+      padding: 0;
     }
 
     &__item {
@@ -199,10 +200,10 @@
     cursor: pointer;
 
     &__line {
+      margin: 5px;
       width: 21px;
       height: 3px;
       background: $blackColor;
-      margin: 5px;
 
       &:first-child {
         transform: rotate(-45deg) translate(0, 6px);

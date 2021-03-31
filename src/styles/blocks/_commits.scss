@@ -16,8 +16,8 @@
 
   &__block {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 3.5rem;
     width: 100%;
@@ -35,10 +35,10 @@
 
     display: flex;
     align-items: center;
+    margin: 0.5rem 0;
     font-family: 'Roboto-Regular';
     font-weight: 400;
     font-size: 1.1rem;
-    margin: 0.5rem 0;
     text-decoration: none;
     color: $greyColor;
 
