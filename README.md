@@ -1,16 +1,10 @@
-<h1 align="center">Analyzer</h1>
+<h1 align="center">News analyzer</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/made%20by-opv1-blue.svg">
 </p>
 
-## [See the project](https://opv1.github.io/analyzer/)
+## Description
 
-## Setup
+API: [NewsAPI](https://newsapi.org/)
 
-```
-npm run build
-```
-
-```
-npm run dev
-```
+## [See the project](https://opv1.github.io/news-analyzer)
