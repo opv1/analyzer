@@ -3,6 +3,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url('assets/images/background.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: $greyBackground;
 
   &__wrapper {
@@ -26,7 +30,7 @@
     font-family: 'Roboto Slab';
     font-weight: 500;
     font-size: 4rem;
-    color: $blackColor;
+    color: $whiteColor;
   }
 
   &__subcaption {
@@ -36,7 +40,7 @@
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 1.1rem;
-    color: $blackColor;
+    color: $whiteColor;
   }
 
   &__form {
@@ -58,7 +62,11 @@
     font-weight: 400;
 
     &:focus {
-      background-color: #f0f0f0;
+      background-color: $greyBackground;
+    }
+
+    &:disabled {
+      background-color: darken($greyBackground, 20%);
     }
   }
 
@@ -79,6 +87,10 @@
 
     &:hover {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    &:disabled {
+      background-color: darken($blueColor, 20%);
     }
   }
 }

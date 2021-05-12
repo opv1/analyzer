@@ -41,6 +41,9 @@
   }
 
   &__item {
+    display: flex;
+    align-items: center;
+
     &:not(:last-child) {
       margin-right: 2rem;
     }
@@ -49,7 +52,6 @@
   &__link {
     @include transition(color);
 
-    padding-bottom: 0.5rem;
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 1.1rem;

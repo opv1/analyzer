@@ -15,9 +15,10 @@
     flex: 1;
     flex-direction: column;
     margin: 1rem;
+    width: 100%;
 
     &:nth-child(1) {
-      height: 350px;
+      min-height: 350px;
       background-image: url('https://avatars1.githubusercontent.com/u/55979609?s=400&v=4');
       background-position: center;
       background-size: contain;
@@ -47,7 +48,7 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .author {
     &__wrapper {
       flex-direction: column;
