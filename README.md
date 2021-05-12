@@ -7,4 +7,6 @@
 
 ## Description
 
+Stack: JavaScript + Pug + Webpack
+
 API: [News API](https://newsapi.org)
