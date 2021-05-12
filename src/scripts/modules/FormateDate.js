@@ -4,7 +4,9 @@ export default class FormateDate {
   }
 
   formateDateLocal(date) {
-    return date.toLocaleString('ru', this.optionsDate)
+    const dateLocal = date.toLocaleString('ru', this.optionsDate)
+
+    return dateLocal
   }
 
   formateDateIco(date, days) {
@@ -12,6 +14,8 @@ export default class FormateDate {
       date.setDate(date.getDate() - days)
     }
 
-    return date.toISOString().slice(0, 10)
+    const dateIco = date.toISOString().slice(0, 10)
+
+    return dateIco
   }
 }
