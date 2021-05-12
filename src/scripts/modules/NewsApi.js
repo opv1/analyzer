@@ -1,9 +1,6 @@
 export default class NewsApi {
   constructor(options) {
-    this.apiUrl =
-      process.env.NODE_ENV === 'development'
-        ? 'http://newsapi.org/v2/everything?'
-        : 'https://newsapi.org/v2/everything?'
+    this.apiUrl = 'https://newsapi.org/v2/everything?'
     this.fromDate = options.fromDate
     this.toDate = options.toDate
     this.pageSize = options.pageSize
