@@ -8,7 +8,7 @@ export default class NewsCard {
         <div class="result__info">
           <span class="result__date">${publishedAt}</span>
           <h3 class="result__title">${title}</h3>
-          <div class="result__description">${description}</div>
+          <p class="result__description">${description}</p>
           <span class="result__source">${source.name}</span>
         </div>
       </a>`

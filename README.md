@@ -7,6 +7,4 @@
 
 ## Description
 
-Stack: JavaScript + Webpack
-
-API: [News API](https://newsapi.org/)
+API: [News API](https://newsapi.org)

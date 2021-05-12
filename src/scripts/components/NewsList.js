@@ -1,5 +1,5 @@
-import { resultButton } from 'constants'
-import noImage from '../assets/images/no-image.jpg'
+import { resultButton } from 'scripts/constants'
+import noImage from 'assets/images/no-image.jpg'
 
 export default class NewsList {
   constructor(newsCard, formateDate) {

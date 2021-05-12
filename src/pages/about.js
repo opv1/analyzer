@@ -1,7 +1,7 @@
-import CommitCard from 'components/CommitCard'
-import CommitList from 'components/CommitList'
-import FormateDate from 'modules/FormateDate'
-import GitHubApi from 'modules/GitHubApi'
+import CommitCard from 'scripts/components/CommitCard'
+import CommitList from 'scripts/components/CommitList'
+import FormateDate from 'scripts/modules/FormateDate'
+import GitHubApi from 'scripts/modules/GitHubApi'
 import 'styles/about.scss'
 
 const formateDate = new FormateDate()

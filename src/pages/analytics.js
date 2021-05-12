@@ -1,5 +1,5 @@
-import Analytics from 'components/Analytics'
-import DataStorage from 'modules/DataStorage'
+import Analytics from 'scripts/components/Analytics'
+import DataStorage from 'scripts/modules/DataStorage'
 import 'styles/analytics.scss'
 
 const dataStorage = new DataStorage()

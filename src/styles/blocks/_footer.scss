@@ -15,7 +15,7 @@
 
   &__copyright {
     margin: 0.5rem 0;
-    font-family: 'Roboto-Regular';
+    font-family: 'Roboto';
     font-weight: 400;
     color: $greyColor;
   }
@@ -40,12 +40,13 @@
 
   &__item {
     display: flex;
+    align-items: center;
   }
 
   &__link {
     @include transition(color);
 
-    font-family: 'SourceSansPro-Regular';
+    font-family: 'Source Sans Pro';
     font-weight: 400;
     font-size: 1.1rem;
     text-decoration: none;

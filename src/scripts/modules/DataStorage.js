@@ -1,8 +1,8 @@
-import { counterTotal, formateMonth, formateWeek } from 'utils'
+import { counterTotal, formateMonth, formateWeek } from 'scripts/utils'
 
 export default class DataStorage {
   constructor() {
-    this.nameStorage = 'newsAnalyzer'
+    this.nameStorage = 'news-analyzer'
   }
 
   setStorage(newsObject, keyWord) {

@@ -1,4 +1,4 @@
-import FormateDate from 'modules/FormateDate'
+import FormateDate from 'scripts/modules/FormateDate'
 
 const formateDate = new FormateDate()
 

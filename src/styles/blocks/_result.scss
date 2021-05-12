@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 0;
   background-color: $greyBackground;
 
   &__wrapper {
@@ -23,7 +22,7 @@
 
   &__caption {
     margin: 0;
-    font-family: 'RobotoSlab-Regular';
+    font-family: 'Roboto Slab';
     font-weight: 400;
     font-size: 2.5rem;
   }
@@ -34,7 +33,7 @@
     display: flex;
     align-items: center;
     margin: 0.5rem 0;
-    font-family: 'Roboto-Regular';
+    font-family: 'Roboto';
     font-weight: 400;
     font-size: 1.1rem;
     text-decoration: none;
@@ -50,7 +49,7 @@
     justify-items: center;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    margin: 3.5rem 0;
+    margin: 1rem 0;
     width: 100%;
   }
 
@@ -91,7 +90,7 @@
   }
 
   &__date {
-    font-family: 'SourceSansPro-Regular';
+    font-family: 'Source Sans Pro';
     font-weight: 700;
     font-size: 16px;
     color: $greyColor;
@@ -102,7 +101,7 @@
     overflow: hidden;
     margin: 0;
     height: 85px;
-    font-family: 'RobotoSlab-Regular';
+    font-family: 'Roboto Slab';
     font-weight: 400;
     font-size: 24px;
     text-overflow: ellipsis;
@@ -116,7 +115,7 @@
     overflow: hidden;
     margin: 0;
     height: 90px;
-    font-family: 'Roboto-Regular';
+    font-family: 'Roboto';
     font-weight: 400;
     font-size: 16px;
     text-overflow: ellipsis;
@@ -133,7 +132,7 @@
   }
 
   &__source {
-    font-family: 'RobotoSlab-Regular';
+    font-family: 'Roboto Slab';
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 0.5px;
@@ -149,7 +148,7 @@
     border-radius: 80px;
     padding: 1.5rem 5rem;
     max-width: 290px;
-    font-family: 'Roboto-Regular';
+    font-family: 'Roboto';
     font-weight: 400;
     color: $whiteColor;
     background: $blueColor;

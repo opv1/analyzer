@@ -1,0 +1,17 @@
+- var title = 'Аналитика'
+
+doctype html
+html(lang='ru')
+  head 
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    link(rel='icon', href=require('assets/images/favicon.png').default)
+    title= title
+  body
+    .page
+      include blocks/header
+      main.content
+        include blocks/analytics
+        include blocks/graphic
+      include blocks/footer
+      

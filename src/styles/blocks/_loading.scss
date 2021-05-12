@@ -8,7 +8,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 0;
   height: 250px;
   background: $greyBackground;
 
@@ -20,6 +19,7 @@
 
   &__preloader {
     display: block;
+    margin: 1rem;
     border: 5px solid $greyColor;
     border-top-color: $blueColor;
     border-bottom-color: $blueColor;
@@ -29,9 +29,9 @@
     animation: spin 0.75s infinite linear;
   }
 
-  &__text {
-    margin: 1rem;
-    font-family: 'Roboto-Regular';
+  &__caption {
+    margin: 0;
+    font-family: 'Roboto';
     font-weight: 400;
     font-size: 1.1rem;
     text-align: center;

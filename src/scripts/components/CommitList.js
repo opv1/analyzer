@@ -28,11 +28,6 @@ export default class CommitList {
   createSwiper() {
     new Swiper('.swiper-container', {
       spaceBetween: 30,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
-      },
       breakpoints: {
         320: {
           slidesPerView: 1,

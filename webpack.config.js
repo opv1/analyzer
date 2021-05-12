@@ -9,19 +9,6 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
-const jsLoaders = () => {
-  const loaders = [
-    {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-      },
-    },
-  ]
-
-  return loaders
-}
-
 const cssLoaders = (extra) => {
   const loaders = [
     {
@@ -41,24 +28,29 @@ const cssLoaders = (extra) => {
   return loaders
 }
 
-const jsFileName = (pathData) => {
-  if (pathData.runtime === 'index') {
-    return './[name].[chunkhash].js'
-  } else {
-    return './pages/[name].[chunkhash].js'
-  }
+const jsLoaders = () => {
+  const loaders = [
+    {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+      },
+    },
+  ]
+
+  return loaders
 }
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    index: './index.js',
+    index: './pages/index.js',
     about: './pages/about.js',
     analytics: './pages/analytics.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: (pathData) => jsFileName(pathData),
+    filename: './scripts/[name].[chunkhash].js',
   },
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -78,13 +70,17 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: jsLoaders(),
-        exclude: /node_modules/,
+        test: /\.pug$/,
+        use: ['pug-loader'],
       },
       {
         test: /\.(sa|sc|c)ss$/,
         use: cssLoaders('postcss-loader'),
+      },
+      {
+        test: /\.js$/,
+        use: jsLoaders(),
+        exclude: /node_modules/,
       },
       {
         test: /\.(png|jpg|gif|ico|svg)$/,
@@ -105,24 +101,25 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './pages/index.pug',
       chunks: ['index'],
+      filename: './index.html',
       minify: {
         collapseWhitespace: isProd,
       },
     }),
     new HtmlWebpackPlugin({
-      template: './pages/about.html',
-      filename: './pages/about.html',
+      template: './pages/about.pug',
       chunks: ['about'],
+      filename: './about.html',
       minify: {
         collapseWhitespace: isProd,
       },
     }),
     new HtmlWebpackPlugin({
-      template: './pages/analytics.html',
-      filename: './pages/analytics.html',
+      template: './pages/analytics.pug',
       chunks: ['analytics'],
+      filename: './analytics.html',
       minify: {
         collapseWhitespace: isProd,
       },

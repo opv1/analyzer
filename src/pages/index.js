@@ -1,10 +1,10 @@
-import NewsCard from 'components/NewsCard'
-import NewsList from 'components/NewsList'
-import DataStorage from 'modules/DataStorage'
-import FormateDate from 'modules/FormateDate'
-import NewsApi from 'modules/NewsApi'
-import CheckInput from 'modules/CheckInput'
-import * as constants from 'constants'
+import NewsCard from 'scripts/components/NewsCard'
+import NewsList from 'scripts/components/NewsList'
+import DataStorage from 'scripts/modules/DataStorage'
+import FormateDate from 'scripts/modules/FormateDate'
+import NewsApi from 'scripts/modules/NewsApi'
+import CheckInput from 'scripts/modules/CheckInput'
+import * as constants from 'scripts/constants'
 import 'styles/index.scss'
 
 const checkInput = new CheckInput()
@@ -29,9 +29,9 @@ const newsCard = new NewsCard()
 const newsList = new NewsList(newsCard, formateDate)
 
 function eventListeners() {
-  constants.headerBurger.addEventListener('click', activeSidedrawer)
-  constants.headerTimes.addEventListener('click', activeSidedrawer)
-  constants.headerForm.addEventListener('submit', searchNews)
+  // constants.headerBurger.addEventListener('click', activeSidedrawer)
+  // constants.headerTimes.addEventListener('click', activeSidedrawer)
+  constants.searchForm.addEventListener('submit', searchNews)
   constants.resultButton.addEventListener('click', moreNews)
 }
 
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (data) {
     const { keyWord } = data.analyticsObject
 
-    constants.headerForm.elements.input.value = keyWord
+    constants.searchForm.elements.input.value = keyWord
     newsList.renderNewsList(data.newsObject.articles)
     constants.resultSection.classList.remove('hide')
   }
@@ -49,20 +49,20 @@ document.addEventListener('DOMContentLoaded', () => {
   eventListeners()
 })
 
-function activeSidedrawer() {
-  constants.headerBurger.classList.toggle('hide')
-  constants.headerSidedrawer.classList.toggle('active')
-}
+// function activeSidedrawer() {
+//   constants.headerBurger.classList.toggle('hide')
+//   constants.headerSidedrawer.classList.toggle('active')
+// }
 
 function searchNews(event) {
   event.preventDefault()
 
-  if (checkInput.validateValue(constants.headerForm.elements.input)) {
-    const keyWord = constants.headerForm.elements.input.value
+  if (checkInput.validateValue(constants.searchForm.elements.input)) {
+    const keyWord = constants.searchForm.elements.input.value
 
     constants.resultContainer.textContent = ''
-    constants.headerForm.elements.input.setAttribute('disabled', true)
-    constants.headerForm.elements.button.setAttribute('disabled', true)
+    constants.searchForm.elements.input.setAttribute('disabled', true)
+    constants.searchForm.elements.button.setAttribute('disabled', true)
 
     const promise = new Promise((resolve) => {
       constants.loadingSection.classList.remove('hide')
@@ -100,8 +100,8 @@ function searchNews(event) {
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        constants.headerForm.elements.input.removeAttribute('disabled')
-        constants.headerForm.elements.button.removeAttribute('disabled')
+        constants.searchForm.elements.input.removeAttribute('disabled')
+        constants.searchForm.elements.button.removeAttribute('disabled')
       })
   }
 }

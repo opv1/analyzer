@@ -2,77 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 1.5rem;
+  padding: 1.5rem 0;
   width: 100%;
-
-  &__main {
-    background-image: url('../assets/images/background.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    .header__brand {
-      color: $whiteColor;
-    }
-
-    .header__item {
-      &:first-child {
-        .header__link {
-          border-bottom: 2px solid $whiteColor;
-        }
-      }
-    }
-
-    .header__sidedrawer__item {
-      &:first-child {
-        .header__sidedrawer__link {
-          border-bottom: 2px solid $whiteColor;
-        }
-      }
-    }
-
-    .header__link {
-      &:hover {
-        color: $whiteColor;
-      }
-    }
-
-    .header__sidedrawer__link {
-      &:hover {
-        color: $whiteColor;
-      }
-    }
-
-    .header__burger {
-      &__line {
-        background: $whiteColor;
-      }
-    }
-
-    .header__times {
-      &__line {
-        background: $whiteColor;
-      }
-    }
-  }
-
-  &__about {
-    .header__item {
-      &:last-child {
-        .header__link {
-          border-bottom: 2px solid $blackColor;
-        }
-      }
-    }
-
-    .header__sidedrawer__item {
-      &:last-child {
-        .header__sidedrawer__link {
-          border-bottom: 2px solid $blackColor;
-        }
-      }
-    }
-  }
 
   &__wrapper {
     display: flex;
@@ -89,7 +20,7 @@
   }
 
   &__brand {
-    font-family: 'RobotoSlab-Regular';
+    font-family: 'Roboto Slab';
     font-weight: 900;
     font-size: 1.5rem;
     text-decoration: none;
@@ -119,7 +50,7 @@
     @include transition(color);
 
     padding-bottom: 0.5rem;
-    font-family: 'Roboto-Regular';
+    font-family: 'Roboto';
     font-weight: 400;
     font-size: 1.1rem;
     text-decoration: none;
@@ -127,180 +58,6 @@
 
     &:hover {
       color: $blackColor;
-    }
-  }
-
-  &__burger {
-    display: none;
-    cursor: pointer;
-
-    &__line {
-      margin: 5px;
-      width: 21px;
-      height: 3px;
-      background: $blackColor;
-    }
-
-    &.hide {
-      opacity: 0;
-    }
-  }
-
-  &__sidedrawer {
-    @include transition(transform);
-
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 100;
-    width: 40vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.3);
-    transform: translateX(100%);
-
-    &__list {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      list-style: none;
-      margin: 0;
-      margin-top: 4rem;
-      padding: 0;
-    }
-
-    &__item {
-      margin-bottom: 2rem;
-    }
-
-    &__link {
-      @include transition(color);
-
-      padding-bottom: 0.5rem;
-      font-family: 'Roboto-Regular';
-      font-weight: 400;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: $greyColor;
-
-      &:hover {
-        color: $blackColor;
-      }
-    }
-
-    &.active {
-      transform: translateX(0%);
-    }
-  }
-
-  &__times {
-    position: absolute;
-    top: 25px;
-    cursor: pointer;
-
-    &__line {
-      margin: 5px;
-      width: 21px;
-      height: 3px;
-      background: $blackColor;
-
-      &:first-child {
-        transform: rotate(-45deg) translate(0, 6px);
-      }
-
-      &:last-child {
-        transform: rotate(45deg) translate(0, -6px);
-      }
-    }
-  }
-
-  &__search {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 0;
-  }
-
-  &__block {
-    display: flex;
-    flex-direction: column;
-    max-width: 545px;
-  }
-
-  &__caption {
-    margin: 0;
-    margin-bottom: 2rem;
-    width: 100%;
-    font-family: 'RobotoSlab-Regular';
-    font-weight: 500;
-    font-size: 4rem;
-    color: $whiteColor;
-  }
-
-  &__description {
-    margin: 0;
-    width: 100%;
-    font-family: 'Roboto-Regular';
-    font-weight: 400;
-    font-size: 1.1rem;
-    color: $whiteColor;
-  }
-
-  &__form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2.5rem 0;
-    width: 100%;
-  }
-
-  &__input {
-    @include transition(background-color);
-
-    outline: none;
-    border: none;
-    border-radius: 100px;
-    padding: 1rem 1.5rem;
-    width: 80%;
-    font-family: 'Roboto-Regular';
-    font-weight: 400;
-
-    &:focus {
-      background-color: #f0f0f0;
-    }
-  }
-
-  &__button {
-    @include transition(box-shadow);
-
-    position: relative;
-    right: 50px;
-    outline: none;
-    border: none;
-    border-radius: 100px;
-    padding: 1rem 1.5rem;
-    width: 100px;
-    font-family: 'Roboto-Regular';
-    font-weight: 400;
-    color: $whiteColor;
-    background: $blueColor;
-    cursor: pointer;
-
-    &:hover {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .header {
-    &__list {
-      display: none;
-    }
-
-    &__burger {
-      display: block;
     }
   }
 }

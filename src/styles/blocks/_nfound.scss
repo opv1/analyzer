@@ -2,8 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 0;
-  height: 250px;
   background: $greyBackground;
 
   &__block {
@@ -13,14 +11,17 @@
   }
 
   &__image {
+    margin-bottom: 1rem;
+
     img {
       display: block;
     }
   }
 
   &__caption {
-    margin: 1rem;
-    font-family: 'RobotoSlab-Regular';
+    margin: 0;
+    margin-bottom: 1rem;
+    font-family: 'Roboto Slab';
     font-weight: 400;
     font-size: 1.6rem;
     text-align: center;
@@ -29,7 +30,7 @@
   &__text {
     margin: 0;
     max-width: 350px;
-    font-family: 'Roboto-Regular';
+    font-family: 'Roboto';
     font-weight: 400;
     font-size: 1.1rem;
     text-align: center;
