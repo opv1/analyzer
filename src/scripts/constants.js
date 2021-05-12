@@ -1,6 +1,3 @@
-// export const headerBurger = document.querySelector('.header__burger')
-// export const headerSidedrawer = document.querySelector('.header__sidedrawer')
-// export const headerTimes = document.querySelector('.header__times')
 export const searchForm = document.querySelector('.search__form')
 export const loadingSection = document.querySelector('.loading')
 export const nfoundSection = document.querySelector('.nfound')

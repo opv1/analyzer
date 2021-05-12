@@ -29,8 +29,6 @@ const newsCard = new NewsCard()
 const newsList = new NewsList(newsCard, formateDate)
 
 function eventListeners() {
-  // constants.headerBurger.addEventListener('click', activeSidedrawer)
-  // constants.headerTimes.addEventListener('click', activeSidedrawer)
   constants.searchForm.addEventListener('submit', searchNews)
   constants.resultButton.addEventListener('click', moreNews)
 }
@@ -48,11 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   eventListeners()
 })
-
-// function activeSidedrawer() {
-//   constants.headerBurger.classList.toggle('hide')
-//   constants.headerSidedrawer.classList.toggle('active')
-// }
 
 function searchNews(event) {
   event.preventDefault()
