@@ -3,8 +3,3 @@ $blueColor: #347eff;
 $greyColor: #b6bcbf;
 $greyBackground: #f5f6f7;
 $whiteColor: #fff;
-
-@mixin transition($property) {
-  transition-property: $property;
-  transition-duration: 0.3s;
-}

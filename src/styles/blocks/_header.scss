@@ -50,8 +50,6 @@
   }
 
   &__link {
-    @include transition(color);
-
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 1.1rem;

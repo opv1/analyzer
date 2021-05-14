@@ -44,8 +44,6 @@
   }
 
   &__link {
-    @include transition(color);
-
     font-family: 'Source Sans Pro';
     font-weight: 400;
     font-size: 1.1rem;
@@ -65,8 +63,6 @@
   }
 
   &__icon {
-    @include transition(transform);
-
     text-decoration: none;
 
     img {

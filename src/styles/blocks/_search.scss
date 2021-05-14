@@ -51,8 +51,6 @@
   }
 
   &__input {
-    @include transition(background-color);
-
     outline: none;
     border: none;
     border-radius: 10px;
@@ -71,8 +69,6 @@
   }
 
   &__button {
-    @include transition(box-shadow);
-
     position: relative;
     right: 50px;
     outline: none;
