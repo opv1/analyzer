@@ -8,11 +8,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    min-height: 200px;
   }
 
   &__caption {
     margin: 0;
-    margin-bottom: 1rem;
     font-family: 'Roboto Slab';
     font-weight: 400;
     font-size: 1.6rem;

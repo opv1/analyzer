@@ -8,24 +8,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 250px;
   background: $greyBackground;
 
   &__block {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    min-height: 200px;
   }
 
   &__preloader {
     display: block;
-    margin: 1rem;
-    border: 5px solid $greyColor;
+    border: 10px solid $greyColor;
     border-top-color: $blueColor;
     border-bottom-color: $blueColor;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     animation: spin 0.75s infinite linear;
   }
 
